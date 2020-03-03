@@ -73,7 +73,7 @@ Yes. The {{site.data.keyword.blockchainfull_notm}} Platform can be purchased and
 {: #ibp-v2-faq-v2-Hyperledger-Fabric-3-1}
 {: faq}
 
-{{site.data.keyword.blockchainfull_notm}} Platform v2.1.2 uses Hyperledger Fabric v1.4.4 while {{site.data.keyword.blockchainfull_notm}} Platform v2.1.0 and 2.1.1 use Hyperledger Fabric 1.4.3.
+{{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 uses Hyperledger Fabric v1.4.6 while {{site.data.keyword.blockchainfull_notm}} Platform v2.1.0 and 2.1.1 use Hyperledger Fabric 1.4.3.
 
 ## What database do the peers use for their ledger?
 {: #ibp-v2-faq-v2-IBP-Overview-1-3}

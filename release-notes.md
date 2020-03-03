@@ -25,6 +25,41 @@ Use these release notes that are grouped by date to learn about the latest chang
 {:shortdesc}
 
 
+## 24 March 2020
+{: #03-24-2020}
+
+
+**CA, peer and ordering node patch 1.4.6-1**
+
+**Hyperledger Fabric v1.4.6**
+
+All new nodes are deployed using Hyperledger Fabric v1.4.6. If you have an existing blockchain network, you should review the topic on [Capabilities](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern#ibp-console-govern-capabilities) to understand how this new Fabric version can impact your network.
+
+**Hardware Security Module (HSM) support for node identities**   
+
+When you deploy a CA, peer, or ordering node, you now have the option to store the private key for the node identity in an HSM. See [Configuring a node to use a HSM](https://test.cloud.ibm.com/docs/blockchain?topic=blockchain-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm) for more details.
+
+**Ability to override default CA, peer, ordering node configuration**  
+
+Hyperledger Fabric includes many configuration options for a CA, peer, or ordering node. A subset of those options for the [CA](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-ca-customization), [peer](docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-peer-create-json) and [ordering node](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-orderer-create-json) can now be overridden by using the console or the [APIs](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-apis#ibp-v2-apis-custom).
+
+**Add and remove Raft nodes**  
+
+Previously, a Raft ordering service could only contain one or five ordering nodes. Now you have the ability to add or remove Raft ordering nodes as needed using the console. Additionally, support has been added to allow ordering nodes to be contributed to the Raft ordering service by different organizations. Learn more about the process in the new [Raft Ordering service tutorial]().
+
+**Install and Instantiate Java Chaincode**
+
+In addition to smart contracts written in JavaScript, TypeScript, and Go programming languages, it is now possible to install and instantiate Java smart contracts from the console.
+
+**New process for Channel and MSP creation**
+
+The console panels for creating a channel and organization MSP definition have been updated for an improved user experience.
+
+**v2 APIs available**
+
+New {{site.data.keyword.blockchainfull_notm}} Platform console APIs using the route `/v2/` are now available. Use of the legacy `/v1/` APIs continues to be supported. See [{{site.data.keyword.blockchainfull_notm}} Platform APIs](https://cloud.ibm.com/apidocs/blockchain) for more information.
+
+
 
 ## 17 December 2019
 {: #12-17-2019}

@@ -19,10 +19,10 @@ subcollection: blockchain-sw-213
 {:tip: .tip}
 {:pre: .pre}
 
-# Deploying {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2
+# Deploying {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3
 {: #deploy-k8}
 
-You can use the following instructions to deploy the {{site.data.keyword.blockchainfull}} Platform v2.1.2 on any x86_64 Kubernetes cluster running at v1.14 - v1.16. Use these instructions if you are using distributions such as Rancher or {{site.data.keyword.cloud_notm}} Private. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+You can use the following instructions to deploy the {{site.data.keyword.blockchainfull}} Platform v2.1.3 on any x86_64 Kubernetes cluster running at v1.14 - v1.16. Use these instructions if you are using distributions such as Rancher or {{site.data.keyword.cloud_notm}} Private. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 {:shortdesc}
 
 ## Resources required

@@ -19,13 +19,13 @@ subcollection: blockchain-sw-213
 {:tip: .tip}
 {:pre: .pre}
 
-# Deploying {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2 behind a firewall
+# Deploying {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 behind a firewall
 {: #deploy-ocp-firewall}
 
-You can use these instructions to deploy {{site.data.keyword.blockchainfull}} Platform v2.1.2 behind a firewall without internet connectivity. If you are deploying the platform on a cluster with access to the external internet, use the main instructions for [Deploying {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp).
+You can use these instructions to deploy {{site.data.keyword.blockchainfull}} Platform v2.1.3 behind a firewall without internet connectivity. If you are deploying the platform on a cluster with access to the external internet, use the main instructions for [Deploying {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp).
 {:shortdesc}
 
-You can deploy the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2 onto a Kubernetes cluster that is running on Red Hat OpenShift Container Platform 3.11, 4.1, or 4.2. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://www.openshift.com/learn/topics/operators){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+You can deploy the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 onto a Kubernetes cluster that is running on Red Hat OpenShift Container Platform 3.11, 4.1, or 4.2. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://www.openshift.com/learn/topics/operators){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 
 ## Need to Know
 

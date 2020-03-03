@@ -139,7 +139,7 @@ Endorsement policies are not updated automatically when new organizations join t
 ### What does the user type have to do with the smart contract endorsement policy?
 {: #ibp-console-smart-contracts-endorse-user-type}
 
-It's worth clicking the **Advanced** button to review the endorsement policy that will be used for the smart contract. Every organization that you select from the **Members** drop-down list on this panel will be included in the endorsement policy. If the organization MSP was created based on Hyperledger Fabric v1.4.4 or higher, then the role name is automatically set to `peer`. Otherwise, the role defaults to `member`, meaning the identity type required to endorse transactions can be any of  `client`, `peer`, `orderer`, or `admin`.  
+It's worth clicking the **Advanced** button to review the endorsement policy that will be used for the smart contract. Every organization that you select from the **Members** drop-down list on this panel will be included in the endorsement policy. If the organization MSP was created based on Hyperledger Fabric v1.4.6 or higher, then the role name is automatically set to `peer`. Otherwise, the role defaults to `member`, meaning the identity type required to endorse transactions can be any of  `client`, `peer`, `orderer`, or `admin`.  
 
 If you know when the organization MSP definition was created, you can determine what version of Hyperledger Fabric was used by examining the release notes in the console by clicking the `?` icon in the upper right corner.
 {: tip}
