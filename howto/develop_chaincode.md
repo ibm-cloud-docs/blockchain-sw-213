@@ -6,7 +6,7 @@ lastupdated: "2019-09-24"
 
 keywords: update data, private data, smart contract, CouchDB indexes, cross chaincode transaction
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 
@@ -50,7 +50,7 @@ A smart contract is typically able to validate requests, apply the business rule
 ## Installing Chaincode
 {: #develop-smart-contracts-install}
 
-Because chaincode provides the structure of transactions on a channel, a chaincode needs to be installed on all the peers joined to the channel that want use the chaincode to update or query the channel ledger. Then, one member of the channel can then instantiate the chaincode on a channel and set the chaincode's endorsement policy. Installation and instantiation of chaincode can be performed by using the {{site.data.keyword.blockchainfull_notm}} Platform UI, the Fabric Peer command-line interface, or from a client application by using the Fabric SDKs.  <blockchain-sw>To learn how to deploy a chaincode by using the {{site.data.keyword.blockchainfull_notm}} Platform console, see the [Deploy a smart contract on the network tutorial](/docs/blockchain-sw?topic=blockchain-sw-ibp-console-smart-contracts#ibp-console-smart-contracts).</blockchain-sw>
+Because chaincode provides the structure of transactions on a channel, a chaincode needs to be installed on all the peers joined to the channel that want use the chaincode to update or query the channel ledger. Then, one member of the channel can then instantiate the chaincode on a channel and set the chaincode's endorsement policy. Installation and instantiation of chaincode can be performed by using the {{site.data.keyword.blockchainfull_notm}} Platform UI, the Fabric Peer command-line interface, or from a client application by using the Fabric SDKs.  To learn how to deploy a chaincode by using the {{site.data.keyword.blockchainfull_notm}} Platform console, see the [Deploy a smart contract on the network tutorial](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-smart-contracts#ibp-console-smart-contracts).
 
 ## Chaincode and data
 {: #develop-smart-contracts-data}

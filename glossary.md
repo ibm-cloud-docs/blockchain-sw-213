@@ -6,7 +6,7 @@ lastupdated: "2020-03-03"
 
 keywords: IBM Blockchain, IBM Blockchain Platform, terms, Fabric, Raft, CouchDB, consortium
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 

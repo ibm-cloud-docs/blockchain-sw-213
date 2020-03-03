@@ -6,7 +6,7 @@ lastupdated: "2020-03-03"
 
 keywords: import nodes, another console, import a CA, import a peer, import admin identities, import an ordering service node
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 

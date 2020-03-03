@@ -6,7 +6,7 @@ lastupdated: "2020-03-03"
 
 keywords: security, encryption, storage, tls, iam, roles, keys
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 
@@ -31,7 +31,7 @@ subcollection: blockchain-sw
 
 **Audience:** Tasks in this section are typically performed by **blockchain network operators**.  
 
- <blockchain-sw>Configuration of an {{site.data.keyword.blockchainfull_notm}} Platform network includes deploying the blockchain console that can then be used to create blockchain nodes which reside in the customer Kubernetes cluster. </blockchain-sw>
+ Configuration of an {{site.data.keyword.blockchainfull_notm}} Platform network includes deploying the blockchain console that can then be used to create blockchain nodes which reside in the customer Kubernetes cluster. 
 
 Considerations include:
 - [IAM (Identity and Access Management)](#ibp-security-ibp-iam)
@@ -46,19 +46,19 @@ Considerations include:
 
 
 
-<blockchain-sw>
-Identity and access management allows the owner of a console to control which users have access to the console and their privileges within it. IAM is built into the blockchain console and includes local console authentication and role management. When the console is initially provisioned you need to specify the email address of the user who is designated as the console administrator, also known as the **Manager**. This administrator can then add and grant other users access to the console by using the **Users** tab. It is also possible to change the console administrator. Every user that accesses the console must be assigned an access policy with a user role defined. The policy determines what actions the user can perform within the console. Other users can be assigned with **Manager**, **Writer**, or **Reader** roles when a console manager adds them to the console. The definition of each role is provided in the [Role to permissions mapping table](/docs/blockchain-sw?topic=blockchain-sw-console-icp-manage#console-icp-manage--role-mapping). For the steps required to add new users, see [Managing users from the console](/docs/blockchain-sw?topic=blockchain-sw-console-icp-manage#console-icp-manage-users).
 
-Note that users can also be managed with [APIs](/docs/blockchain-sw?topic=blockchain-sw-ibp-v2-apis#console-icp-manage-users-apis).
-</blockchain-sw>
+Identity and access management allows the owner of a console to control which users have access to the console and their privileges within it. IAM is built into the blockchain console and includes local console authentication and role management. When the console is initially provisioned you need to specify the email address of the user who is designated as the console administrator, also known as the **Manager**. This administrator can then add and grant other users access to the console by using the **Users** tab. It is also possible to change the console administrator. Every user that accesses the console must be assigned an access policy with a user role defined. The policy determines what actions the user can perform within the console. Other users can be assigned with **Manager**, **Writer**, or **Reader** roles when a console manager adds them to the console. The definition of each role is provided in the [Role to permissions mapping table](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-manage#console-icp-manage--role-mapping). For the steps required to add new users, see [Managing users from the console](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-manage#console-icp-manage-users).
+
+Note that users can also be managed with [APIs](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-apis#console-icp-manage-users-apis).
+
 
 ### Ports
 {: #ibp-security-ibp-ports}
 
 
-<blockchain-sw>
+
 If you are using a client application to send requests to the console, either via the blockchain APIs or the Fabric SDKs, the standard `HTTPS` (443) port needs to be exposed in your firewall.
-</blockchain-sw>
+
 
 ### Key management
 {: #ibp-security-ibp-keys}
@@ -107,9 +107,9 @@ You can use the blockchain console to select which ACLs to apply to resources on
 
 In order to use the blockchain [APIs](https://cloud.ibm.com/apidocs/blockchain){: external} to create and manage network components, your application needs to be able to authenticate and connect to your network. 
 
-<blockchain-sw>
-See this topic on how to [Connect to your console using API keys](/docs/blockchain-sw?topic=blockchain-sw-ibp-v2-apis#console-icp-manage-api-key) for more details.
-</blockchain-sw>
+
+See this topic on how to [Connect to your console using API keys](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-apis#console-icp-manage-api-key) for more details.
+
 
 ## Best practices for security on the customer Kubernetes cluster
 {: #ibp-security-Kubernetes}
@@ -136,33 +136,33 @@ The best place to start is to learn about the security features of the underlyin
 
 With {{site.data.keyword.cloud_notm}} Private, **Pod Security Policies** provide a way to control the security level of the pods and containers in your cluster. The Pod Security Policy that is applied to the namespace on a cluster is the default security setting for any new pod that is created in that namespace. If you are using {{site.data.keyword.cloud_notm}} Private, review the [Security guide](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.0/user_management/admin.html){: external} for best practices.
 
-<blockchain-sw>
+
 For OpenShift Container Platform security considerations, you should review the [Red Hat Container Security Guide Service](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html-single/container_security_guide/index){: external}. You will need to use [security context constraints](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html-single/architecture/index#security-context-constraints){: external} (SCCs) to define a set of conditions that a pod must run with in order to be accepted into the system. Details are included in the {{site.data.keyword.blockchainfull_notm}} Platform deployment instructions.  
 
 If you are not running the platform on Red Hat OpenShift Container Platform, Red Hat Open Kubernetes Distribution, or {{site.data.keyword.cloud_notm}} Private then you need to setup the nginx ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}.
-</blockchain-sw>
+
 
 ### Network security
 {: #ibp-security-Kubernetes-network}
 
 
 
-<blockchain-sw>
+
 The Kubernetes Container Platform provides the underlying network, including the networks and routers, over which the customer's VLAN resides. The customer needs to configure their servers and use gateways and firewalls to route traffic between servers to protect workloads from network threats. Protecting your cloud network by using firewalls and intrusion prevention system devices is imperative for protecting your cloud-based workloads.
-</blockchain-sw>
+
 
 
 
 ### Cluster and Operating System security
 {: #ibp-security-Kubernetes-container-os}
 
-- **Sensitive data:** Cluster configuration data is stored in the `etcd` component of your Kubernetes master. Data in etcd is stored on the local disk of the Kubernetes master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}}. <blockchain-sw>If you are using OpenShift, you can choose to enable encryption for your etcd data on the local disk of your Kubernetes master by [Encrypting Data at the datastore layer](https://docs.openshift.com/container-platform/3.11/admin_guide/encrypting_data.html){: external} for your cluster.</blockchain-sw>
+- **Sensitive data:** Cluster configuration data is stored in the `etcd` component of your Kubernetes master. Data in etcd is stored on the local disk of the Kubernetes master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}}. If you are using OpenShift, you can choose to enable encryption for your etcd data on the local disk of your Kubernetes master by [Encrypting Data at the datastore layer](https://docs.openshift.com/container-platform/3.11/admin_guide/encrypting_data.html){: external} for your cluster.
 
 
 
-<blockchain-sw>
+
 - **UBI Linux:** The Fabric Docker images use [Red Hat UBI images](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/building_running_and_managing_containers/index#how_are_ubi_images_different/){: external}, which is a smaller, lighter, and more secure version of Linux.
-</blockchain-sw>
+
 
 ### Keys and cluster access information
 {: #ibp-security-Kubernetes-keys}
@@ -190,14 +190,14 @@ Customers are responsible for encrypting their own storage and the encryption mu
 
 
 - For more information about encryption on {{site.data.keyword.cloud_notm}} Private:
-[Encrypting volumes that are used by IBM Cloud Private](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/installing/fips_encrypt_volumes.html){: external} <blockchain-sw>
+[Encrypting volumes that are used by IBM Cloud Private](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/installing/fips_encrypt_volumes.html){: external} 
 - For more information on securing your persistent storage on OpenShift, see this topic on [Volume Security](https://docs.openshift.com/container-platform/3.11/install_config/persistent_storage/pod_security_context.html){: external}.
-</blockchain-sw>
+
 
 ### Data privacy
 {: #ibp-security-kubernetes-privacy}
 
-When you have data privacy requirements, [Private Data collections](https://hyperledger-fabric.readthedocs.io/en/release-1.4/private-data/private-data.html#what-is-private-data){: external} provide a way to further isolate specific data from the rest of the channel members. The combination of the use of channels and private data offer various solutions for achieving <blockchain-sw>[Data Residency](/docs/blockchain-sw?topic=blockchain-sw-console-icp-about-data-residency).</blockchain-sw>
+When you have data privacy requirements, [Private Data collections](https://hyperledger-fabric.readthedocs.io/en/release-1.4/private-data/private-data.html#what-is-private-data){: external} provide a way to further isolate specific data from the rest of the channel members. The combination of the use of channels and private data offer various solutions for achieving [Data Residency](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-about-data-residency).
 
 ### GDPR
 {: #ibp-security-kubernetes-gdpr}

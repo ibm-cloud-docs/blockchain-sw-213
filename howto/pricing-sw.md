@@ -6,7 +6,7 @@ lastupdated: "2020-03-03"
 
 keywords: pricing model, VPC, CPU, vCPU, virtual core, cost, scalability, estimation, optimize your cost
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 
@@ -28,7 +28,7 @@ This guide helps you understand the pricing model for {{site.data.keyword.blockc
 ## License
 {: #ibp-software-pricing-license}
 
-{{site.data.keyword.blockchainfull_notm}} Platform v2.1.2 delivers the components that are needed to run a blockchain network on your own infrastructure using Kubernetes. You can access your [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering which is required in order to deploy the release. With this offering, you are responsible for procuring and provisioning your own Kubernetes cluster on one of the [Supported Platforms](/docs/blockchain-sw?topic=blockchain-sw-console-ocp-about#console-ocp-about-prerequisites). Technical support from IBM Blockchain is included in the offering.
+{{site.data.keyword.blockchainfull_notm}} Platform v2.1.2 delivers the components that are needed to run a blockchain network on your own infrastructure using Kubernetes. You can access your [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering which is required in order to deploy the release. With this offering, you are responsible for procuring and provisioning your own Kubernetes cluster on one of the [Supported Platforms](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-ocp-about#console-ocp-about-prerequisites). Technical support from IBM Blockchain is included in the offering.
 
 ## Pricing
 {: #ibp-software-pricing-pricing}

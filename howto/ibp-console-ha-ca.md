@@ -6,7 +6,7 @@ lastupdated: "2020-03-03"
 
 keywords: high availability, CA, PostgreSQL, replica sets
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 

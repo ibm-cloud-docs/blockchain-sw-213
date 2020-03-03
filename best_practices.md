@@ -6,7 +6,7 @@ lastupdated: "2020-03-03"
 
 keywords: best practices, develop applications, connectivity, availability, mutual TLS, CouchDB
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 

@@ -6,7 +6,7 @@ lastupdated: "2020-03-03"
 
 keywords: organizations, MSPs, create an MSP, MSP JSON file, consortium, system channel
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 

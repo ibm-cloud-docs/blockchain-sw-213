@@ -6,7 +6,7 @@ lastupdated: "2020-03-03"
 
 keywords: network components, Kubernetes, batch timeout, channel update, channels, governance, channel configuration, access control
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 

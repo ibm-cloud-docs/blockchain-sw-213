@@ -6,7 +6,7 @@ lastupdated: "2020-03-03"
 
 keywords: blockchain components, ca, certificate authorities, peer, ordering service, orderer, channel, smart contract, applications
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 

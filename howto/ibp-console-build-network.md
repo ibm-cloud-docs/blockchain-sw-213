@@ -6,7 +6,7 @@ lastupdated: "2020-03-03"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, ordering service, blockchain network
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 
@@ -29,11 +29,11 @@ subcollection: blockchain-sw
 **Target audience:** This topic is designed for network operators who are responsible for creating, monitoring, and managing the blockchain network.
 
 
-<blockchain-sw>
-If you have not already deployed your {{site.data.keyword.blockchainfull_notm}} Platform console to a Kubernetes cluster, see [Getting started with {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2](/docs/blockchain-sw?topic=blockchain-sw-get-started-console-ocp).
+
+If you have not already deployed your {{site.data.keyword.blockchainfull_notm}} Platform console to a Kubernetes cluster, see [Getting started with {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2](/docs/blockchain-sw-213?topic=blockchain-sw-213-get-started-console-ocp).
 
 You need to pay close attention to the resources at your disposal when you choose to deploy nodes and create channels. It is your responsibility to manage your Kubernetes cluster and deploy additional resources if necessary. For more information about component sizings and how the console interacts with your Kubernetes cluster, see [Allocating resources](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern-components#ibp-console-govern-components-allocate-resources).
-</blockchain-sw>
+
 
 
 
@@ -98,8 +98,8 @@ To create the CA that will issue certificates for your first organization, perfo
 1. Navigate to the **Nodes** tab on the left and click **Add Certificate Authority**. The side panels will allow you to customize the CA that you want to create and the organization that this CA will issue keys for.
 2. In this tutorial, we're creating nodes, so make sure the option to **Create a Certificate Authority** is selected. Then click **Next**.
 3. Use the side panel to give your CA a **display name**. Our recommended value for this CA is `Org1 CA`. Then give your CA admin credentials by specifying a **CA administrator enroll ID** of `admin` and a secret of `adminpw`. Again, these are **recommended values**.
-4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the link below.<blockchain-sw>
-   * [Database and replica sets](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-ha-ca#ibp-console-build-ha-ca-create) (Creating an HA CA)</blockchain-sw>
+4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the link below.
+   * [Database and replica sets](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-ha-ca#ibp-console-build-ha-ca-create) (Creating an HA CA)
    * [Kubernetes zone selection](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-ha#ibp-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
    * [Resource allocation](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern-components#ibp-console-govern-components-allocate-resources)
 5. Review the Summary page, then click **Add Certificate Authority**. 
@@ -281,7 +281,7 @@ The ordering service is a key component in a network because it performs a few e
 
 For more information about ordering services and the role they play in networks based on Hyperledger Fabric, see [The Ordering Service](https://hyperledger-fabric.readthedocs.io/en/release-1.4/orderer/ordering_service.html){: external}.
 
-<blockchain-sw>You</blockchain-sw> have the option between creating a one node ordering service (sufficient for testing purposes) and a crash fault tolerant ordering service featuring five nodes tied to a single organization.  In this tutorial, we will show the one  node ordering service.
+You have the option between creating a one node ordering service (sufficient for testing purposes) and a crash fault tolerant ordering service featuring five nodes tied to a single organization.  In this tutorial, we will show the one  node ordering service.
 
 However, just as with the peer, before we can create an ordering service, we need to create a CA to supply the identities and the MSP of our ordering service organization.
 
@@ -296,7 +296,7 @@ The production level ordering service available is a crash fault tolerant (CFT) 
 
 Currently, the only crash fault tolerant configuration of ordering nodes currently available is **five** nodes. While it is possible to create a crash fault tolerant ordering service with as little as three nodes, this configuration incurs risk. If a node goes down, for example during a maintenance cycle, only two nodes would be left. If another node was lost during this cycle **for any reason**, only one node would left. In that state, a one node ordering service when you started with three, you would no longer have a majority of nodes available, also known as a "quorum". Without a quorum, no transactions can be pushed. The channel would cease to function.
 
-With five nodes, you can lose two nodes and still maintain a quorum, meaning that you can undergo a maintenance cycle while maintaining high availability. As a result,  <blockchain-sw>you </blockchain-sw> will only have the choice between one node and five nodes. Production networks should choose the five node option, as a one node ordering service is, by definition, not crash fault tolerant.
+With five nodes, you can lose two nodes and still maintain a quorum, meaning that you can undergo a maintenance cycle while maintaining high availability. As a result,  you  will only have the choice between one node and five nodes. Production networks should choose the five node option, as a one node ordering service is, by definition, not crash fault tolerant.
 
 In this tutorial, we will create a one node ordering service.
 
@@ -308,8 +308,8 @@ The process for creating a CA for an ordering service is identical to creating i
 1. Navigate to the **Nodes** tab and click **Add Certificate Authority**.
 2. In this tutorial, we're creating nodes, so make sure the option to **Create a Certificate Authority** is selected. Then click **Next**
 3. Give this CA a unique display name, `Ordering Service CA`. You're free to reuse the **CA administrator enroll ID** of `admin` and a secret of `adminpw`. As this is a different CA, this identity is distinct from the CA admin identity for created for the `Org1 CA`, even though the ID and secret are identical.
-4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the link below.<blockchain-sw>
-   * [Database and replica sets](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-ha-ca#ibp-console-build-ha-ca-create) (Creating an HA CA) this </blockchain-sw>
+4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the link below.
+   * [Database and replica sets](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-ha-ca#ibp-console-build-ha-ca-create) (Creating an HA CA) this 
    * [Kubernetes zone selection](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-ha#ibp-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
    * [Resource allocation](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern-components#ibp-console-govern-components-allocate-resources)
 5. Review the Summary page, then click **Add Certificate Authority**.
@@ -455,9 +455,9 @@ Because only ordering service admins can add peer organizations to the consortiu
 
 Watch the following [video](http://ibm.biz/BlockchainPlatformSeries4){: external} to learn about the process to add the organization to the consortium, create the channel, and join your peer to the channel.
 
-<blockchain-sw> Before attempting these steps, you may experience an error when you click your ordering service tile. If so, review the troubleshooting topic [Why is my channel creation failing or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"](/docs/blockchain-sw?topic=blockchain-sw-ibp-v2-troubleshooting#ibp-v2-troubleshooting-accept-tls).
+ Before attempting these steps, you may experience an error when you click your ordering service tile. If so, review the troubleshooting topic [Why is my channel creation failing or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-troubleshooting#ibp-v2-troubleshooting-accept-tls).
 {: tip}
-</blockchain-sw>
+
 
 After the Ordering service tile has the green status indicator you can proceed with the following steps. Because you created the ordering service admin using the console, this process is relatively straightforward:
 1. Navigate to the **Nodes** tab.

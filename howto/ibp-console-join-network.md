@@ -7,7 +7,7 @@ lastupdated: "2020-03-03"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, join a network, system channel
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 
@@ -29,11 +29,11 @@ subcollection: blockchain-sw
 **Target audience:** This topic is designed for network operators who are responsible for creating, monitoring, and managing the blockchain network.  
 
 
-<blockchain-sw>
-If you have not already deployed your {{site.data.keyword.blockchainfull_notm}} Platform console to a Kubernetes cluster, see [Getting started with {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2](/docs/blockchain-sw?topic=blockchain-sw-get-started-console-ocp).  
+
+If you have not already deployed your {{site.data.keyword.blockchainfull_notm}} Platform console to a Kubernetes cluster, see [Getting started with {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2](/docs/blockchain-sw-213?topic=blockchain-sw-213-get-started-console-ocp).  
 
 You need to pay close attention to the resources at your disposal when you choose to deploy nodes and create channels. It is your responsibility to manage your Kubernetes cluster and deploy additional resources if necessary. For more information about component sizings and how the console interacts with your Kubernetes Service cluster, see [Allocating resources](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern-components#ibp-console-govern-components-iks-console-interaction).
-</blockchain-sw>
+
 
 ## Sample network tutorial series
 {: #ibp-console-join-network-structure}
@@ -81,8 +81,8 @@ Perform the following steps from your console:
 1. Navigate to the **Nodes** tab on the left and click **Add Certificate Authority**. The side panels will allow you to customize the CA that you want to create and the organization that this CA will issue keys for.
 2. In this tutorial, we're creating nodes, so make sure the option to **Create a Certificate Authority** is selected. Then click **Next**.
 3. Use the side panel to give your CA a **display name**. Our recommended value for this CA is `Org2 CA`. Then give your CA admin credentials by specifying a **CA administrator enroll ID** of `admin` and a secret of `adminpw`.
-4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the link below.<blockchain-sw>
-   * [Database and replica sets](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-ha-ca#ibp-console-build-ha-ca-create) (Creating an HA CA)</blockchain-sw>
+4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the link below.
+   * [Database and replica sets](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-ha-ca#ibp-console-build-ha-ca-create) (Creating an HA CA)
    * [Kubernetes zone selection](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-ha#ibp-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
    * [Resource allocation](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern-components#ibp-console-govern-components-allocate-resources)
 5. Review the Summary page, then click **Add Certificate Authority**. 

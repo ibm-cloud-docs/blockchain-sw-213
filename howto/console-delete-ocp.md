@@ -6,7 +6,7 @@ lastupdated: "2020-03-03"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 

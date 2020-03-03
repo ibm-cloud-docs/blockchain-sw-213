@@ -6,7 +6,7 @@ lastupdated: "2020-03-03"
 
 keywords: IBM Blockchain Platform, video series, videos, getting started videos, demo videos
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 
@@ -27,9 +27,9 @@ You can watch the getting started video series to learn more about how to use {{
 {:shortdesc}
 
 
-<blockchain-sw>
+
 ## Getting started with {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2
-</blockchain-sw>
+
 {: #ibp-videos-ibp-v2}
 
 Watch the following [video series]( http://ibm.biz/BlockchainPlatformSeries) to learn more about the {{site.data.keyword.blockchainfull_notm}} Platform and how you can get started to build your own network.

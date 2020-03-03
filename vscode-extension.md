@@ -7,7 +7,7 @@ lastupdated: "2020-03-03"
 
 keywords: vs code extension, Visual Studio Code extension, smart contract, development tools
 
-subcollection: blockchain-sw
+subcollection: blockchain-sw-213
 
 ---
 
