@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-04"
 
 keywords: IBM Blockchain Platform, images
 
@@ -32,7 +32,6 @@ The IBM Blockchain images must be deployed using a container environment on x86_
 
 - Ubuntu Linux version 18.04.2
 - Red Hat OpenShift 3.11, 4.1, and 4.2
-- OKD 3.11
 - {{site.data.keyword.cloud_notm}} Private 3.2.1
 - Azure Kubernetes Service
 - Rancher 2.x
