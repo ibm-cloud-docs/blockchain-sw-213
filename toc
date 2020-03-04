@@ -10,6 +10,16 @@ IBM Blockchain Platform v2.1.3
 	whats_new.md
 	howto/pricing-sw.md
 	blockchain_component_overview.md
+
+	{: .topicgroup}
+	Tutorials
+		howto/ibp-console-build-network.md
+		howto/ibp-console-join-network.md
+		howto/ibp-console-smart-contracts.md
+		howto/ibp-console-add-remove-raft.md
+		reference/videos.md
+		/blockchain/blockchain-k8s-overview
+
 	security.md
 	ibp-console-ha.md
 	data-residency.md
@@ -36,9 +46,6 @@ IBM Blockchain Platform v2.1.3
 
 	{: .topicgroup}
 	Using the IBM Blockchain Platform console
-		howto/ibp-console-build-network.md
-		howto/ibp-console-join-network.md
-		howto/ibp-console-smart-contracts.md
 		howto/ibp-console-create-app.md
 		howto/ibp-console-import-nodes.md
 		howto/ibp-console-identities.md
@@ -62,8 +69,6 @@ IBM Blockchain Platform v2.1.3
 	{: .navgroup id="reference"}
 	[API reference](https://cloud.ibm.com/apidocs/blockchain)
 	/blockchain/blockchain-hyperledger-fabric
-	/blockchain/blockchain-k8s-overview
-	reference/videos.md
 	glossary.md
 	{: .navgroup-end}
 
