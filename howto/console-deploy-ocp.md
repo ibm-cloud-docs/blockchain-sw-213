@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-04"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -632,7 +632,10 @@ Unlike the resource allocation, you cannot add zones to a running network. If yo
 
 ### Use your own TLS Certificates (Optional)
 
-The {{site.data.keyword.blockchainfull_notm}} Platform console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using creating a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
+The {{site.data.keyword.blockchainfull_notm}} Platform console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
+
+This step needs to be performed before the console is deployed.
+{: important}
 
 You can use a Certificate Authority or tool to create the TLS certificates for the console. The TLS certificate needs to include the hostname of the console and the proxy in the subject name or the alternative domain names. The console and proxy hostname are in the following format:
 
@@ -654,7 +657,7 @@ tlsSecretName: console-tls-secret
 ```
 {:codeblock}
 
-When you finish editing the file, you can apply it to your cluster to provide new TLS certificates to a deployed console. After the console restarts, the UI returns to its previous state, allowing you to operate all of your exiting nodes and channels.
+When you finish editing the file, you can apply it to your cluster in order to secure communications with your own TLS certificates:
 ```
 kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
