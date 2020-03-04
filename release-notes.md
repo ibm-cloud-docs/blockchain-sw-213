@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-04"
 
 
 keywords: release note, latest changes, Hyperledger Fabric
@@ -31,25 +31,34 @@ Use these release notes that are grouped by date to learn about the latest chang
 
 **CA, peer and ordering node patch 1.4.6-1**
 
+
+**Support for OpenShift Container Platform v4.2 on LinuxONE on s390x**
+
+Enables IBM Z environments to participate fully in a multicloud architecture. Existing IBM Z applications running on Linux on IBM Z and z/OS can be extended to create a comprehensive multi-organizatioal blockchain network. 
+
 **Hyperledger Fabric v1.4.6**
 
 All new nodes are deployed using Hyperledger Fabric v1.4.6. If you have an existing blockchain network, you should review the topic on [Capabilities](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern#ibp-console-govern-capabilities) to understand how this new Fabric version can impact your network.
 
 **Hardware Security Module (HSM) support for node identities**   
 
-When you deploy a CA, peer, or ordering node, you now have the option to store the private key for the node identity in an HSM. See [Configuring a node to use a HSM](https://test.cloud.ibm.com/docs/blockchain?topic=blockchain-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm) for more details.
+Full cryptographic HSM support is now available for HSMs that implement the PKCS11 standard. Using an HSM provides on-demand encryption, key management, and key storage. When you deploy a CA, peer, or ordering node, you now have the option to store the private key for the node identity in an HSM. See [Configuring a node to use a HSM](https://test.cloud.ibm.com/docs/blockchain?topic=blockchain-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm) for more details.
+
+**Improved multi-organization transaction resilience**  
+
+Previously, an ordering service could only contain one or five ordering nodes and they all were contributed from the same organization. Now, the ordering service can be deployed across multiple organizations in a blockchain network, enabling individual organizations to add and remove individual ordering nodes as required. Multi-organizational transaction ordering improves the decentralized nature of a blockchain network.  Learn more about the process in the new [Adding and removing Raft ordering service nodes tutorial](/docs/blockchain-sw?topic=blockchain-sw-ibp-console-add-remove-orderer).
+
+**Enhanced software configuration management with Ansible**
+
+Ansible playbooks are available for single and multi-organization configurations and automate the creation and management of peer, orderer, and certificate authority network elements. Ansible support is delivered through the [Ansible Galaxy](https://galaxy.ansible.com/home){: external} website, the official hub for sharing Ansible content.
 
 **Ability to override default CA, peer, ordering node configuration**  
 
 Hyperledger Fabric includes many configuration options for a CA, peer, or ordering node. A subset of those options for the [CA](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-ca-customization), [peer](docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-peer-create-json) and [ordering node](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-orderer-create-json) can now be overridden by using the console or the [APIs](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-apis#ibp-v2-apis-custom).
 
-**Add and remove Raft nodes**  
-
-Previously, a Raft ordering service could only contain one or five ordering nodes. Now you have the ability to add or remove Raft ordering nodes as needed using the console. Additionally, support has been added to allow ordering nodes to be contributed to the Raft ordering service by different organizations. Learn more about the process in the new [Raft Ordering service tutorial]().
-
 **Install and Instantiate Java Chaincode**
 
-In addition to smart contracts written in JavaScript, TypeScript, and Go programming languages, it is now possible to install and instantiate Java smart contracts from the console.
+In addition to smart contracts written in JavaScript, TypeScript, and Go programming languages, it is now possible to install and instantiate Java smart contracts from the console. Moreover, Java can be freely mixed and matched with other application and smart contract programming languages, including JavaScript, TypeScript, and Go. This heterogeneous programming language support enables an organization to capitalize on the full range of its development skills.
 
 **New process for Channel and MSP creation**
 
