@@ -22,6 +22,14 @@ subcollection: blockchain-sw-213
 # Using the {{site.data.keyword.blockchainfull_notm}} images
 {: #blockchain-images}
 
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;">
+  <p style="line-height: 10px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-{[page-anchor]}">2.1.2</a>
+    </p>
+</div>
+
+
 For experienced Hyperledger Fabric customers, the {{site.data.keyword.blockchainfull}} Platform provides images for peer, CA, ordering service, and smart contract containers that are signed and supported by {{site.data.keyword.IBM_notm}}. These images are based on the open source [Hyperledger Fabric](https://hyperledger-fabric.readthedocs.io/en/release-1.4/) code base and contain a number of enhancements for stability and serviceability.
 
 {{site.data.keyword.blockchainfull_notm}} Platform images can be purchased through an entitlement to the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3. The images are bundled with support from {{site.data.keyword.IBM_notm}}. {{site.data.keyword.blockchainfull_notm}} does not support blockchain components that are deployed using the open source Hyperledger Fabric Docker images.

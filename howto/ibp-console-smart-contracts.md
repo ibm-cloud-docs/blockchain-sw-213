@@ -22,6 +22,14 @@ subcollection: blockchain-sw-213
 # Deploy a smart contract on the network
 {: #ibp-console-smart-contracts}
 
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;">
+  <p style="line-height: 10px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-{[page-anchor]}">2.1.2</a>
+    </p>
+</div>
+
+
 A smart contract is the code, sometimes referred to as chaincode, that applications interact with to read and update data on the blockchain ledger. A smart contract can turn business logic into an executable program that is agreed to and verified by all members of a blockchain network. This tutorial is the third part in the [sample network tutorial series](#ibp-console-smart-contracts-structure) and describes how to deploy smart contracts to start transactions in the blockchain network.
 {:shortdesc}
 

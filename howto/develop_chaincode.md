@@ -19,9 +19,16 @@ subcollection: blockchain-sw-213
 {:tip: .tip}
 {:pre: .pre}
 
-
 # Writing smart contracts
 {: #develop-smart-contracts}
+
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;">
+  <p style="line-height: 10px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-{[page-anchor]}">2.1.2</a>
+    </p>
+</div>
+
 
 Chaincode, also referred to as smart contracts, is software that you can use to read and update data on the blockchain ledger. Chaincode can turn business logic into an executable program that is agreed to and verified by all members of the blockchain network. Business logic includes the definition of assets that are traded between parties. It also consists of the terms and conditions that are required for a transaction to be executed. Turning these rules into code on a blockchain allow businesses to streamline business processing and auditing and reduce large amounts of manual processing and paperwork.
 

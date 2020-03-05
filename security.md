@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-05"
 
 keywords: security, encryption, storage, tls, iam, roles, keys
 
@@ -22,6 +22,14 @@ subcollection: blockchain-sw-213
 
 # Security
 {: #ibp-security}
+
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;">
+  <p style="line-height: 10px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-{[page-anchor]}">2.1.2</a>
+    </p>
+</div>
+
 
 {{site.data.keyword.blockchainfull}} Platform provides a scalable, highly reliable platform that helps customers deploy applications and data quickly and securely. This document provides information about securing your {{site.data.keyword.blockchainfull_notm}} Platform service instance, where the blockchain console runs, and best practices for securing the  Kubernetes cluster where the blockchain nodes are deployed.
 {:shortdesc}
@@ -71,7 +79,7 @@ If a private key is lost and cannot be recovered, you will need to generate a ne
 
 
 
-You also have the option to bring your own certificates from your own non-{{site.data.keyword.blockchainfull_notm}} Platform CA when you create a peer node or ordering service. If you use your own certificates, you will need to manually build the peer or ordering service MSP definition file that includes those certificates and import the file into the console **Organizations** tab. See  [Using certificates from an external CA with your peer or ordering node](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern-components#ibp-console-govern-third-party-ca) for the steps required.
+You also have the option to bring your own certificates from your own non-{{site.data.keyword.blockchainfull_notm}} Platform CA when you create a peer node or ordering service. If you use your own certificates, you will need to manually build the peer or ordering service MSP definition file that includes those certificates and import the file into the console **Organizations** tab. See  [Using certificates from an external CA with your peer or ordering node](/docs/blockchain?topic=blockchain-ibp-console-govern-components#ibp-console-govern-third-party-ca) for the steps required.
 
 ### Membership Service Providers (MSPs)
 {: #ibp-security-ibp-msp}

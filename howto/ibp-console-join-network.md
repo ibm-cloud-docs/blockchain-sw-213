@@ -23,6 +23,14 @@ subcollection: blockchain-sw-213
 # Join a network
 {: #ibp-console-join-network}
 
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;">
+  <p style="line-height: 10px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-{[page-anchor]}">2.1.2</a>
+    </p>
+</div>
+
+
 {{site.data.keyword.blockchainfull}} Platform is a blockchain-as-a-service offering that enables you to develop, deploy, and operate blockchain applications and networks. You can learn more about blockchain components and how they work together by visiting the [Blockchain component overview](/docs/blockchain-sw-213?topic=blockchain-sw-213-blockchain-component-overview#blockchain-component-overview). This tutorial is the second part in the [sample network tutorial series](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-network#ibp-console-build-network-sample-tutorial) and describes how to create nodes in the {{site.data.keyword.blockchainfull_notm}} Platform console and connect them a blockchain consortium hosted in another cluster.
 {:shortdesc}
 
@@ -81,10 +89,11 @@ Perform the following steps from your console:
 1. Navigate to the **Nodes** tab on the left and click **Add Certificate Authority**. The side panels will allow you to customize the CA that you want to create and the organization that this CA will issue keys for.
 2. In this tutorial, we're creating nodes, so make sure the option to **Create a Certificate Authority** is selected. Then click **Next**.
 3. Use the side panel to give your CA a **display name**. Our recommended value for this CA is `Org2 CA`. Then give your CA admin credentials by specifying a **CA administrator enroll ID** of `admin` and a secret of `adminpw`.
-4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the link below.
-   * [Database and replica sets](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-ha-ca#ibp-console-build-ha-ca-create) (Creating an HA CA)
-   * [Kubernetes zone selection](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-ha#ibp-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
-   * [Resource allocation](/docs/blockchain?topic=blockchain-ibp-console-govern-components#ibp-console-govern-components-allocate-resources)
+4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the links below.
+   * [Database and replica sets](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-ha-ca#ibp-console-build-ha-ca-create) (Creating an HA CA) 
+   * [Multizone Kubernetes cluster](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-ha#ibp-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
+   * [Hardware Security Module (HSM)](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm)
+   * [Resource allocation](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-allocate-resources)
 5. Review the Summary page, then click **Add Certificate Authority**. 
 
 **Task: Creating the peer organization CA**
@@ -97,7 +106,7 @@ Perform the following steps from your console:
 After you deploy the CA, you will use it when you create your organization MSP, register users, and to create your entry point to a network, the **peer**.
 
 
-Advanced users may already have their own CA, and not want to create a new CA in the console. If your existing CA can issue certificates in `X.509` format, you can use certificates from your own third-party CA instead of creating new certificates here. The CA should sign using ECDSA and the defaults should be set to use P256 curve. See this topic on [Using certificates from an external CA with your peer or ordering node](/docs/blockchain?topic=blockchain-ibp-console-govern-components#ibp-console-govern-third-party-ca) for more information.
+Advanced users may already have their own CA, and not want to create a new CA in the console. If your existing CA can issue certificates in `X.509` format, you can use certificates from your own third-party CA instead of creating new certificates here. The CA should sign using ECDSA and the defaults should be set to use P256 curve. See this topic on [Using certificates from an external CA with your peer or ordering node](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-third-party-ca) for more information.
 
 ### Associating the CA admin identity
 {: #ibp-console-join-network-ca-admin}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-05"
 
 keywords: pricing model, VPC, CPU, vCPU, virtual core, cost, scalability, estimation, optimize your cost
 
@@ -21,6 +21,14 @@ subcollection: blockchain-sw-213
 
 # Pricing
 {: #ibp-sw-pricing}
+
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;">
+  <p style="line-height: 10px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-{[page-anchor]}">2.1.2</a>
+    </p>
+</div>
+
 
 This guide helps you understand the pricing model for {{site.data.keyword.blockchainfull}} Platform v2.1.3, and how much you will pay when you develop and grow your blockchain network of peers, ordering service, and Certificate Authorities components, which are based on Hyperledger Fabric v1.4.6.
 {:shortdesc}

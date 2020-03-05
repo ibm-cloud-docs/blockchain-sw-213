@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-05"
 
 keywords: IBM Blockchain Platform, release, new features
 
@@ -21,6 +21,42 @@ subcollection: blockchain-sw-213
 
 # What's new
 {: #whats-new}
+
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;">
+  <p style="line-height: 10px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-{[page-anchor]}">2.1.2</a>
+    </p>
+</div>
+
+
+## March 24, 2020
+{: #whats-new-03-24-2020}
+
+
+{{site.data.keyword.blockchainfull}} Platform v2.1.3 is now available.
+
+
+The following enhancements have been added in this latest release: 
+- Red Hat OpenShift on LinuxONE (s390x)
+- Support for Public Key Cryptography Standards PKCS #11
+- Raft consensus protocol support
+- Ansible support for simplified network configuration and management
+- Full Java development support
+- Support for the MQ Bridge to blockchain
+- Support for Hyperledger Fabric v1.4.6
+- Synergy with specific {{site.data.keyword.cloud_notm}} Paks
+
+
+If you have an existing {{site.data.keyword.blockchainfull_notm}} Platform v2.1.0, v2.1.1, or v2.1.2 deployment and are interested in upgrading to {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3, see the following topics:
+- [Upgrading your console and components on the OpenShift Container Platform](/docs/blockchain-sw-213?topic=blockchain-sw-213-upgrade-ocp)
+- [Upgrading your console and components on Kubernetes or {{site.data.keyword.cloud_notm}} Private 3.2.1](/docs/blockchain-sw-213?topic=blockchain-sw-213-upgrade-k8)
+- [Upgrading the {{site.data.keyword.blockchainfull_notm}} images](/docs/blockchain-sw-213?topic=blockchain-sw-213-blockchain-images#blockchain-images-upgrade)
+
+
+See the [Release notes](/docs/blockchain-sw-213?topic=blockchain-sw-213-release-notes-saas-20#03-24-2020) for more details on the new features that have been added to this release.
+
+We've streamlined the documentation. If you are an existing customer, you may notice that we've added a new `Tutorials` section in the table of contents under `Learn`. We've aggregated all of the tutorials in a single location under the Tutorials heading to make them easier to find.
 
 
 

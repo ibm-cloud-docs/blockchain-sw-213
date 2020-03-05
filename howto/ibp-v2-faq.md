@@ -24,6 +24,14 @@ subcollection: blockchain-sw-213
 # FAQs
 {: #ibp-v2-faq}
 
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;">
+  <p style="line-height: 10px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-{[page-anchor]}">2.1.2</a>
+    </p>
+</div>
+
+
 **General**   
 
 - [What is the value of using {{site.data.keyword.blockchainfull_notm}} Platform over native Hyperledger Fabric?](#ibp-v2-faq-v2-IBP-Overview-1-7)
@@ -76,7 +84,7 @@ Yes. The {{site.data.keyword.blockchainfull_notm}} Platform can be purchased and
 {: faq}
 {: support}
 
-View the Support page by clicking the question mark icon <img src="images/support-link.png" alt="Support link icon" width="30" style="width:30px; border-style: none"/>in the upper right corner of the page. The {{site.data.keyword.blockchainfull_notm}} Platform version is visible under the page heading.
+View the Support page by clicking the question mark icon <img src="../images/support-link.png" alt="Support link icon" width="30" style="width:30px; border-style: none"/>in the upper right corner of the page. The {{site.data.keyword.blockchainfull_notm}} Platform version is visible under the page heading.
 
 ## What version of Hyperledger Fabric is being used with {{site.data.keyword.blockchainfull_notm}} Platform?
 {: #ibp-v2-faq-v2-Hyperledger-Fabric-3-1}
@@ -89,7 +97,7 @@ View the Support page by clicking the question mark icon <img src="images/suppor
 {: faq}
 {: support}
 
-You have the choice of either CouchDB or LevelDB when you configure your peer database. Because data is modeled differently in a Couch database than in a Level database, the peers in a channel must all use the same database type. See [LevelDB versus CouchDB](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern-components#ibp-console-govern-components-level-couch) to decide what is best for your business needs.
+You have the choice of either CouchDB or LevelDB when you configure your peer database. Because data is modeled differently in a Couch database than in a Level database, the peers in a channel must all use the same database type. See [LevelDB versus CouchDB](/docs/blockchain?topic=blockchain-ibp-console-govern-components#ibp-console-govern-components-level-couch) to decide what is best for your business needs.
 
 ## What languages are supported for smart contracts?
 {: #ibp-v2-faq-v2-IBP-Overview-1-4}
@@ -102,7 +110,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform supports smart contracts 
 {: #ibp-v2-faq-v2-external-certs}
 {: faq}
 
-Yes, you can bring your own certificates if they are issued by a CA that is X.509 compliant. The CA should sign by using ECDSA and the defaults should be set to use P256 curve. See this topic about [Using certificates from an external CA with your peer or ordering node](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern-components#ibp-console-govern-third-party-ca).
+Yes, you can bring your own certificates if they are issued by a CA that is X.509 compliant. The CA should sign by using ECDSA and the defaults should be set to use P256 curve. See this topic about [Using certificates from an external CA with your peer or ordering node](/docs/blockchain?topic=blockchain-ibp-console-govern-components#ibp-console-govern-third-party-ca).
 
 ## I am currently using Hyperledger Fabric v1.4.x and want to move to {{site.data.keyword.blockchainfull_notm}} Platform v2.1.x. Can I continue to use Raft?
 {: #ibp-v2-faq-migrate-raft}
