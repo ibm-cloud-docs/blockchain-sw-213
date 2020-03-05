@@ -27,7 +27,7 @@ subcollection: blockchain-sw-213
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;">
   <p style="line-height: 10px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-{[page-anchor]}">2.1.2</a>
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-ibp-v2-faq.">2.1.2</a>
     </p>
 </div>
 
@@ -84,7 +84,7 @@ Yes. The {{site.data.keyword.blockchainfull_notm}} Platform can be purchased and
 {: faq}
 {: support}
 
-View the Support page by clicking the question mark icon <img src="../images/support-link.png" alt="Support link icon" width="30" style="width:30px; border-style: none"/>in the upper right corner of the page. The {{site.data.keyword.blockchainfull_notm}} Platform version is visible under the page heading.
+View the Support page by clicking the question mark icon <img src="../images/support-link.png" alt="Support link icon" width="30" style="width:30px; border-style: none"/> in the upper right corner of the page. The {{site.data.keyword.blockchainfull_notm}} Platform version is visible under the page heading.
 
 ## What version of Hyperledger Fabric is being used with {{site.data.keyword.blockchainfull_notm}} Platform?
 {: #ibp-v2-faq-v2-Hyperledger-Fabric-3-1}

@@ -22,6 +22,14 @@ subcollection: blockchain-sw-213
 # Build a network
 {: #ibp-console-build-network}
 
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;">
+  <p style="line-height: 10px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-ibp-console-build-network.">2.1.2</a>
+    </p>
+</div>
+
+
 {{site.data.keyword.blockchainfull}} Platform is a blockchain-as-a-service offering that enables you to develop, deploy, and operate blockchain applications and networks. You can learn more about blockchain components and how they work together by visiting the [Blockchain component overview](/docs/blockchain-sw-213?topic=blockchain-sw-213-blockchain-component-overview#blockchain-component-overview). This tutorial is the first part in the [sample network tutorial series](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-network#ibp-console-build-network-sample-tutorial) and describes how to use the {{site.data.keyword.blockchainfull_notm}} Platform console to build a fully functional network on Kubernetes cluster deployed into the cloud infrastructure of your choice.
 {:shortdesc}
 
@@ -191,8 +199,8 @@ Now that we have created the peer's CA and used it to **register** identities fo
 3. Under **Root Certificate Authority details**, specify the CA you used to register the identities in the previous step. If this is your first time through this tutorial, you should only see one: `Org1 CA`.
 4. The **Enroll ID** and **Enroll secret** fields below this will auto populate with the enroll ID of your CA admin: `admin`. However, using this identity would give your organization the same admin identity as your CA, which for security reasons is not recommended. Instead, select the enroll ID you created for your organization admin from the drop-down list, `org1admin`, and enter its associated secret, `org1adminpw`. Then, give this identity a display name, `Org1 MSP Admin`. Note: the default display name for this identity is the name of your MSP and the word "Admin". If you select a different name for your MSP, that will be reflected in the default.
 5. Click the **Generate** button to enroll this identity as the admin of your organization and export the identity to the Wallet, where it will be used when creating the peer and creating channels.
-6. Click **Export** to export the admin certificates to your file system. As we said above, this identity is not stored in your console or managed by {{site.data.keyword.IBM_notm}}. It is only stored in local browser storage. If you change browsers, you will need to import this identity into your Wallet to be able to administer the peer.
-7. Click **Create MSP definition**.
+6. Click **Export** to export the admin certificates to your file system. As we said above, this identity is not stored in your console or managed by {{site.data.keyword.IBM_notm}}. It is only stored in local browser storage. If you change browsers, you will need to import this identity into your Wallet to be able to administer the peer. Click **Next**.
+7. Review the MSP details and when you are satisfied, click **Create MSP definition**.
 
 Exporting your organization admin identity is important because you are responsible for managing and securing these certificates. If you switch browsers, you will need to import this admin identity otherwise you will not be able to operate Org1.
 {:important}
@@ -242,10 +250,11 @@ Use your console to perform the following steps:
 2. Make sure the option to **Create a peer** is selected. Then click **Next**.
 3. Give your peer a **Display name** of `Peer Org1`.
 4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the links below.
-   * [State database selection](/docs/blockchain?topic=blockchain-ibp-console-govern-components#ibp-console-govern-components-level-couch)
-   * [Kubernetes zone selection](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-ha#ibp-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured for multizone support.
-   * [External Certificate Authority configuration](/docs/blockchain?topic=blockchain-ibp-console-govern-components#ibp-console-govern-third-party-ca)
-   * [Resource allocation](/docs/blockchain?topic=blockchain-ibp-console-govern-components#ibp-console-govern-components-allocate-resources)
+   * [State database](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-level-couch)
+   * [Multizone Kubernetes cluster](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-ha#ibp-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured for multizone support.
+   * [Use your own CA certificate and private key](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-third-party-ca)
+   * [Hardware Security Module (HSM)](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm)
+   * [Resource allocation](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-allocate-resources)
 5. Click **Next**.
 6. On the next screen
    * Select `Org1 CA`, as this is the CA you used to register the peer identity.
@@ -383,11 +392,11 @@ Create your ordering service organization MSP definition and specify the admin i
 
 1. Navigate to the **Organizations** tab in the left navigation and click **Create MSP definition**.
 2. Enter `Ordering Service MSP` as the organization MSP display name and `osmsp` and as the MSP ID. If you want to specify your own MSP ID in this field, make sure to review the instructions in the tool tip.
-3. Under **Root Certificate Authority details**, select the `Ordering Service CA` that we created.
+3. Under **Root Certificate Authority details**, select the `Ordering Service CA` that we created. The CA root certificate and TLS CA root certificate are displayed. Click **Next**.
 4. The **Enroll ID** and **Enroll secret** fields below this might auto populate with the enroll ID of your CA admin identity, `admin`, which for security reasons is not recommended. Instead, select the enroll ID that you created for your organization admin from the drop-down list, `OSadmin`, and enter its associated secret, `OSadminpw`. Then, give this identity a display name, `Ordering Service MSP Admin`. Note: the default display name for this identity is the name of your MSP and the word "Admin". If you select a different name for your MSP, that will be reflected in the default.
 5. Click the **Generate** button to enroll this identity as the admin of your organization and export the identity to the Wallet.
-6. Click **Export** to export the admin certificates to your file system. If you change browsers, you will need to import this identity into your console Wallet to be able to administer the ordering service.
-7. Click **Create MSP definition**.
+6. Click **Export** to export the admin certificates to your file system. If you change browsers, you will need to import this identity into your console Wallet to be able to administer the ordering service. Click **Next**.
+7. Review the MSP details and when you are satisfied click **Create MSP definition**.
 
 Exporting your organization admin identity is important because you are responsible for managing and securing these certificates. If you export the ordering service and the ordering service MSP definition, they can be imported into another console where another operator can create new channels on the ordering service or join peers to the channel.
 {:important}
@@ -428,9 +437,10 @@ Perform the following steps from your console:
 1. From the **Nodes** tab, click **Add ordering service**.
 2. Make sure the option to **Create an ordering service** is selected. Then click **Next**.
 3. Give your ordering service a **Display name** of `Ordering Service` and choose whether you want your ordering service to have one node (sufficient for testing) or five nodes (good for production). Choose **One ordering node** and click **Next**. For the purpose of this tutorial, do not choose any of the **Advanced deployment options**. Click **Next**. For more information about these options, see the links below.
-   * [Kubernetes zone selection](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-ha#ibp-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
-   * [External Certificate Authority configuration](/docs/blockchain?topic=blockchain-ibp-console-govern-components#ibp-console-govern-third-party-ca)
-   * [Resource allocation](/docs/blockchain?topic=blockchain-ibp-console-govern-components#ibp-console-govern-components-allocate-resources)
+   * [Multizone Kubernetes cluster](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-ha#ibp-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
+   * [Use your own CA certificate and private key](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-third-party-ca)
+   * [Hardware Security Module (HSM)](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm)
+   * [Resource allocation](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-allocate-resources)
 4. On the next panel,
    * Select `Ordering Service CA` as your CA.
    * Then, select the **enroll ID** for the node identity that you created for your ordering service from the drop-down list, `OS1`.
