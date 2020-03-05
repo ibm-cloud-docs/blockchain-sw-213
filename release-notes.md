@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-04"
+lastupdated: "2020-03-05"
 
 
 keywords: release note, latest changes, Hyperledger Fabric
@@ -42,7 +42,7 @@ All new nodes are deployed using Hyperledger Fabric v1.4.6. If you have an exist
 
 **Hardware Security Module (HSM) support for node identities**   
 
-Full cryptographic HSM support is now available for HSMs that implement the PKCS11 standard. Using an HSM provides on-demand encryption, key management, and key storage. When you deploy a CA, peer, or ordering node, you now have the option to store the private key for the node identity in an HSM. See [Configuring a node to use a HSM](https://test.cloud.ibm.com/docs/blockchain?topic=blockchain-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm) for more details.
+Full cryptographic HSM support is now available for HSMs that implement the PKCS #11 standard. Using an HSM provides on-demand encryption, key management, and key storage. When you deploy a CA, peer, or ordering node, you now have the option to store the private key for the node identity in an HSM. See [Configuring a node to use a HSM](https://test.cloud.ibm.com/docs/blockchain?topic=blockchain-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm) for more details.
 
 **Improved multi-organization transaction resilience**  
 
