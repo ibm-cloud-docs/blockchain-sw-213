@@ -3,7 +3,7 @@
 copyright:
   years: 2019
 
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-05"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, join a network, system channel
 
@@ -158,6 +158,7 @@ Registering these identities with the CA is only the first step in **creating** 
   | | Peer identity |  peer2 | peer2pw | peer|
   {: caption="Table 4. Using your CA to register user" caption-side="bottom"}
 
+
 ### Creating the peer organization MSP
 {: #ibp-console-join-network-create-peers-org2}
 
@@ -194,6 +195,8 @@ After you have created the MSP, you should be able to see the peer organization 
   {: caption="Table 6. Check your Wallet" caption-side="bottom"}
 
 For more information about MSPs, see [managing organizations](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-organizations#ibp-console-organizations).
+
+
 
 ### Creating a peer
 {: #ibp-console-join-network-peer-create}
