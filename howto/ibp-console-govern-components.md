@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-03"
+lastupdated: "2020-03-05"
 
 keywords: network components, Kubernetes, OpenShift, allocate resources, batch timeout, reallocate resources, LevelDB, CouchDB, ordering nodes, ordering, add and remove, governance
 
@@ -19,7 +19,7 @@ subcollection: blockchain-sw-213
 {:tip: .tip}
 {:pre: .pre}
 
-# Component governance
+# Reallocating resources
 {: #ibp-console-govern-components}
 
 After creating CAs, peers, and ordering nodes, you can use the console to update these components in a variety of ways.
