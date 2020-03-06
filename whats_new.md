@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-06"
 
 keywords: IBM Blockchain Platform, release, new features
 
@@ -43,9 +43,7 @@ The following enhancements have been added in this latest release:
 - Raft consensus protocol support
 - Ansible support for simplified network configuration and management
 - Full Java development support
-- Support for the MQ Bridge to blockchain
 - Support for Hyperledger Fabric v1.4.6
-- Synergy with specific {{site.data.keyword.cloud_notm}} Paks
 
 
 If you have an existing {{site.data.keyword.blockchainfull_notm}} Platform v2.1.0, v2.1.1, or v2.1.2 deployment and are interested in upgrading to {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3, see the following topics:

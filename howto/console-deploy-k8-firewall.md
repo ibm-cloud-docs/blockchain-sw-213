@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-06"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises
 
@@ -37,7 +37,7 @@ You can use the following instructions to deploy the {{site.data.keyword.blockch
 
 ## Need to Know
 
-- If you are deploying the {{site.data.keyword.blockchainfull_notm}} Platform behind a firewall, without access to the public internet, your JavaScript, or TypeScript chaincode will not be able to download external dependencies when the chaincode is instantiated. You need point to a local NPM registry for your chaincode to access the required dependencies. This problem does not occur if you are using chaincode that are written in Go.
+- If you are deploying the {{site.data.keyword.blockchainfull_notm}} Platform behind a firewall, without access to the public internet, your JavaScript, or TypeScript chaincode will not be able to download external dependencies when the chaincode is instantiated. You need to point to a local NPM registry for your chaincode to access the required dependencies. This problem does not occur if you are using chaincode that are written in Go.
 
 - After you deploy your peer and ordering nodes, you need to expose the ports of your nodes for your network to be able to respond to requests from applications or nodes outside your firewall. For more information about the ports that you need to expose, see [Internet Ports](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-security#ibp-security-ibp-ports) in the security guide.
 
