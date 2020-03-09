@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-06"
+lastupdated: "2020-03-09"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises
 
@@ -33,7 +33,7 @@ subcollection: blockchain-sw-213
 You can use these instructions to deploy {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 behind a firewall without internet connectivity. If you are deploying the platform on a cluster with access to the external internet, use the main instructions for [Deploying {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8).
 {:shortdesc}
 
-You can use the following instructions to deploy the {{site.data.keyword.blockchainfull}} Platform v2.1.3 on any x86_64 v1.14 through v1.16 Kubernetes cluster. Use these instructions if you are using distributions such as Rancher or {{site.data.keyword.cloud_notm}} Private. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+You can use the following instructions to deploy the {{site.data.keyword.blockchainfull}} Platform v2.1.3 on any x86_64 Kubernetes cluster running at v1.14 - v1.16 or on s390x on {{site.data.keyword.cloud_notm}} Private v3.2.1 running LinuxONE. Use these instructions if you are using distributions such as Rancher or {{site.data.keyword.cloud_notm}} Private. The {{site.data.keyword.blockchainfull_notm}} Platform uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.blockchainfull_notm}} Platform console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 
 ## Need to Know
 
@@ -60,9 +60,9 @@ Ensure that your Kubernetes cluster has sufficient resources for the {{site.data
 {: #deploy-k8-browsers-firewall}
 The {{site.data.keyword.blockchainfull_notm}} Platform console has been successfully tested on the following browsers:
 
-- Chrome: Version 78.0.3904.70 (Official Build) (64-bit)
+- Chrome Version 80.0.3987.122 (Official Build) (64-bit)
 - Firefox (non-ESR): Version 69.0.1
-- Safari: Version 13.0 (14608.1.49)
+- Safari Version 13.0.3 (15608.3.10.1.4) 
 - Edge: v44.17763.1.0
 
 ## Storage

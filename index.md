@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-09"
 
 keywords: Kubernetes, IBM Cloud Private, OCP, OpenShift Container Platform, IBM Blockchain Platform
 
@@ -30,7 +30,7 @@ subcollection: blockchain-sw-213
 </div>
 
 
-{{site.data.keyword.blockchainfull}} Platform provides a managed and full stack blockchain-as-a-service (BaaS) offering that allows you to deploy blockchain components on any Kubernetes v1.14 - v1.16 container platform on x86_64.  This offering is ideal for the customers who want to deploy their components, store their data, or run their workloads on their own infrastructure or across public and private clouds for security, risk mitigation, preference, or compliance reasons. Clients can build, operate, and grow their blockchain networks with an offering that can be used from development through production.
+{{site.data.keyword.blockchainfull}} Platform provides a managed and full stack blockchain-as-a-service (BaaS) offering that allows you to deploy blockchain components on any Kubernetes v1.14 - v1.16 container platform on x86_64 including Open Shift Container Platform 3.11, 4.1 and 4.2 or {{site.data.keyword.cloud_notm}} Private v3.2.1. The platform is also supported on LinuxONE (s390x) using Open Shift Container Platform 4.2 and {{site.data.keyword.cloud_notm}} Private v3.2.1. This offering is ideal for the customers who want to deploy their components, store their data, or run their workloads on their own infrastructure or across public and private clouds for security, risk mitigation, preference, or compliance reasons. Clients can build, operate, and grow their blockchain networks with an offering that can be used from development through production.
 {:shortdesc}
 
 Your entitlement includes the flexible management console for deploying and managing your blockchain network. Use the console or {{site.data.keyword.blockchainfull_notm}} Platform APIs to build a consortium of organizations to easily transact on the same network, regardless of each client's cloud preference. By installing the {{site.data.keyword.blockchainfull_notm}} Platform console, users can create components in their clusters and connect them to components deployed on other clusters, forming a distributed, multi-organizational blockchain network.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-09"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -61,9 +61,9 @@ Ensure that your OpenShift cluster has sufficient resources for the {{site.data.
 {: #deploy-ocp-browsers-firewall}
 The {{site.data.keyword.blockchainfull_notm}} Platform console has been successfully tested on the following browsers:
 
-- Chrome: Version 78.0.3904.70 (Official Build) (64-bit)
+- Chrome Version 80.0.3987.122 (Official Build) (64-bit)
 - Firefox (non-ESR): Version 69.0.1
-- Safari: Version 13.0 (14608.1.49)
+- Safari Version 13.0.3 (15608.3.10.1.4) 
 - Edge: v44.17763.1.0
 
 ## Storage
@@ -618,7 +618,16 @@ You also need to make additional edits to the file depending on your choices in 
 - If you changed the name of your Docker key secret, change corresponding value of the `imagePullSecret:` field.
 - If you created a new storage class for your network, provide the storage class that you created to the `class:` field.
 
-
+If you are deploying on OpenShift Container Platform v4.2 on LinuxONE, you need to replace:
+```
+arch:
+- amd64
+```
+in the `spec:` section with:
+```
+arch:
+- s390x
+```
 
 Because you can only run the following command once, you should review the [Advanced deployment options](#console-deploy-ocp-advanced-firewall) in case any of the options are relevant to your configuration, before you install the console.  For example, if you are deploying your console on a multizone cluster, you need to configure that before you run the following step to install the console.
 {: important}
