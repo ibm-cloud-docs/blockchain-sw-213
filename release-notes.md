@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-06"
+lastupdated: "2020-03-10"
 
 
 keywords: release note, latest changes, Hyperledger Fabric
@@ -52,11 +52,11 @@ All new nodes are deployed using Hyperledger Fabric v1.4.6. If you have an exist
 
 Full cryptographic HSM support is now available for HSMs that implement the PKCS #11 standard. Using an HSM provides on-demand encryption, key management, and key storage. When you deploy a CA, peer, or ordering node, you now have the option to store the private key for the node identity in an HSM. See [Configuring a node to use a HSM](https://test.cloud.ibm.com/docs/blockchain?topic=blockchain-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm) for more details.
 
-**Improved multi-organization transaction resilience**  
+**Support for adding and removing ordering nodes from an existing ordering service**  
 
 Previously, an ordering service could only contain one or five ordering nodes and they all were contributed from the same organization. Now, the ordering service can be deployed across multiple organizations in a blockchain network, enabling individual organizations to add and remove individual ordering nodes as required. Multi-organizational transaction ordering improves the decentralized nature of a blockchain network.  Learn more about the process in the new [Adding and removing Raft ordering service nodes tutorial](/docs/blockchain-sw?topic=blockchain-sw-ibp-console-add-remove-orderer).
 
-**Enhanced software configuration management with Ansible**
+**Ansible support for simplified network configuration and management**
 
 Ansible playbooks are available for single and multi-organization configurations and automate the creation and management of peer, orderer, and certificate authority network elements. Ansible support is delivered through the [Ansible Galaxy](https://galaxy.ansible.com/home){: external} website, the official hub for sharing Ansible content.
 
@@ -64,7 +64,7 @@ Ansible playbooks are available for single and multi-organization configurations
 
 Hyperledger Fabric includes many configuration options for a CA, peer, or ordering node. A subset of those options for the [CA](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-ca-customization), [peer](docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-peer-create-json) and [ordering node](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-orderer-create-json) can now be overridden by using the console or the [APIs](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-apis#ibp-v2-apis-custom).
 
-**Install and instantiate Java smart contracts**
+**Full Java smart contract development support**
 
 In addition to smart contracts written in JavaScript, TypeScript, and Go programming languages, it is now possible to install and instantiate Java smart contracts from the console. Moreover, Java can be freely mixed and matched with other application and smart contract programming languages, including JavaScript, TypeScript, and Go. This heterogeneous programming language support enables an organization to capitalize on the full range of its development skills.
 
@@ -75,10 +75,6 @@ In order to use Java chaincode, developers should be aware that:
 - Custom Gradle versions can be used by using a Gradle wrapper.
 - Java smart contracts require the fabric-chaincode-shim at v1.4.6 or later, as this version is the first version that includes support for Java 11.
 - For an example of a Java smart contract, see the [FabCar Java smart contract](https://github.com/hyperledger/fabric-samples/tree/release-1.4/chaincode/fabcar/java){: external} from Fabric v1.4.
-
-**New process for Channel and MSP creation**
-
-The console panels for creating a channel and organization MSP definition have been updated for an improved user experience.
 
 **v2 APIs available**
 

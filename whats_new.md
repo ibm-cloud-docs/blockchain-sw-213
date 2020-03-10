@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-06"
+lastupdated: "2020-03-10"
 
 keywords: IBM Blockchain Platform, release, new features
 
@@ -39,11 +39,12 @@ subcollection: blockchain-sw-213
 
 The following enhancements have been added in this latest release: 
 - Red Hat OpenShift on LinuxONE (s390x)
-- Support for Public Key Cryptography Standards PKCS #11
-- Raft consensus protocol support
-- Ansible support for simplified network configuration and management
-- Full Java development support
 - Support for Hyperledger Fabric v1.4.6
+- Hardware Security Module (HSM) support for node identities
+- Support for adding and removing ordering nodes from an existing ordering service
+- Ansible support for simplified network configuration and management
+- Ability to override default CA, peer, ordering node configuration
+- Full Java smart contract development support
 
 
 If you have an existing {{site.data.keyword.blockchainfull_notm}} Platform v2.1.0, v2.1.1, or v2.1.2 deployment and are interested in upgrading to {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3, see the following topics:
