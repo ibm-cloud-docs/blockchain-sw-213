@@ -104,6 +104,10 @@ When you deploy a CA, the following advanced deployment options are available:
 * [Hardware Security Module](#ibp-console-adv-deployment-cfg-hsm) - Configure the CA to use an HSM to generate and store private keys.
 * [CA configuration override](#ibp-console-adv-deployment-ca-customization) - Choose this option when you want to override CA configuration. settings.
 
+### Database and replica sets
+{: #ibp-console-adv-deployment-CA-replica-sets}
+
+Because redundancy is the key to ensuring that when a node goes down another node is able to continue to process requests, you have the option to configure replica sets for CA nodes. For a complete understanding of what replica sets are and how they can be configured for a CA, see this topic on [Building a high availability Certificate Authority (CA)](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-ha-ca).
 
 
 ### Sizing a CA during creation
@@ -125,12 +129,10 @@ As we noted in our section on [Considerations before you deploy a node](#ibp-con
 For more details on the resource allocation panel in the console see [Allocating resource](#ibp-console-adv-deployment-allocate-resources).
 
 
-
 #### Creating highly available CAs
 {: #ibp-console-adv-deployment-CA-HA}
 
-For information about creating highly available CAs through the use of replica sets, see [how to configure CA replica sets](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-ha-ca).
-
+For information about creating highly available CAs through the use of replica sets, see [how to configure CA replica sets](/docs/blockchain?topic=blockchain-ibp-console-ha-ca).
 
 ### Customizing a CA configuration
 {: #ibp-console-adv-deployment-ca-customization}
@@ -992,12 +994,12 @@ The {{site.data.keyword.blockchainfull_notm}} Platform HSM implementation is bas
 #### Building the proxy image
 {: #ibp-console-adv-deployment-pkcs11-proxy-build-img}
 
-The first step is to build a Docker image for the PKCS #11 proxy and add the HSM specific library to the image. The following example shows the process for adding the `softhsm` drivers to the image. (`Softhsm` is a software version of HSM that can be used for HSM simulation and testing, but you need to replace it with the library from your HSM provider.)
+The first step is to build a Docker image for the PKCS #11 proxy and add the HSM specific library to the image. The following example shows the process for adding the `SoftHSM` drivers to the image. (`Softhsm` is a software version of HSM that can be used for HSM simulation and testing, but you need to replace it with the library from your HSM provider.)
 
 If you are running the platform behind a firewall, you need to pull the proxy image to a machine that has internet access and then push the image to a docker registry that you can access from behind your firewall.
 {: note}
 
-Starting under `### YOUR HSM LIBRARY BUILD GOES HERE ###`, edit the code for your HSM, and save it to a file named `Dockerfile`. If you are not using `softhsm` to try out the process, you should remove the section that starts with the label `### EXAMPLE CONFIGURATION FOR SOFTHSM ###` and ends with `### EXAMPLE CONFIGURATION FOR SOFTHSM ENDS HERE###`.
+Starting under `### YOUR HSM LIBRARY BUILD GOES HERE ###`, edit the code for your HSM, and save it to a file named `Dockerfile`. If you are not using `SoftHSM` to try out the process, you should remove the section that starts with the label `### EXAMPLE CONFIGURATION FOR SOFTHSM ###` and ends with `### EXAMPLE CONFIGURATION FOR SOFTHSM ENDS HERE###`.
 
 
 ```

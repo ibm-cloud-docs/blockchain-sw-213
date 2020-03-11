@@ -21,6 +21,7 @@ IBM Blockchain Platform v2.1.3
 		reference/videos.md
 		howto/ibp-console-ic-ha-howto.md
 		howto/ibp-console-ha-ca.md
+		reference/hsm-gemalto.md
 		/blockchain/blockchain-k8s-overview
 
 	security.md
