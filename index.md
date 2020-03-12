@@ -30,7 +30,7 @@ subcollection: blockchain-sw-213
 </div>
 
 
-{{site.data.keyword.blockchainfull}} Platform provides a managed and full stack blockchain-as-a-service (BaaS) offering that allows you to deploy blockchain components on many platforms including Kubernetes, Openshift Container Platform, and IBM Cloud Private. For details of what is supported, see [Supported Platforms(/docs/blockchain-sw-213?topic=blockchain-sw-213-console-ocp-about#console-ocp-about-prerequisites). This offering is ideal for the customers who want to deploy their components, store their data, or run their workloads on their own infrastructure or across public and private clouds for security, risk mitigation, preference, or compliance reasons. Clients can build, operate, and grow their blockchain networks with an offering that can be used from development through production.
+{{site.data.keyword.blockchainfull}} Platform provides a managed and full stack blockchain-as-a-service (BaaS) offering that allows you to deploy blockchain components on many platforms including Kubernetes, Openshift Container Platform, and {{site.data.keyword.cloud_notm}} Private. For details of what is supported, see [Supported Platforms](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-ocp-about#console-ocp-about-prerequisites). This offering is ideal for the customers who want to deploy their components, store their data, or run their workloads on their own infrastructure or across public and private clouds for security, risk mitigation, preference, or compliance reasons. Clients can build, operate, and grow their blockchain networks with an offering that can be used from development through production.
 {:shortdesc}
 
 Your entitlement includes the flexible management console for deploying and managing your blockchain network. Use the console or {{site.data.keyword.blockchainfull_notm}} Platform APIs to build a consortium of organizations to easily transact on the same network, regardless of each client's cloud preference. By installing the {{site.data.keyword.blockchainfull_notm}} Platform console, users can create components in their clusters and connect them to components deployed on other clusters, forming a distributed, multi-organizational blockchain network.
@@ -41,7 +41,7 @@ For more information on where you can run {{site.data.keyword.blockchainfull_not
 
 The **{{site.data.keyword.blockchainfull_notm}} Platform v2.1.3** is purchased as a stand-alone entitlement. After purchase, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. This key is required to deploy the release or download the container images.
 
-With this offering, you are responsible for purchasing and provisioning your own Kubernetes cluster. Additionally you will need to [open ports in your firewall](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-security#ibp-security-ibp-ports) if you are using one.
+With this offering, you are responsible for purchasing and provisioning your own Kubernetes cluster. Additionally, you will need to [open ports in your firewall](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-security#ibp-security-ibp-ports) if you are using one.
 {: important}
 
 ## Already have an {{site.data.keyword.blockchainfull_notm}} Platform v2.1.x network and want to upgrade?
