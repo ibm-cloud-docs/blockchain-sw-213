@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-11"
+lastupdated: "2020-03-12"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall
 
@@ -94,6 +94,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 can be deployed us
 | IBM Cloud Private  | 3.2.1 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | IBM Cloud Private on LinuxONE | 3.2.1 | s390x | ![Checkmark icon](../../icons/checkmark-icon.svg)  |
 | Kubernetes **   | v1.14 - v1.16 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) Rancher v2.3.2|
+{: caption="Table 1. Supported platforms" caption-side="bottom"}
 ** This offering is not supported on the {{site.data.keyword.cloud_notm}} Kubernetes Service. If you want to run the {{site.data.keyword.blockchainfull_notm}} Platform on the {{site.data.keyword.cloud_notm}} Kubernetes Service, use the [IBM Blockchain Platform for IBM Cloud offering](https://cloud.ibm.com/docs/blockchain?topic=blockchain-ibp-v2-deploy-iks).
 
 If you are not running the platform on Red Hat OpenShift Container Platform, Red Hat Open Kubernetes Distribution, or {{site.data.keyword.cloud_notm}} Private then you need to setup the nginx ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}.

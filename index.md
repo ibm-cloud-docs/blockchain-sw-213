@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-09"
+lastupdated: "2020-03-12"
 
 keywords: Kubernetes, IBM Cloud Private, OCP, OpenShift Container Platform, IBM Blockchain Platform
 
@@ -30,7 +30,7 @@ subcollection: blockchain-sw-213
 </div>
 
 
-{{site.data.keyword.blockchainfull}} Platform provides a managed and full stack blockchain-as-a-service (BaaS) offering that allows you to deploy blockchain components on any Kubernetes v1.14 - v1.16 container platform on x86_64 including Open Shift Container Platform 3.11, 4.1 and 4.2 or {{site.data.keyword.cloud_notm}} Private v3.2.1. The platform is also supported on LinuxONE (s390x) using Open Shift Container Platform 4.2 and {{site.data.keyword.cloud_notm}} Private v3.2.1. This offering is ideal for the customers who want to deploy their components, store their data, or run their workloads on their own infrastructure or across public and private clouds for security, risk mitigation, preference, or compliance reasons. Clients can build, operate, and grow their blockchain networks with an offering that can be used from development through production.
+{{site.data.keyword.blockchainfull}} Platform provides a managed and full stack blockchain-as-a-service (BaaS) offering that allows you to deploy blockchain components on many platforms including Kubernetes, Openshift Container Platform, and IBM Cloud Private. For details of what is supported, see [Supported Platforms(/docs/blockchain-sw-213?topic=blockchain-sw-213-console-ocp-about#console-ocp-about-prerequisites). This offering is ideal for the customers who want to deploy their components, store their data, or run their workloads on their own infrastructure or across public and private clouds for security, risk mitigation, preference, or compliance reasons. Clients can build, operate, and grow their blockchain networks with an offering that can be used from development through production.
 {:shortdesc}
 
 Your entitlement includes the flexible management console for deploying and managing your blockchain network. Use the console or {{site.data.keyword.blockchainfull_notm}} Platform APIs to build a consortium of organizations to easily transact on the same network, regardless of each client's cloud preference. By installing the {{site.data.keyword.blockchainfull_notm}} Platform console, users can create components in their clusters and connect them to components deployed on other clusters, forming a distributed, multi-organizational blockchain network.
@@ -41,7 +41,7 @@ For more information on where you can run {{site.data.keyword.blockchainfull_not
 
 The **{{site.data.keyword.blockchainfull_notm}} Platform v2.1.3** is purchased as a stand-alone entitlement. After purchase, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. This key is required to deploy the release or download the container images.
 
-With this offering, you are responsible for purchasing and provisioning your own Kubernetes cluster.
+With this offering, you are responsible for purchasing and provisioning your own Kubernetes cluster. Additionally you will need to [open ports in your firewall](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-security#ibp-security-ibp-ports) if you are using one.
 {: important}
 
 ## Already have an {{site.data.keyword.blockchainfull_notm}} Platform v2.1.x network and want to upgrade?
@@ -59,7 +59,7 @@ Check out the following topics for instructions on how to upgrade:
 
 | |{{site.data.keyword.blockchainfull_notm}} Platform for anywhere (v2.1.3) | {{site.data.keyword.blockchainfull_notm}} Platform for {{site.data.keyword.cloud_notm}} |
 |----|---|----|
-| Where do you want to deploy the platform?|  Multiple Kubernetes distributions on a private, public or hybrid multicloud | An {{site.data.keyword.IBM_notm}} Kubernetes Service cluster on {{site.data.keyword.cloud_notm}} |  
+| Where do you want to deploy the platform?|  Multiple Kubernetes distributions on a private, public or hybrid multicloud <br><br> See [Supported Platforms](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-ocp-about#console-ocp-about-prerequisites) | An {{site.data.keyword.IBM_notm}} Kubernetes Service cluster on {{site.data.keyword.cloud_notm}} <br><br> See [Supported configuration](/docs/blockchain?topic=blockchain-ibp-console-overview#ibp-console-overview-supported-cfg |  
 | What are my deployment options? | <ul><li> Full platform </li> <li> Only {{site.data.keyword.blockchainfull_notm}} images ** </li> </ul>| <ul><li> Full platform </li> </ul>
 | How is it billed? |Contact us for [pricing](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-sw-pricing) |[$0.29 USD per allocated CPU hour](/docs/blockchain?topic=blockchain-ibp-saas-pricing)  |
 | Can I connect with Peers in other clouds? |  Yes| Yes |
