@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-12"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -205,7 +205,7 @@ kubectl get deployment ibp-operator -o yaml > operator.yaml
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. Open `operator-upgrade.yaml` in a text editor. You need to update the `image:` field with the updated version of the operator image. You can find the name and tag of the latest operator image below:
 ```
-cp.icr.io/cp/ibp-operator:2.1.2-20200213-amd64
+cp.icr.io/cp/ibp-operator:2.1.3-20200324-amd64
 ```
 {:codeblock}
 
@@ -304,35 +304,35 @@ docker login --username cp --password <KEY> cp.icr.io
 
 After you log in, use the following command to pull the images for {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3:
 ```
-docker pull cp.icr.io/cp/ibp-operator:2.1.2-20200213-amd64
-docker pull cp.icr.io/cp/ibp-init:2.1.2-20200213-amd64
-docker pull cp.icr.io/cp/ibp-peer:1.4.4-20200213-amd64
-docker pull cp.icr.io/cp/ibp-orderer:1.4.4-20200213-amd64
-docker pull cp.icr.io/cp/ibp-ca:1.4.4-20200213-amd64
-docker pull cp.icr.io/cp/ibp-dind:1.4.4-20200213-amd64
-docker pull cp.icr.io/cp/ibp-console:2.1.2-20200213-amd64
-docker pull cp.icr.io/cp/ibp-grpcweb:2.1.2-20200213-amd64
-docker pull cp.icr.io/cp/ibp-utilities:1.4.4-20200213-amd64
-docker pull cp.icr.io/cp/ibp-couchdb:2.3.1-20200213-amd64
-docker pull cp.icr.io/cp/ibp-deployer:2.1.2-20200213-amd64
-docker pull cp.icr.io/cp/ibp-fluentd:2.1.2-20200213-amd64
+docker pull cp.icr.io/cp/ibp-operator:2.1.3-20200324-amd64
+docker pull cp.icr.io/cp/ibp-init:2.1.3-20200324-amd64
+docker pull cp.icr.io/cp/ibp-peer:1.4.6-20200324-amd64
+docker pull cp.icr.io/cp/ibp-orderer:1.4.6-20200324-amd64
+docker pull cp.icr.io/cp/ibp-ca:1.4.6-20200324-amd64
+docker pull cp.icr.io/cp/ibp-dind:1.4.6-20200324-amd64
+docker pull cp.icr.io/cp/ibp-console:2.1.3-20200324-amd64
+docker pull cp.icr.io/cp/ibp-grpcweb:2.1.3-20200324-amd64
+docker pull cp.icr.io/cp/ibp-utilities:1.4.6-20200324-amd64
+docker pull cp.icr.io/cp/ibp-couchdb:2.3.1-20200324-amd64
+docker pull cp.icr.io/cp/ibp-deployer:2.1.3-20200324-amd64
+docker pull cp.icr.io/cp/ibp-fluentd:2.1.3-20200324-amd64
 ```
 {:codeblock}
 
 After you download the images, you must change the image tags to refer to your docker registry. Replace `<LOCAL_REGISTRY>` with the url of your local registry and run the following commands:
 ```
-docker tag cp.icr.io/cp/ibp-operator:2.1.2-20200213-amd64 <LOCAL_REGISTRY>/ibp-operator:2.1.2-20200213-amd64
-docker tag cp.icr.io/cp/ibp-init:2.1.2-20200213-amd64 <LOCAL_REGISTRY>/ibp-init:2.1.2-20200213-amd64
-docker tag cp.icr.io/cp/ibp-peer:1.4.4-20200213-amd64 <LOCAL_REGISTRY>/ibp-peer:1.4.4-20200213-amd64
-docker tag cp.icr.io/cp/ibp-orderer:1.4.4-20200213-amd64 <LOCAL_REGISTRY>/ibp-orderer:1.4.4-20200213-amd64
-docker tag cp.icr.io/cp/ibp-ca:1.4.4-20200213-amd64 <LOCAL_REGISTRY>/ibp-ca:1.4.4-20200213-amd64
-docker tag cp.icr.io/cp/ibp-dind:1.4.4-20200213-amd64 <LOCAL_REGISTRY>/ibp-dind:1.4.4-20200213-amd64
-docker tag cp.icr.io/cp/ibp-console:2.1.2-20200213-amd64 <LOCAL_REGISTRY>/ibp-console:2.1.2-20200213-amd64
-docker tag cp.icr.io/cp/ibp-grpcweb:2.1.2-20200213-amd64 <LOCAL_REGISTRY>/ibp-grpcweb:2.1.2-20200213-amd64
-docker tag cp.icr.io/cp/ibp-utilities:1.4.4-20200213-amd64 <LOCAL_REGISTRY>/ibp-utilities:1.4.4-20200213-amd64
-docker tag cp.icr.io/cp/ibp-couchdb:2.3.1-20200213-amd64 <LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20200213-amd64
-docker tag cp.icr.io/cp/ibp-deployer:2.1.2-20200213-amd64 <LOCAL_REGISTRY>/ibp-deployer:2.1.2-20200213-amd64
-docker tag cp.icr.io/cp/ibp-fluentd:2.1.2-20200213-amd64 <LOCAL_REGISTRY>/ibp-fluentd:2.1.2-20200213-amd64
+docker tag cp.icr.io/cp/ibp-operator:2.1.3-20200324-amd64 <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200324-amd64
+docker tag cp.icr.io/cp/ibp-init:2.1.3-20200324-amd64 <LOCAL_REGISTRY>/ibp-init:2.1.3-20200324-amd64
+docker tag cp.icr.io/cp/ibp-peer:1.4.6-20200324-amd64 <LOCAL_REGISTRY>/ibp-peer:1.4.6-20200324-amd64
+docker tag cp.icr.io/cp/ibp-orderer:1.4.6-20200324-amd64 <LOCAL_REGISTRY>/ibp-orderer:1.4.6-20200324-amd64
+docker tag cp.icr.io/cp/ibp-ca:1.4.6-20200324-amd64 <LOCAL_REGISTRY>/ibp-ca:1.4.6-20200324-amd64
+docker tag cp.icr.io/cp/ibp-dind:1.4.6-20200324-amd64 <LOCAL_REGISTRY>/ibp-dind:1.4.6-20200324-amd64
+docker tag cp.icr.io/cp/ibp-console:2.1.3-20200324-amd64 <LOCAL_REGISTRY>/ibp-console:2.1.3-20200324-amd64
+docker tag cp.icr.io/cp/ibp-grpcweb:2.1.3-20200324-amd64 <LOCAL_REGISTRY>/ibp-grpcweb:2.1.3-20200324-amd64
+docker tag cp.icr.io/cp/ibp-utilities:1.4.6-20200324-amd64 <LOCAL_REGISTRY>/ibp-utilities:1.4.6-20200324-amd64
+docker tag cp.icr.io/cp/ibp-couchdb:2.3.1-20200324-amd64 <LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20200324-amd64
+docker tag cp.icr.io/cp/ibp-deployer:2.1.3-20200324-amd64 <LOCAL_REGISTRY>/ibp-deployer:2.1.3-20200324-amd64
+docker tag cp.icr.io/cp/ibp-fluentd:2.1.3-20200324-amd64 <LOCAL_REGISTRY>/ibp-fluentd:2.1.3-20200324-amd64
 ```
 {:codeblock}
 
@@ -348,18 +348,18 @@ docker login --username <USER> --password <LOCAL_REGISTRY_PASSWORD> <LOCAL_REGIS
 
 Then, run the following command to push the images. Replace `<LOCAL_REGISTRY>` with the url of your local registry.
 ```
-docker push <LOCAL_REGISTRY>/ibp-operator:2.1.2-20200213-amd64
-docker push <LOCAL_REGISTRY>/ibp-init:2.1.2-20200213-amd64
-docker push <LOCAL_REGISTRY>/ibp-peer:1.4.4-20200213-amd64
-docker push <LOCAL_REGISTRY>/ibp-orderer:1.4.4-20200213-amd64
-docker push <LOCAL_REGISTRY>/ibp-ca:1.4.4-20200213-amd64
-docker push <LOCAL_REGISTRY>/ibp-dind:1.4.4-20200213-amd64
-docker push <LOCAL_REGISTRY>/ibp-console:2.1.2-20200213-amd64
-docker push <LOCAL_REGISTRY>/ibp-grpcweb:2.1.2-20200213-amd64
-docker push <LOCAL_REGISTRY>/ibp-utilities:1.4.4-20200213-amd64
-docker push <LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20200213-amd64
-docker push <LOCAL_REGISTRY>/ibp-deployer:2.1.2-20200213-amd64
-docker push <LOCAL_REGISTRY>/ibp-fluentd:2.1.2-20200213-amd64
+docker push <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200324-amd64
+docker push <LOCAL_REGISTRY>/ibp-init:2.1.3-20200324-amd64
+docker push <LOCAL_REGISTRY>/ibp-peer:1.4.6-20200324-amd64
+docker push <LOCAL_REGISTRY>/ibp-orderer:1.4.6-20200324-amd64
+docker push <LOCAL_REGISTRY>/ibp-ca:1.4.6-20200324-amd64
+docker push <LOCAL_REGISTRY>/ibp-dind:1.4.6-20200324-amd64
+docker push <LOCAL_REGISTRY>/ibp-console:2.1.3-20200324-amd64
+docker push <LOCAL_REGISTRY>/ibp-grpcweb:2.1.3-20200324-amd64
+docker push <LOCAL_REGISTRY>/ibp-utilities:1.4.6-20200324-amd64
+docker push <LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20200324-amd64
+docker push <LOCAL_REGISTRY>/ibp-deployer:2.1.3-20200324-amd64
+docker push <LOCAL_REGISTRY>/ibp-fluentd:2.1.3-20200324-amd64
 ```
 {:codeblock}
 
@@ -487,7 +487,7 @@ kubectl get deployment ibp-operator -o yaml > operator.yaml
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. Open `operator-upgrade.yaml` a text editor. You need to update the `image:` field with the updated version of the operator image:
 ```
-<LOCAL_REGISTRY>/ibp-operator:2.1.2-20200213-amd64
+<LOCAL_REGISTRY>/ibp-operator:2.1.3-20200324-amd64
 ```
 {:codeblock}
 
