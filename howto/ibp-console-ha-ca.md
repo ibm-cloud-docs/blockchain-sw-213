@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-12"
 
 keywords: high availability, CA, PostgreSQL, replica sets
 
@@ -53,7 +53,7 @@ When a Kubernetes pod becomes unavailable, Kubernetes immediately attempts to re
 - CA replica sets are automatically spread across your worker nodes in a _single zone_ according to available resources. Replica sets are not available across zones.
 - Because creating a CA replica set results in a new CA pod, when you configure an additional replica set, the CPU and memory requirements for the CA are doubled. If three replica sets are required, then the total CPU and memory requirements triple, and so on. However, the storage allocation does not change because all of the replica sets use the same PostgreSQL database. When you configure your CA, you can specify how many replica sets to create.
 - The number of replica sets can be scaled up or down over time according to your availability needs.
-- Replica sets are only available when PostGreSQL is selected as the CA database.
+- Replica sets are only available when PostgreSQL is selected as the CA database.
 - The ability to deploy a CA to a specific Kubernetes cluster zone is only available when SQLite is selected as the CA database.
 
 ## Before you begin
