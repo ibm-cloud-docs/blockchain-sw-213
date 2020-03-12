@@ -111,7 +111,7 @@ Replace the values above with the following lines at the same indentation:
 ```
 {:codeblock}
 
-- Replace `<CLUSTER_TYPE>` with `IKS` if you are deploying the platform on open source Kubernetes or Rancher.
+- Replace `<CLUSTER_TYPE>` with `K8S` if you are deploying the platform on open source Kubernetes or Rancher.
 - Replace `<CLUSTER_TYPE>` with `ICP` if you are deploying the platform on {{site.data.keyword.cloud_notm}} Private.
 
 When you are finished editing the file, the `env:` section would look similar to the following:
@@ -130,7 +130,7 @@ env:
 - name: OPERATOR_NAME
   value: ibp-operator
 - name: CLUSTERTYPE
-  value: IKS
+  value: K8S
 ```
 {:codeblock}
 
@@ -292,7 +292,7 @@ Replace the values above with the following lines at the same indentation:
 ```
 {:codeblock}
 
-- Replace `<CLUSTER_TYPE>` with `IKS` if you are deploying the platform on open source Kubernetes or Rancher.
+- Replace `<CLUSTER_TYPE>` with `K8S` if you are deploying the platform on open source Kubernetes or Rancher.
 - Replace `<CLUSTER_TYPE>` with `ICP` if you are deploying the platform on {{site.data.keyword.cloud_notm}} Private.
 
 When you are finished editing the file, the `env:` section would look similar to the following:
@@ -311,7 +311,7 @@ env:
 - name: OPERATOR_NAME
   value: ibp-operator
 - name: CLUSTERTYPE
-  value: IKS
+  value: K8S
 ```
 {:codeblock}
 

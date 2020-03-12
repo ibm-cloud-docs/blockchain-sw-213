@@ -435,7 +435,7 @@ spec:
 ```
 {:codeblock}
 
-- Replace `<CLUSTER_TYPE>` with `IKS` if you are deploying the platform on open source Kubernetes or Rancher.
+- Replace `<CLUSTER_TYPE>` with `K8S` if you are deploying the platform on open source Kubernetes or Rancher.
 - Replace `<CLUSTER_TYPE>` with `ICP` if you are deploying the platform on {{site.data.keyword.cloud_notm}} Private.
 - If you changed the name of the Docker key secret, then you need to edit the field of `name: docker-key-secret`.
 
