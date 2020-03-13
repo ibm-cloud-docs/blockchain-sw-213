@@ -84,20 +84,20 @@ The {{site.data.keyword.blockchainfull_notm}} Platform includes the following ke
 
 The {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 can be deployed using the following Kubernetes distributions on the following Platforms:
 
-| Kubernetes distribution | Version | Hardware |  Tested configuration| SSL Pathrough mode required*** |
+| Kubernetes distribution | Version | Hardware |  Tested configuration|
 |----|----|----|-----|
-| OpenShift Container Platform | 3.11 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg)  | |
-| OpenShift Container Platform | 4.1 |  x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg)  | |
-| OpenShift Container Platform | 4.2 |  x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) | |
-| OpenShift Container Platform on Microsoft Azure | 4.1 |  x86_64 | | |
-| OpenShift Container Platform on LinuxONE | 4.2 | s390x |  | |
-| IBM Cloud Private  | 3.2.1 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) | |
-| IBM Cloud Private on LinuxONE | 3.2.1 | s390x | ![Checkmark icon](../../icons/checkmark-icon.svg)  | |
-| Kubernetes **   | v1.14 - v1.16 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) Rancher v2.3.2| ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| OpenShift Container Platform | 3.11 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg)  |
+| OpenShift Container Platform | 4.1 |  x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg)  |
+| OpenShift Container Platform | 4.2 |  x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| OpenShift Container Platform on Microsoft Azure | 4.1 |  x86_64 | |
+| OpenShift Container Platform on LinuxONE | 4.2 | s390x |  |
+| IBM Cloud Private  | 3.2.1 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| IBM Cloud Private on LinuxONE | 3.2.1 | s390x | ![Checkmark icon](../../icons/checkmark-icon.svg)  |
+| Kubernetes ***    | v1.14 - v1.16 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) Rancher v2.3.2|
 {: caption="Table 1. Supported platforms" caption-side="bottom"}
+*** If you want to use {{site.data.keyword.IBM_notm}} Kubernetes Service, we recommend that you check out the [IBM Blockchain Platform for IBM Cloud](/docs/blockchain?topic=blockchain-ibp-v2-deploy-iks){: external} offering unless you specifically require this offering. See [Is IBM Blockchain Platform v2.1.3 suitable for you](/docs/blockchain-sw-213?topic=blockchain-sw-213-get-started-console-ocp#get-started-console-ocp-suitable).  
 
-
-*** If you are not running the platform on Red Hat OpenShift Container Platform, Red Hat Open Kubernetes Distribution, or {{site.data.keyword.cloud_notm}} Private then you need to setup the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}.
+If you are running on Amazon Kubernetes Service or {{site.data.keyword.IBM_notm}} Kubernetes Service then you need to setup the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. 
 {: important}
 
 ## License and pricing
