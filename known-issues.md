@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-13"
 
 keywords: catalina, chrome, external CA, TLS, orderer, error
 
@@ -70,6 +70,6 @@ You can safely ignore this error, as the certificates the console is trying to p
 ## Unable to create peer or ordering node using external CA certificates
 {: #sw-known-issues-external-CA-cant-create}
 
-Currently, it is not possible to create a peer or ordering nodes using certificates entered into the console as described in [Component governance](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern-components#ibp-console-govern-third-party-ca).
+Currently, it is not possible to create a peer or ordering nodes using certificates entered into the console as described in the [Advanced deployment options](/docs/blockchain?topic=blockchain-ibp-console-adv-deployment#ibp-console-adv-deployment-third-party-ca).
 
 It is still possible to create components using the normal register and enroll flows in the console.
