@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-12"
+lastupdated: "2020-03-13"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -478,6 +478,9 @@ spec:
 ```
 {:codeblock}
 - If you changed the name of the Docker key secret, then you need to edit the field of `name: docker-key-secret`.
+- If you are using OpenShift Container Platform v4.2 on LinuxONE, you need to make the following additional customizations:
+   1. In the `spec.affinity` section, change `amd64` to `s390x`.
+   2. In the `spec.containers` section, replace `amd64` in the operator `images` tag with `s390x`.
 
 Then, use the `kubectl` CLI to add the custom resource to your project.
 
