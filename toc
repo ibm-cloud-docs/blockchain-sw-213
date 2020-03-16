@@ -61,7 +61,6 @@ IBM Blockchain Platform v2.1.3
 	{: .topicgroup}
 	Developing smart contracts and applications
 		vscode-extension.md
-		howto/develop_chaincode.md
 		best_practices.md
 
 	howto/console-ocp-manage.md
