@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-03-16"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -733,9 +733,9 @@ You can also find your console URL by logging in to your OpenShift cluster and r
 ```
 oc get routes -n <PROJECT_NAME>
 ```
-In the output of the command, you can see the URLs for the proxy and the console. You need to add `https://` to the beginning console URL to to access the console. You do not need to add a port to the URL.
+In the output of the command, you can see the URLs for the proxy and the console. You need to add `https://` to the beginning console URL to access the console. You do not need to add a port to the URL.
 
-In your browser, you can see the console log in screen:
+In your browser, you can see the console login screen:
 - For the **User ID**, use the value you provided for the `email:` field in the `ibp-console.yaml` file.
 - For the **Password**, use the value you encoded for the `password:` field in the `ibp-console.yaml` file. This password becomes the default password for the console that all new users use to log in to the console. After you log in for the first time, you will be asked to provide a new password that you can use to log in to the console.
 

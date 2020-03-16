@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-16"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -59,7 +59,7 @@ You can use the OpenShift CLI to remove the {{site.data.keyword.blockchainfull_n
 2. Use the CLI to switch to the OpenShift project that you created for your blockchain network:
 
   ```
-  kubectl project <PROJECT_NAME>
+  oc project <PROJECT_NAME>
   ```
   {:codeblock}
 
