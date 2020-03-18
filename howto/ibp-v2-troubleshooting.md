@@ -418,6 +418,7 @@ Follow these [instructions](/docs/blockchain-sw-213?topic=blockchain-sw-213-cons
 {: troubleshoot}
 
 This problem can happen when you try to deploy a CA, peer, or ordering node that is configured with HSM and the deployment fails. Or it can surface when a node that is configured for HSM stops working. The node, client, or SDK logs contain the following error:
+{: tsSymptoms}
 ```
 {"code":1000,"message":"Private key not found [pkcs11: 0x30: CKR_DEVICE_ERROR]"}"
 ```
@@ -425,18 +426,19 @@ or
 ```
 {"code":1000,"message":"Private key not found [pkcs11: 0xB3: CKR_SESSION_HANDLE_INVALID]"}"
 ```
-{: tsSymptoms}
+
 
 This problem happens when the PKCS #11 proxy that is associated with the HSM is unreachable to due a network problem or if the proxy restarts after the node has connected to it.
 {: tsCauses}
 
 To re-establish communications between the node and the proxy, restart the failing node by deleting the pod. A new pod will be created and the connection with the PKCS #11 proxy is restored. Use the following steps to restart the failing node:
+{: tsResolve}
 - List the pods: `kubectl get pods -n <NAMESPACE>`
-- Delete the pod: `kubectl delete pod -n <NAMESPACE> <PODNAME>`
+- Delete the pod: `kubectl delete pod -n <NAMESPACE> <PODNAME>`  
+
 Replace:
 - `<NAMESPACE>` with the namespace or project, if using Openshift Container Platform, where the  {{site.data.keyword.blockchainfull_notm}} Platform was deployed in your Kubernetes cluster.
 - `<PODNAME>` with the **Name** of the failing pod that is visible in the list of pods returned by the previous command.
-{: tsResolve}
 
 ## Why are my transactions returning an endorsement policy error: signature set did not satisfy policy?
 {: #ibp-v2-troubleshooting-endorsement-sig-failure}
