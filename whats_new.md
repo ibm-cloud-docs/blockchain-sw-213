@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-10"
+lastupdated: "2020-03-18"
 
 keywords: IBM Blockchain Platform, release, new features
 
@@ -37,7 +37,7 @@ subcollection: blockchain-sw-213
 {{site.data.keyword.blockchainfull}} Platform v2.1.3 is now available.
 
 
-The following enhancements have been added in this latest release: 
+The following enhancements are included in this latest release: 
 - Red Hat OpenShift on LinuxONE (s390x)
 - Support for Hyperledger Fabric v1.4.6
 - Hardware Security Module (HSM) support for node identities
@@ -53,9 +53,9 @@ If you have an existing {{site.data.keyword.blockchainfull_notm}} Platform v2.1.
 - [Upgrading the {{site.data.keyword.blockchainfull_notm}} images](/docs/blockchain-sw-213?topic=blockchain-sw-213-blockchain-images#blockchain-images-upgrade)
 
 
-See the [Release notes](/docs/blockchain-sw-213?topic=blockchain-sw-213-release-notes-saas-20#03-24-2020) for more details on the new features that have been added to this release.
+See the [Release notes](/docs/blockchain-sw-213?topic=blockchain-sw-213-release-notes-saas-20#03-24-2020) for more details on the new features that are included in this release.
 
-We've streamlined the documentation. If you are an existing customer, you may notice that we've added a new `Tutorials` section in the table of contents under `Learn`. We've aggregated all of the tutorials in a single location under the Tutorials heading to make them easier to find.
+We've streamlined the documentation. If you are an existing customer, you might notice that a new `Tutorials` section was added in the table of contents under `Learn`. We've aggregated all of the tutorials in a single location under the Tutorials heading to make them easier to find.
 
 
 
