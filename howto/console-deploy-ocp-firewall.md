@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-03-18"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -90,7 +90,7 @@ When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PP
 
 1. The {{site.data.keyword.blockchainfull_notm}} Platform can be installed only on the [OpenShift Container Platform 3.11, 4.1, or 4.2](https://docs.openshift.com/container-platform/3.11/welcome/index.html){: external}.
 
-2. You need to install and connect to your cluster by using [OpenShift Container Platform CLI](https://docs.openshift.com/container-platform/4.2/cli_reference/get_started_cli.html#installing-the-cli){: external} to deploy the platform.
+2. You need to install and connect to your cluster by using [OpenShift Container Platform CLI](https://docs.openshift.com/container-platform/4.2/cli_reference/openshift_cli/getting-started-cli.html){: external} to deploy the platform.
 
 ## Pull the {{site.data.keyword.blockchainfull_notm}} Platform images
 
@@ -611,7 +611,7 @@ spec:
 
 You need to specify the external endpoint information of the console in the `ibp-console.yaml` file:
 - Replace `<LOCAL_REGISTRY>` with the url of your local registry.
-- Replace `<DOMAIN>` with the name of your cluster domain. You can find this value by using the OpenShift web console. Use the dropdown menu next to **OpenShift Container Platform** at the top of the page to switch from **Service Catalog** to **Cluster Console**. Examine the url for that page. It will be similar to `console.xyz.abc.com/k8s/cluster/projects`. The value of the domain then would be `xyz.abc.com`, after removing `console` and `/k8s/cluster/projects`.
+- Replace `<DOMAIN>` with the name of your cluster domain. You can find this value by using the OpenShift web console. Use the dropdown menu next to **OpenShift Container Platform** at the top left of the page to switch from **Service Catalog** to **Cluster Console**. Examine the url for that page. It will be similar to `console.xyz.abc.com/k8s/cluster/projects`. The value of the domain then would be `xyz.abc.com`, after removing `console` and `/k8s/cluster/projects`.
 
 You need to provide the user name and password that is used to access the console for the first time:
 - Replace `<EMAIL>` with the email address of the console administrator.
