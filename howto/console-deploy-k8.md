@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-03-19"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -55,7 +55,6 @@ The {{site.data.keyword.blockchainfull_notm}} Platform console has been successf
 - Chrome Version 80.0.3987.122 (Official Build) (64-bit)
 - Firefox (non-ESR): Version 69.0.1
 - Safari Version 13.0.3 (15608.3.10.1.4)
-- Edge: v44.17763.1.0
 
 ## Storage
 {: #deploy-k8-storage}
