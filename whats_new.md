@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-19"
 
 keywords: IBM Blockchain Platform, release, new features
 
@@ -42,7 +42,6 @@ The following enhancements are included in this latest release:
 - Support for Hyperledger Fabric v1.4.6
 - Hardware Security Module (HSM) support for node identities
 - Support for adding and removing ordering nodes from an existing ordering service
-- Ansible support for simplified network configuration and management
 - Ability to override default CA, peer, ordering node configuration
 - Full Java smart contract development support
 
