@@ -37,7 +37,7 @@ Use these release notes that are grouped by date to learn about the latest chang
 {: #03-24-2020}
 
 
-**CA, peer and ordering node patch 1.4.6-1**
+
 
 
 
