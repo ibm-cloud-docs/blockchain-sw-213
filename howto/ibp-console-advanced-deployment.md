@@ -30,6 +30,7 @@ subcollection: blockchain-sw-213
 </div>
 
 
+
 When you deploy a node from the console, there are various advanced deployment options available for each node type. This topic provides more details about each of those options.
 {:shortdesc}
 

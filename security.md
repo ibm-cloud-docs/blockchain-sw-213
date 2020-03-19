@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-19"
 
 keywords: security, encryption, storage, tls, iam, roles, keys
 
@@ -29,6 +29,7 @@ subcollection: blockchain-sw-213
     <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-ibp-security">2.1.2</a>
     </p>
 </div>
+
 
 
 {{site.data.keyword.blockchainfull}} Platform provides a scalable, highly reliable platform that helps customers deploy applications and data quickly and securely. This document provides information about securing your {{site.data.keyword.blockchainfull_notm}} Platform service instance, where the blockchain console runs, and best practices for securing the  Kubernetes cluster where the blockchain nodes are deployed.
