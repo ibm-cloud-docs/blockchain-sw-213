@@ -18,7 +18,6 @@ IBM Blockchain Platform v2.1.3
 		howto/ibp-console-smart-contracts.md
 		howto/ibp-console-create-app.md
 		howto/ibp-console-add-remove-raft.md
-		reference/videos.md
 		howto/ibp-console-ic-ha-howto.md
 		howto/ibp-console-ha-ca.md
 		reference/hsm-gemalto.md

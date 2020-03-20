@@ -1071,7 +1071,7 @@ The ability to update an ordering node configuration is not available for orderi
 {: #ibp-console-adv-deployment-third-party-ca}
 
 
-Currently, it is not possible to create a five node Raft ordering service or a peer using certificates entered into the console as described in this section. You can still use the normal register and enroll flow that is described in [Build a network](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-network#ibp-console-build-network-use-CA-org1) to create this type of ordering service or peer.
+Currently, it is not possible to create a five node Raft ordering service using certificates entered into the console as described in this section. You can still use the normal register and enroll flow that is described in [Build a network](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-network#ibp-console-build-network-create-orderer-ca) to create this type of ordering service.
 {:important}
 
 
