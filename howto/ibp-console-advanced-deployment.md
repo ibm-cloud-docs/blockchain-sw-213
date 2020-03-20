@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-03-20"
 
 keywords: deployment, advanced, CouchDB, LevelDB, external CA, HSM, resource allocation
 
@@ -1071,7 +1071,7 @@ The ability to update an ordering node configuration is not available for orderi
 {: #ibp-console-adv-deployment-third-party-ca}
 
 
-Currently, it is not possible to create a five node Raft ordering service using certificates entered into the console as described in this section. You can still use the normal register and enroll flow that is described in [Build a network](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-network#ibp-console-build-network-use-CA-org1) to create this type of ordering service.
+Currently, it is not possible to create a five node Raft ordering service or a peer using certificates entered into the console as described in this section. You can still use the normal register and enroll flow that is described in [Build a network](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-network#ibp-console-build-network-use-CA-org1) to create this type of ordering service or peer.
 {:important}
 
 
@@ -1329,8 +1329,8 @@ The {{site.data.keyword.blockchainfull_notm}} Platform HSM implementation is bas
 The first step is to build a Docker image for the PKCS #11 proxy and add the HSM-specific library to the image.
 
 - The following example shows the process for adding the `SoftHSM` drivers to the image. (`Softhsm` is a software version of HSM that can be used for HSM simulation and testing, but you need to replace it with the library from your HSM provider.)
-- If you are using Cloud HSM, refer to this [tutorial](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-hsm-gemalto) for configuring it to work with the {{site.data.keyword.blockchainfull}} Platform.
-- If you are running {{site.data.keyword.blockchainfull}} Platform on LinuxONE on s390x, refer to this [example](https://github.com/Z-HSM/blob/master/README.md){: external} for configuring [opencryptoki](https://github.com/opencryptoki/opencryptoki){: external} on Z. 
+- If you are using Cloud HSM, refer to this [tutorial](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-hsm-gemalto) for configuring it to work with the {{site.data.keyword.blockchainfull_notm}} Platform.
+- If you are running {{site.data.keyword.blockchainfull_notm}} Platform on LinuxONE on s390x, refer to this [example](https://github.com/Z-HSM/blob/master/README.md){: external} for configuring [opencryptoki](https://github.com/opencryptoki/opencryptoki){: external} on Z. 
 
 If you are running the platform behind a firewall, you need to pull the proxy image to a machine that has internet access and then push the image to a docker registry that you can access from behind your firewall.
 {: note}

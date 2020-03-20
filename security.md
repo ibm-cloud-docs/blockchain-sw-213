@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-03-20"
 
 keywords: security, encryption, storage, tls, iam, roles, keys
 
@@ -56,7 +56,7 @@ Considerations include:
 
 
 
-Identity and access management allows the owner of a console to control which users can access to the console and their privileges within it. IAM is built into the blockchain console and includes local console authentication and role management. When the console is initially provisioned you need to specify the email address of the user who is designated as the console administrator, also known as the **Manager**. This administrator can then add and grant other users access to the console by using the **Users** tab. It is also possible to change the console administrator. Every user that accesses the console must be assigned an access policy with a user role defined. The policy determines what actions the user can perform within the console. Other users can be assigned with **Manager**, **Writer**, or **Reader** roles when a console manager adds them to the console. The definition of each role is provided in the [Role to permissions mapping table](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-manage#console-icp-manage--role-mapping). For the steps required to add new users, see [Managing users from the console](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-manage#console-icp-manage-users).
+Identity and access management allows the owner of a console to control which users can access to the console and their privileges within it. IAM is built into the blockchain console and includes local console authentication and role management. When the console is initially provisioned you need to specify the email address of the user who is designated as the console administrator, also known as the **Manager**. This administrator can then add and grant other users access to the console by using the **Users** tab. It is also possible to change the console administrator. Every user that accesses the console must be assigned an access policy with a user role defined. The policy determines what actions the user can perform within the console. Other users can be assigned with **Manager**, **Writer**, or **Reader** roles when a console manager adds them to the console. The definition of each role is provided in the [Role to permissions mapping table](https://cloud.ibm.com/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-manage#console-icp-manage-role-mapping). For the steps required to add new users, see [Managing users from the console](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-manage#console-icp-manage-users).
 
 Note that users can also be managed with [APIs](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-apis#console-icp-manage-users-apis).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-20"
 
 keywords: pricing model, VPC, CPU, vCPU, virtual core, cost, scalability, estimation, optimize your cost
 
@@ -43,7 +43,7 @@ This guide helps you understand the pricing model for {{site.data.keyword.blockc
 
 The pricing of {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 is based on the number of Virtual Processor Cores (VPCs) used. A VPC, or vCPU, can be either a virtual core that is assigned to a virtual server, or a physical processor core in a non-partitioned server. You must obtain a licensed entitlement for each VPC made available to the {{site.data.keyword.blockchainfull_notm}} Platform. The number of vCPU or CPUs that are required can vary depending on your infrastructure, network design and performance requirements.
 
-If you are using the Red Hat OpenShift Container Platform, you can read more about  VPCs (CPUs) in that platform, see  [Allocating Node Resources](https://docs.openshift.com/container-platform/4.2/admin_guide/allocating_node_resources.html){: external}.
+If you are using the Red Hat OpenShift Container Platform, you can read more about  VPCs (CPUs) in that platform, see  [Allocating Node Resources](https://docs.openshift.com/container-platform/4.2/nodes/nodes/nodes-nodes-resources-configuring.html){: external}.
 Note that 1 `core` in OpenShift is equivalent to 1 vCPU in {{site.data.keyword.blockchainfull_notm}} Platform.
 
 The {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 offering also includes the ability to download and run just the peer, orderer, CA, and smart contract container images without the console. This is an advanced option for customers who are experienced with the Hyperledger Fabric processes for deploying and running the nodes and includes limited support for those images.

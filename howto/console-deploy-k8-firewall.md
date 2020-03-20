@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-03-20"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises
 
@@ -67,7 +67,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform console has been successf
 ## Storage
 {: #deploy-k8-storage-firewall}
 
-{{site.data.keyword.blockchainfull_notm}} Platform requires persistent storage for each CA, peer, and ordering node that you deploy, in addition to the storage required by the {{site.data.keyword.blockchainfull_notm}} console. The {{site.data.keyword.blockchainfull_notm}} Platform console uses [dynamic provisioning](https://docs.openshift.com/container-platform/4.2/install_config/persistent_storage/dynamically_provisioning_pvs.html#basic-spec-definition){: external} to allocate storage for each blockchain node that you deploy by using a pre-defined storage class.
+{{site.data.keyword.blockchainfull_notm}} Platform requires persistent storage for each CA, peer, and ordering node that you deploy, in addition to the storage required by the {{site.data.keyword.blockchainfull_notm}} console. The {{site.data.keyword.blockchainfull_notm}} Platform console uses [dynamic provisioning](https://docs.openshift.com/container-platform/4.2/storage/dynamic-provisioning.html){: external} to allocate storage for each blockchain node that you deploy by using a pre-defined storage class.
 
 Before you deploy the {{site.data.keyword.blockchainfull_notm}} Platform console, you must create a storage class with enough backing storage for the {{site.data.keyword.blockchainfull_notm}} console and the nodes that you create. You can set this storage class to the default storage class of your Kubernetes cluster or create a new class that is used by the {{site.data.keyword.blockchainfull_notm}} Platform console. If you are using a multizone cluster, then you must configure the default storage class for each zone. After you create the storage class, run the command `kubectl patch storageclass` to set the storage class of the multizone region to be the default storage class.
 
@@ -75,7 +75,7 @@ If you prefer not to choose a persistent storage option, the default storage cla
 {: note}
 
 ## Get your entitlement key
-{: #deploy-k8-entitlement-key}
+{: #deploy-k8-entitlement-key-firewall}
 
 When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PPA, you receive an entitlement key for the software is associated with your MyIBM account. You need to access and save this key to deploy the platform.
 
