@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-03-20"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -78,7 +78,7 @@ When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PP
 ## Before you begin
 {: #deploy-k8-prerequisites}
 
-1. The {{site.data.keyword.blockchainfull_notm}} Platform can be installed only on the [Supported Platforms](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-ocp-about#console-ocp-about-prerequisites).
+1. The {{site.data.keyword.blockchainfull_notm}} Platform can be installed only on the [Supported Platforms](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-ocp-about#console-ocp-about-prerequisites){: external}.
 
 2. You need to install and connect to your cluster by using the [kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl){: external} to deploy the platform. If you are using {{site.data.keyword.cloud_notm}} Private, install the [{{site.data.keyword.cloud_notm}} Private CLI 3.2.1](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.1/manage_cluster/install_cli.html){: external}. The {{site.data.keyword.cloud_notm}} Private CLI includes the kubectl CLI.
 
@@ -169,7 +169,7 @@ kubectl apply -f ibp-psp.yaml
 
 ### Apply the ClusterRole
 
-Copy the following text to a file on your local system and save the file as `ibp-clusterrole.yaml`. This file defines the required ClusterRole for the PodSecurityPolicy.
+Copy the following text to a file on your local system and save the file as `ibp-clusterrole.yaml`. This file defines the required ClusterRole for the PodSecurityPolicy. Edit the file and replace `<NAMESPACE>` with the name of your namespace.
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -450,8 +450,8 @@ kubectl apply -f ibp-operator.yaml -n <NAMESPACE>
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <NAMESPACE>`. If your operator deployment is successful, then you can see the following tables with four ones displayed. The operator takes about a minute to deploy.
 ```
-NAME           DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-ibp-operator   1         1         1            1           1m
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+ibp-operator   1/1     1            1           1m
 ```
 
 ## Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console
@@ -695,9 +695,9 @@ kubectl apply -f ibp-console.yaml -n <NAMESPACE>
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <NAMESPACE>`. If your console deployment is successful, you can see `ibpconsole` added to the deployment table, with four ones displayed. The console takes a few minutes to deploy. You might need to click refresh and wait for the table to be updated.
 ```
-NAME           DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-ibp-operator   1         1         1            1           10m
-ibpconsole     1         1         1            1           4m
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+ibp-operator   1/1     1            1           10m
+ibpconsole     1/1     1            1           4m
 ```
 
 The console consists of four containers that are deployed inside a single pod:
