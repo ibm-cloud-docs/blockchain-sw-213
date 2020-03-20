@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-03-20"
 
 keywords: catalina, chrome, external CA, TLS, orderer, error
 
@@ -67,7 +67,7 @@ When attempting to export an ordering node, you might see the following error: `
 
 You can safely ignore this error, as the certificates the console is trying to pull are only needed for a feature that is not currently enabled.
 
-## Unable to create peer or ordering node using external CA certificates
+## Unable to create a five-node Raft ordering service using external CA certificates
 {: #sw-known-issues-external-CA-cant-create}
 
 Currently, it is not possible to create a peer or ordering nodes using certificates entered into the console as described in the [Advanced deployment options](/docs/blockchain?topic=blockchain-ibp-console-adv-deployment#ibp-console-adv-deployment-third-party-ca).
