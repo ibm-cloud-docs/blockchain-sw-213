@@ -49,9 +49,6 @@ You can upgrade to the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3
 If you are using {{site.data.keyword.blockchainfull_notm}} Platform v2.1.0 or v2.1.1, you cannot access the console from the Chrome browser on Mac OS Catalina when the console is deployed with the default configuration that uses self-signed certificates. For more information on how you can resolve this problem, see [Chrome browser on Mac OS Catalina](/docs/blockchain-sw-213?topic=blockchain-sw-213-sw-known-issues#sw-known-issues-catalina) in Known Issues.
 {:note}
 
-Occasionally, a five node ordering service that was deployed using v2.1.2 will be deleted by the Kubernetes garbage collector because it considers the nodes a resource that needs to be cleaned up. This process is both random and unrecoverable --- if the ordering service is deleted, all of the channels hosted on it are permanently lost. To prevent this, the `ownerReferences` field in the configuration of each ordering node must be removed **before upgrading to v2.1.3**. For the steps about how to pull the configuration file, remove `ordererReferences`, and apply the change, see [Known issues](https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-sw-known-issues#sw-known-issues-ordering-service-delete) in the v2.1.2 documentation.
-{:important}
-
 ## Upgrading platforms
 {: #upgrade-ocp-platform}
 
@@ -82,6 +79,9 @@ You can roll back an upgrade after you use the console to operate your network. 
 ## Before you begin
 
 To upgrade your network, you need to [retrieve your entitlement key](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp#deploy-ocp-entitlement-key) from the My {{site.data.keyword.IBM_notm}} Dashboard, and [create a Kubernetes secret](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp#deploy-ocp-docker-registry-secret) to store the key on your OpenShift project. If the Entitlement key secret was removed from your cluster, or if your key is expired, then you need to download another key and create a new secret.
+
+Occasionally, a five node ordering service that was deployed using v2.1.2 will be deleted by the Kubernetes garbage collector because it considers the nodes a resource that needs to be cleaned up. This process is both random and unrecoverable --- if the ordering service is deleted, all of the channels hosted on it are permanently lost. To prevent this, the `ownerReferences` field in the configuration of each ordering node must be removed **before upgrading to v2.1.3**. For the steps about how to pull the configuration file, remove `ordererReferences`, and apply the change, see [Known issues](https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-sw-known-issues#sw-known-issues-ordering-service-delete) in the v2.1.2 documentation.
+{:important}
 
 ## Step One: Update the ClusterRole
 {: #upgrade-ocp-clusterrole}
