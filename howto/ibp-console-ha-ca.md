@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-03-23"
 
 keywords: high availability, CA, PostgreSQL, replica sets
 
@@ -35,6 +35,8 @@ Because redundancy is required to achieve high availability (HA) networks, you c
 {:shortdesc}
 
 **Target audience:** This topic is designed for network operators who are responsible for creating, monitoring, and managing the blockchain network.
+
+
 
 ## Configuring CA replica sets
 {: #ibp-console-build-ha-ca-replica-sets}
