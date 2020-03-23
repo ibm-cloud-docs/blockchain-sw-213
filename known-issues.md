@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-20"
+lastupdated: "2020-03-23"
 
 keywords: catalina, chrome, external CA, TLS, orderer, error
 
@@ -38,7 +38,7 @@ The console will not work in the Chrome browser on Mac OS Catalina when the {{si
 1.  Use a different [supported browser](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp#deploy-ocp-browsers) with Catalina.
 2. Use your own [TLS certificates when deploying on OpenShift Container Platform](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp#use-your-own-tls-certificates-optional-) or [TLS certificates when deploying on Kubernetes or {{site.data.keyword.cloud_notm}} Private](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8#use-your-own-tls-certificates-optional-).
 3. Run the following commands to generate a new key and certificate pair for the console that will fix the problem.
-   1. Run the following command to get the pod that corresponds to the ibp console:
+   1. Run the following command to get the pod that corresponds to the console:
       ```
       kubectl get po
       ```
@@ -58,18 +58,4 @@ The console will not work in the Chrome browser on Mac OS Catalina when the {{si
       kubectl delete po <pod-name>
       ```
       {: codeblock}
-    When the pod restart completes, you should now be able to login to your console URL from a Chrome Browser.
-
-## Exporting an ordering node shows error for missing TLS certs
-{: #sw-known-issues-orderer-tls-cert-error}
-
-When attempting to export an ordering node, you might see the following error: `Some ordering service TLS certificates could not be retrieved at this time and will not be included in the exported information.`
-
-You can safely ignore this error, as the certificates the console is trying to pull are only needed for a feature that is not currently enabled.
-
-## Unable to create a five-node Raft ordering service using external CA certificates
-{: #sw-known-issues-external-CA-cant-create}
-
-Currently, it is not possible to create a peer or ordering nodes using certificates entered into the console as described in the [Advanced deployment options](/docs/blockchain?topic=blockchain-ibp-console-adv-deployment#ibp-console-adv-deployment-third-party-ca).
-
-It is still possible to create components using the normal register and enroll flows in the console.
+    When the pod restart completes, you should now be able to log in to your console URL from a Chrome Browser.
