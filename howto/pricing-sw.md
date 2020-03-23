@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-20"
+lastupdated: "2020-03-23"
 
 keywords: pricing model, VPC, CPU, vCPU, virtual core, cost, scalability, estimation, optimize your cost
 
@@ -30,7 +30,7 @@ subcollection: blockchain-sw-213
 </div>
 
 
-This guide helps you understand the pricing model for {{site.data.keyword.blockchainfull}} Platform v2.1.3, and how much you will pay when you develop and grow your blockchain network of peers, ordering service, and Certificate Authorities components, which are based on Hyperledger Fabric v1.4.6.
+This guide helps you understand the pricing model for {{site.data.keyword.blockchainfull}} Platform v2.1.3, and how much you will pay when you develop and grow your blockchain network of Certificate Authorities, peers, and ordering service components, that are based on Hyperledger Fabric v1.4.6.
 {:shortdesc}
 
 ## License
