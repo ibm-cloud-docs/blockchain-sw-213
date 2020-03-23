@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-18"
+lastupdated: "2020-03-23"
 
 keywords: IBM Blockchain Platform, administrate, add user, remove user, password, APIs, authentication, view logs
 
@@ -62,7 +62,7 @@ Permissions are cumulative. If you select a **Manager** role, the user will also
 
 
 
-The password that you provided to the [console custom resource definition](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp#deploy-ocp-console) becomes the default password for the console. All users need to use this password when they log in to the console for the first time. The console manager can also specify a new default password. In the **Users** tab of the console, click the **Update configuration** link under your authentication service tile name. In the right panel, you can view or update the default password for new users of the console.
+The password that you provided to the console custom resource definition becomes the default password for the console. All users need to use this password when they log in to the console for the first time. The console manager can also specify a new default password. In the **Users** tab of the console, click the **Update configuration** link under your authentication service tile name. In the right panel, you can view or update the default password for new users of the console.
 
 
 You need to share the default password, or the default password that you reset, with the users so that they can log in to the console. They will be required to change the password upon their first login.
@@ -102,7 +102,7 @@ Navigate to the **Settings** tab in the console browser to change the logging se
 
 Set the number of collected logs by using the drop-down list under each log type. For example, **Error** and **Warning** collect the least amount of logs, while **Debug** and **All** collect the most.
 
-You can view only the console logs if you are logged in as a console administrator. To view the logs from the **Settings** tab, replace the word `settings` in the browser URL with `api/v1/logs`. For example, if your console url is `localhost:3001/settings`, you can view your logs by navigating to `localhost:3001/api/v1/logs`. Client and server logs are collected in separate files. The most recent logs are at the top of the page.
+You can view only the console logs if you are logged in as a console administrator. To view the logs from the **Settings** tab, replace the word `settings` in the browser URL with `api/v2/logs`. For example, if your console url is `localhost:3001/settings`, you can view your logs by navigating to `localhost:3001/api/v2/logs`. Client and server logs are collected in separate files. The most recent logs are at the top of the page.
 
 ### Viewing your node logs
 {: #console-icp-manage-node-logs}

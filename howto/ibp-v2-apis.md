@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-13"
+lastupdated: "2020-03-23"
 
 keywords: APIs, build a network, authentication, service credentials, API key, API endpoint, IAM access token, Fabric CA client, import a network, generate certificates
 
@@ -40,7 +40,7 @@ This tutorial introduces the generic flow to build a blockchain network with {{s
 ## Prerequisites
 {: #ibp-v2-apis-prereq}
 
-The APIs target your {{site.data.keyword.blockchainfull_notm}} Platform console to authenticate calls and communicate with your nodes. Therefore you must deploy the {{site.data.keyword.blockchainfull_notm}} Platform console before you can start using the {{site.data.keyword.blockchainfull_notm}} Platform console APIs. If you have not yet deployed the console on your cluster, see [Deploying {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3](/docs/blockchain-sw/reference?topic=blockchain-sw-deploy-ocp#deploy-ocp).
+The APIs target your {{site.data.keyword.blockchainfull_notm}} Platform console to authenticate calls and communicate with your nodes. Therefore you must deploy the {{site.data.keyword.blockchainfull_notm}} Platform console before you can start using the {{site.data.keyword.blockchainfull_notm}} Platform console APIs. If you have not yet deployed the console on your cluster, see [Getting started with IBM Blockchain Platform v2.1.3](/docs/blockchain-sw-213?topic=blockchain-sw-213-get-started-console-ocp).
 
 To use the APIs, you will need to gather the following information:
 
@@ -66,7 +66,7 @@ Use the request below to create an API key and secret. You can then use this key
 
 | **Request** |  |
 |-------------|-----------|
-| PATH | POST `<API_endpoint>`/ak/api/v1/permissions/keys |
+| PATH | POST `<API_endpoint>`/ak/api/v2/permissions/keys |
 | **Request body fields** | |
 | <ul><li>`roles`</li><li>`description`</li></ul>| <ul><li>`["reader", "writer", "manager"]` At least one value is required </li><li>`string` optional</li></ul>|
 | **Response body fields** | |
@@ -77,7 +77,7 @@ Use the request below to create an API key and secret. You can then use this key
 {: #console-icp-manage-create-api-key-example}
 ```
 curl -X POST \
-  https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v1/permissions/keys \
+  https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v2/permissions/keys \
   -u user@email.com:password \
   -H 'Content-Type: application/json' \
   -d '{
@@ -93,7 +93,7 @@ Once you have created an API key and secret, you can use the APIs to view or rem
 
 | **Request** |  |
 |-------------|-----------|
-| Path | GET `<API_endpoint>`/ak/api/v1/permissions/keys |
+| Path | GET `<API_endpoint>`/ak/api/v2/permissions/keys |
 | **Response body fields** | |
 | <ul><li>`api_key`</li><li>`roles`</li><li>`ts_created`</li><li>`description`</li></ul>| <ul><li>`string`</li><li>`["<role>"]`</li><li>`number` Unix timestamp in milliseconds</li><li>`string`</li></ul>|
 | Authorization required | reader |
@@ -102,7 +102,7 @@ Once you have created an API key and secret, you can use the APIs to view or rem
 {: #console-icp-manage-view-api-key-example}
 ```
 curl -X GET \
-  https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v1/permissions/keys \
+  https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v2/permissions/keys \
   -u <api_key>:<api_secret>
 ```
 
@@ -111,7 +111,7 @@ curl -X GET \
 
 | **Request** |  |
 |-------------|-----------|
-| Path | DELETE `<API_endpoint>`/ak/api/v1/permissions/keys/`<api_key>` |
+| Path | DELETE `<API_endpoint>`/ak/api/v2/permissions/keys/`<api_key>` |
 | Authorization required| manager |
 
 ### Example curl request: delete API key
@@ -120,7 +120,7 @@ curl -X GET \
 
 ```
 curl -X DELETE \
-  https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v1/permissions/keys/<api_key> \
+  https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v2/permissions/keys/<api_key> \
   -u <api_key>:<api_secret>
 ```
 
@@ -143,7 +143,7 @@ For the APIs that govern the users and settings of your console, and manage the 
 
 | **Request** |  |
 |-------------|-----------|
-| Path | GET `<API_endpoint>`/ak/api/v1/permissions/users |
+| Path | GET `<API_endpoint>`/ak/api/v2/permissions/users |
 | **Response body fields** | |
 | <ul><li>`uuids`</li><li>`email`</li><li>`roles`</li><li>`created`</li></ul>| <ul><li>`string` user id</li><li>`string` email address</li><li>`["<role>"]`</li><li>`number` Unix timestamp in milliseconds</li></ul>|
 | Authorization required | reader |
@@ -153,7 +153,7 @@ For the APIs that govern the users and settings of your console, and manage the 
 
 ```
 curl -X GET \
-  https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v1/permissions/users \
+  https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v2/permissions/users \
   -u <api_key>:<api_secret> \
   -k
 ```
@@ -163,7 +163,7 @@ curl -X GET \
 
 | **Request** |  |
 |-------------|-----------|
-| Path | PUT `<API_endpoint>`/ak/api/v1/permissions/users |
+| Path | PUT `<API_endpoint>`/ak/api/v2/permissions/users |
 | **Request body fields** | |
 | <ul><li>`uuids`</li><li>`roles`</li></ul> | <ul><li>`array of strings` user ids </li><li>`["reader", "writer", "manager"]` At least one value is required</li></ul> |
 | **Response body fields** | |
@@ -175,7 +175,7 @@ curl -X GET \
 
 ```
 curl -X PUT \
-  https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v1/permissions/users \
+  https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v2/permissions/users \
   -u <api_key>:<api_secret> \
   -k \
   -H 'Content-Type: application/json' \
@@ -193,7 +193,7 @@ curl -X PUT \
 
 | **Request** |  |
 |-------------|-----------|
-| Path | POST `<API_endpoint>`/ak/api/v1/permissions/users |
+| Path | POST `<API_endpoint>`/ak/api/v2/permissions/users |
 | **Request body fields** | |
 | <ul><li>`roles`</li><li>`description`</li></ul>| <ul><li>`["reader", "writer", "manager"]` At least one value is required </li><li>`string` optional</li></ul>|
 | Authorization | manager |
@@ -203,7 +203,7 @@ curl -X PUT \
 
 ```
 curl -X POST \
-  https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v1/permissions/users \
+  https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v2/permissions/users \
   -u <api_key>:<api_secret> \
   -k \
   -H 'Content-Type: application/json' \
@@ -221,7 +221,7 @@ curl -X POST \
 
 | **Request** |  |
 |-------------|-----------|
-| Path | DELETE `<API_endpoint>`/ak/api/v1/permissions/users |
+| Path | DELETE `<API_endpoint>`/ak/api/v2/permissions/users |
 | **Request body fields** | |
 | <ul><li>`users`</li></ul>| <ul><li>`string` user id</li></ul>|
 | **Response body fields** | |
@@ -233,7 +233,7 @@ curl -X POST \
 
 ```
 curl -X DELETE \
-  https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v1/permissions/users \
+  https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v2/permissions/users \
   -u <api_key>:<api_secret> \
   -k \
   -H 'Content-Type: application/json' \
@@ -255,7 +255,7 @@ As an example, the API call below will return information about all of the compo
 
 ```
 curl -X GET \
-  https://d456fcd8ee0e4ddfb1ad9bf45986e546-optools.bp01.blockchain.cloud.ibm.com/ak/api/v1/components \
+  https://d456fcd8ee0e4ddfb1ad9bf45986e546-optools.bp01.blockchain.cloud.ibm.com/ak/api/v2/components \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer eyJraWQ.....zJPsw
 ```
@@ -264,7 +264,7 @@ The same API call would resemble the request below for a console deployed with {
 
 ```
 curl -X GET \
-https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v1/components \
+https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v2/components \
   -H 'Content-Type: application/json' \
   -u kO25ME32Nu8TikR_:buYImbg0co8SxneoBWzHueYwrf9Xhg5f \
   -k
@@ -284,7 +284,7 @@ You can only import CA, peer, and ordering nodes that are exported from other {{
 
 You can use APIs to create blockchain components in your instance of the {{site.data.keyword.blockchainfull_notm}} Platform. Use the following steps to build a blockchain network by using the {{site.data.keyword.blockchainfull_notm}} APIs.
 
-1. Create a Certificate Authority (CA) by calling [`POST /ak/api/v1/kubernetes/components/ca`](/apidocs/blockchain#create-a-ca).
+1. Create a Certificate Authority (CA) by calling [`POST /ak/api/v2/kubernetes/components/ca`](/apidocs/blockchain#create-a-ca).
 
   Remember your input and the response, you will need them later.
   {: tip}
@@ -301,13 +301,13 @@ You can use APIs to create blockchain components in your instance of the {{site.
 
   You can also complete these steps by using your {{site.data.keyword.blockchainfull_notm}} Platform console. For more information,  see [Creating and managing identities](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-identities).
 
-3. [Create an MSP definition for your organization](#ibp-v2-apis-msp) by calling [`POST /ak/api/v1/components/msp`](/apidocs/blockchain?#import-a-membership-service-provide-msp).
+3. [Create an MSP definition for your organization](#ibp-v2-apis-msp) by calling [`POST /ak/api/v2/components/msp`](/apidocs/blockchain?#import-an-msp).
 
 4. [Build the configuration file](#ibp-v2-apis-config) that is required to create an ordering service or peer. You must build a unique configuration file for each ordering service or peer that you want to create. If you are deploying multiple ordering nodes, you need to provide a configuration file for each node that you want to create.
 
-5. Create an ordering service by calling [`POST /ak/api/v1/kubernetes/components/orderer`](/apidocs/blockchain#create-an-ordering-service).
+5. Create an ordering service by calling [`POST /ak/api/v2/kubernetes/components/orderer`](/apidocs/blockchain#create-an-ordering-service).
 
-6. Create a peer by calling [`POST /ak/api/v1/kubernetes/components/peer`](/apidocs/blockchain#create-a-peer).
+6. Create a peer by calling [`POST /ak/api/v2/kubernetes/components/peer`](/apidocs/blockchain#create-a-peer).
 
 7. If you want to use the console to operate your blockchain components, you must import your administrator identity into your console wallet. Use the wallet tab to import the certificate and private key of your node admin into the console and create an identity. You then need to use the console to associate this identity with the components you created. For more information, see [Importing an admin identity into the {{site.data.keyword.blockchainfull_notm}} Platform console](#ibp-v2-apis-admin-console).
 
@@ -544,18 +544,18 @@ curl -X POST "https://{API-Endpoint}/ak/api/v2/kubernetes/components/fabric-peer
 
 You can also use the APIs to import {{site.data.keyword.blockchainfull_notm}} components that are created by using the APIs or the {{site.data.keyword.blockchainfull_notm}} Platform console into another service instance of the {{site.data.keyword.blockchainfull_notm}} Platform.
 
-1. Import a CA by calling [`POST /ak/api/v1/components/ca`](/apidocs/blockchain#import-a-ca).
+1. Import a CA by calling [`POST /ak/api/v2/components/ca`](/apidocs/blockchain#import-a-ca).
 
   Remember your input and the response, you will need them later.
   {: tip}
 
   You need to wait for the CA to start. It might take several minutes depending on environment. You can call [`GET /components`](/apidocs/blockchain#get-all-components) to check the CA status. You will get repeated errors before you get a `200` status code to go to next step. Note that this API call times out in one minute.
 
-2. Import an organization MSP definition by calling [`POST /ak/api/v1/components/msp`](/apidocs/blockchain#import-a-membership-service-provide-msp).
+2. Import an organization MSP definition by calling [`POST /ak/api/v2/components/msp`](/apidocs/blockchain#import-an-msp).
 
-3. Import an ordering service by calling [`POST /ak/api/v1/components/orderer`](/apidocs/blockchain#import-an-ordering-service).
+3. Import an ordering service by calling [`POST /ak/api/v2/components/orderer`](/apidocs/blockchain#import-an-ordering-service).
 
-4. Import a peer by calling [`POST /ak/api/v1/components/peer`](/apidocs/blockchain#import-a-peer).
+4. Import a peer by calling [`POST /ak/api/v2/components/peer`](/apidocs/blockchain#import-a-peer).
 
 5. If you plan to use the {{site.data.keyword.blockchainfull_notm}} Platform console to operate your blockchain components, you must import your component administrator identities into your console wallet. For more information, see [Importing an admin identity into the {{site.data.keyword.blockchainfull_notm}} Platform console](#ibp-v2-apis-admin-console).
 
@@ -618,7 +618,7 @@ You can use the Fabric CA client to operate your CAs. Run the following Fabric C
   ```
   {:codeblock}
 
-5. Retrieve the TLS certificate of your CA to be used by the Fabric CA client. If you are using the {{site.data.keyword.blockchainfull_notm}} Platform console, open the CA and click **Settings**, and look for the certificate in base64 format in the **TLS Certificate** field. If your are using the APIs, you can call [`GET /ak/api/v1/components`](/apidocs/blockchain#get-all-components) and find the CA TLS certificate in the `"PEM"` field. If you created the CA by using the `Create a Fabric CA` API, you can also find the TLS certificate in the response body.
+5. Retrieve the TLS certificate of your CA to be used by the Fabric CA client. If you are using the {{site.data.keyword.blockchainfull_notm}} Platform console, open the CA and click **Settings**, and look for the certificate in base64 format in the **TLS Certificate** field. If your are using the APIs, you can call [`GET /ak/api/v2/components`](/apidocs/blockchain#get-all-components) and find the CA TLS certificate in the `"PEM"` field. If you created the CA by using the `Create a Fabric CA` API, you can also find the TLS certificate in the response body.
 
   You need to convert the certificate from base64 into PEM format to use it to communicate with your CA. Insert the base64 encoded string of the TLS certificate into command below. Ensure that you are in your `$HOME/fabric-ca-client` directory.
 
@@ -942,7 +942,7 @@ You need to either encode the special character or surround the url with the sin
 ## Creating an organization MSP definition
 {: #ibp-v2-apis-msp}
 
-You can use the APIs to create an organization MSP definition by calling [`POST /ak/api/v1/components/msp`](/apidocs/blockchain#import-a-membership-service-provide-msp). This MSP contains certificates that define your organization in a blockchain consortium, as well as the admin certificates that you can use to operate your network. If you followed the step above, you have already generated the certificates that are needed to create an organization MSP. Use the following steps to complete the request body of the API call.
+You can use the APIs to create an organization MSP definition by calling [`POST /ak/api/v2/components/msp`](/apidocs/blockchain#import-an-msp). This MSP contains certificates that define your organization in a blockchain consortium, as well as the admin certificates that you can use to operate your network. If you followed the step above, you have already generated the certificates that are needed to create an organization MSP. Use the following steps to complete the request body of the API call.
 
 1. Select an MSP ID for your organization. The MSP ID is the formal name of your organization within the consortium. The MSP ID used to create the organization MSP needs to be the same that you use to deploy your peers.
 
@@ -1084,7 +1084,7 @@ First, we need to provide the connection information of your CA on the {{site.da
 Open the CA in your console and click **Settings**, then the **Export** button to export the CA information to a JSON file. You can use the values from this file to complete your configuration file.
 
 **If your are using the APIs:**
-You can call [`GET /ak/api/v1/components`](/apidocs/blockchain#get-all-components) to get the connection information of your CA. If you created the CA with the `Create a Fabric CA` API, you can also find the necessary information in the response body.
+You can call [`GET /ak/api/v2/components`](/apidocs/blockchain#get-all-components) to get the connection information of your CA. If you created the CA with the `Create a Fabric CA` API, you can also find the necessary information in the response body.
 
 - The `"cahost"` and `"caport"` values are visible in the `ca_url` field in the response body or CA JSON file that you exported.  For example, if your `ca_url` is https://9.30.94.174:30167, the value of the `"cahost"` would be `9.30.94.174` and the `"caport"` would be `30167`.
 - The `"caname"` is the name of the CA that was specified when you deployed the CA. This is the value of the `ca_name` field in the response body or the exported JSON file.

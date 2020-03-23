@@ -21,7 +21,6 @@ IBM Blockchain Platform v2.1.3
 		howto/ibp-console-ic-ha-howto.md
 		howto/ibp-console-ha-ca.md
 		reference/hsm-gemalto.md
-		/blockchain/blockchain-k8s-overview
 
 	security.md
 	ibp-console-ha.md
@@ -69,6 +68,7 @@ IBM Blockchain Platform v2.1.3
 	{: .navgroup id="reference"}
 	[API reference](https://cloud.ibm.com/apidocs/blockchain)
 	/blockchain/blockchain-hyperledger-fabric
+	/blockchain/blockchain-k8s-overview
 	glossary.md
 	{: .navgroup-end}
 

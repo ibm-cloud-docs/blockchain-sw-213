@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-05"
+lastupdated: "2020-03-23"
 
 keywords: IBM Blockchain Platform, support case, Hyperledger Fabric Community, Cloud tickets, Rocket Chat, dWAnswers
 
@@ -39,7 +39,7 @@ It is recommended to start with [free digital support resources](/docs/blockchai
 {: #blockchain-support-resources}
 
 **{{site.data.keyword.blockchainfull_notm}} Resources**
-  This [{{site.data.keyword.blockchainfull_notm}} Platform documentation ](/docs/blockchain-sw-213?topic=blockchain-sw-213-get-started-console-ocp), provides guidance on how to get started with {{site.data.keyword.blockchainfull_notm}} Platform. You can find corresponding topics from the left navigator or search any term with the search function on the top.
+  This [{{site.data.keyword.blockchainfull_notm}} Platform documentation](/docs/blockchain-sw-213?topic=blockchain-sw-213-get-started-console-ocp), provides guidance on how to get started with {{site.data.keyword.blockchainfull_notm}} Platform. You can find corresponding topics from the left navigator or search any term with the search function on the top.
 
   You can find blockchain tutorials and code patterns on [{{site.data.keyword.IBM_notm}} Developer](https://developer.ibm.com/technologies/blockchain/){: external} that provide guidance for building your own smart contracts and applications.
 
