@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-20"
+lastupdated: "2020-03-23"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises
 
@@ -86,7 +86,7 @@ When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PP
 ## Before you begin
 {: #deploy-k8-prerequisites-firewall}
 
-1. The {{site.data.keyword.blockchainfull_notm}} Platform can be installed only on the [Supported Platforms](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-ocp-about#console-ocp-about-prerequisites).
+1. The {{site.data.keyword.blockchainfull_notm}} Platform can be installed only on the [Supported Platforms](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-ocp-about#console-ocp-about-prerequisites){: external}.
 
 2. You need to install and connect to your cluster by using the [kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl){: external} to deploy the platform. If you are using {{site.data.keyword.cloud_notm}} Private, install the [{{site.data.keyword.cloud_notm}} Private CLI 3.2.1](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.1/manage_cluster/install_cli.html){: external}. The {{site.data.keyword.cloud_notm}} Private CLI includes the kubectl CLI.
 
@@ -543,11 +543,10 @@ spec:
 
 - Replace `<CLUSTER_TYPE>` with `K8S` if you are deploying the platform on open source Kubernetes or Rancher.
 - Replace `<CLUSTER_TYPE>` with `ICP` if you are deploying the platform on {{site.data.keyword.cloud_notm}} Private.
-- If you are deploying the platform on LinuxONE on s390x, replace `amd64` in the operator image tag with `s390x`.
-- If you changed the name of the Docker key secret, then you need to edit the field of `name: docker-key-secret`.
 - If you are using {{site.data.keyword.cloud_notm}} Private on LinuxONE (s390x), you need to make the following additional customizations:
    1. In the `spec.affinity` section, change `amd64` to `s390x`.
    2. In the `spec.containers` section, replace `amd64` in the operator `images` tag with `s390x`.
+- If you changed the name of the Docker key secret, then you need to edit the field of `name: docker-key-secret`.
 
 Then, use the kubectl CLI to add the custom resource to your namespace.
 
@@ -558,8 +557,8 @@ kubectl apply -f ibp-operator.yaml -n <NAMESPACE>
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <NAMESPACE>`. If your operator deployment is successful, then you can see the following tables with four ones displayed. The operator takes about a minute to deploy.
 ```
-NAME           DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-ibp-operator   1         1         1            1           1m
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+ibp-operator   1/1     1            1           1m
 ```
 
 ## Deploy the {{site.data.keyword.blockchainfull_notm}} Platform console
@@ -803,9 +802,9 @@ kubectl apply -f ibp-console.yaml -n <NAMESPACE>
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <NAMESPACE>`. If your console deployment is successful, you can see `ibpconsole` added to the deployment table, with four ones displayed. The console takes a few minutes to deploy. You might need to click refresh and wait for the table to be updated.
 ```
-NAME           DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-ibp-operator   1         1         1            1           10m
-ibpconsole     1         1         1            1           4m
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+ibp-operator   1/1     1            1           10m
+ibpconsole     1/1     1            1           4m
 ```
 
 The console consists of four containers that are deployed inside a single pod:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-20"
+lastupdated: "2020-03-23"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -621,12 +621,12 @@ You also need to make additional edits to the file depending on your choices in 
 - If you created a new storage class for your network, provide the storage class that you created to the `class:` field.
 
 If you are deploying on OpenShift Container Platform v4.2 on LinuxONE, you need to replace:
-```
+```yaml
 arch:
 - amd64
 ```
 in the `spec:` section with:
-```
+```yaml
 arch:
 - s390x
 ```
@@ -749,9 +749,34 @@ kubectl create secret generic console-tls-secret --from-file=tls.crt=./tlscert.p
 ```
 {:codeblock}
 
-After you create the secret, add the following field to the `spec:` section of `ibp-console.yaml` with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide name of the TLS secret that you created to the field:
-```
-tlsSecretName: console-tls-secret
+After you create the secret, add the `tlsSecretName` field to the `spec:` section of `ibp-console.yaml` with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key stored in a secret named `"console-tls-secret"`:
+```yaml
+apiVersion: ibp.com/v1alpha1
+kind: IBPConsole
+metadata:
+  name: ibpconsole
+  spec:
+    arch:
+    - amd64
+    license: accept
+    serviceAccountName: default
+    proxyIP:
+    email: "<EMAIL>"
+    password: "<PASSWORD>"
+    registryURL: cp.icr.io/cp
+    imagePullSecret: "docker-key-secret"
+    networkinfo:
+        domain: <DOMAIN>
+    storage:
+      console:
+        class: default
+        size: 10Gi
+    tlsSecretName: "console-tls-secret"
+    clusterdata:
+      zones:
+        - dal10
+        - dal12
+        - dal13
 ```
 {:codeblock}
 
