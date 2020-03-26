@@ -654,7 +654,7 @@ kubectl apply -f console-upgrade.yaml
 ```
 {:codeblock}
 
-## Step four: Enable new features
+### Step four: Enable new features
 {: #upgrade-ocp-fw-features}
 
 After you upgrade your console, you need to enable the Hardware Security Module (HSM) and the ability to add or remove ordering nodes.
