@@ -265,9 +265,9 @@ If you experience a problem while you are upgrading the operator, go to this [tr
 ## Step three: Enable new features
 {: #upgrade-k8-features}
 
-After you upgrade your console, you need to enable the Hardware Security Module (HSM) and the ability add or remove ordering nodes.
+After you upgrade your console, you need to enable the Hardware Security Module (HSM) and the ability to add or remove ordering nodes.
 
-1. Copy the `ibpconsole ConfigMap` to a file by running the following command replacing `<NAMESPACE>` with the name of you Kubernetes namespace or OpenShift Container Platform project.
+1. Copy the `ibpconsole ConfigMap` to a file by running the following command. Replace `<NAMESPACE>` with the name of you Kubernetes namespace or OpenShift Container Platform project.
 
   ```
   kubectl get cm ibpconsole-console -n <NAMESPACE> -o yaml > ibpconsole-cm.yaml
@@ -313,7 +313,7 @@ After you upgrade your console, you need to enable the Hardware Security Module 
         scale_raft_nodes_enabled: true
   ```
   {: codeblock}
-3. Apply the changes you made to the `ibpconsole-cm.yaml` file by running the following command, replacing `<NAMESPACE>` with the name of your Kubernetes namespace or OpenShift Container Platform project.
+3. Apply the changes that you made to the `ibpconsole-cm.yaml` file by running the following command. Replace `<NAMESPACE>` with the name of your Kubernetes namespace or OpenShift Container Platform project.
 
   ```
   kubectl apply -f  ibpconsole-cm.yaml -n <NAMESPACE>
@@ -340,7 +340,7 @@ After you upgrade your console, you need to enable the Hardware Security Module 
     kubectl delete po <CONSOLE-POD>
     ```
     {: codeblock}
-    
+
 5. You can verify that these changes worked by clicking **Add Certificate Authority** on the **Nodes** tab of the console. Click **Create a Certificate Authority** and click **Next**. Look under the **Advanced deployment options**. You should now see a checkbox for **Hardware Security Module (HSM)**.
 
 
@@ -653,9 +653,9 @@ kubectl apply -f console-upgrade.yaml
 ### Step four: Enable new features
 {: #upgrade-k8-fw-features}
 
-After you upgrade your console, you need to enable the Hardware Security Module (HSM) and the ability add or remove ordering nodes.
+After you upgrade your console, you need to enable the Hardware Security Module (HSM) and the ability to add or remove ordering nodes.
 
-1. Copy the `ibpconsole ConfigMap` to a file by running the following command replacing `<NAMESPACE>` with the name of you Kubernetes namespace or OpenShift Container Platform project.
+1. Copy the `ibpconsole ConfigMap` to a file by running the following command. Replace `<NAMESPACE>` with the name of you Kubernetes namespace or OpenShift Container Platform project.
 
   ```
   kubectl get cm ibpconsole-console -n <NAMESPACE> -o yaml > ibpconsole-cm.yaml
@@ -701,7 +701,7 @@ After you upgrade your console, you need to enable the Hardware Security Module 
         scale_raft_nodes_enabled: true
   ```
   {: codeblock}
-3. Apply the changes you made to the `ibpconsole-cm.yaml` file by running the following command, replacing `<NAMESPACE>` with the name of your Kubernetes namespace or OpenShift Container Platform project.
+3. Apply the changes that you made to the `ibpconsole-cm.yaml` file by running the following command. Replace `<NAMESPACE>` with the name of your Kubernetes namespace or OpenShift Container Platform project.
 
   ```
   kubectl apply -f  ibpconsole-cm.yaml -n <NAMESPACE>
@@ -728,7 +728,7 @@ After you upgrade your console, you need to enable the Hardware Security Module 
     kubectl delete po <CONSOLE-POD>
     ```
     {: codeblock}
-    
+
 5. You can verify that these changes worked by clicking **Add Certificate Authority** on the **Nodes** tab of the console. Click **Create a Certificate Authority** and click **Next**. Look under the **Advanced deployment options**. You should now see a checkbox for **Hardware Security Module (HSM)**.
 
 
