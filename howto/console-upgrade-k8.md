@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-23"
+lastupdated: "2020-03-26"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -77,7 +77,113 @@ To upgrade your network, you need to [retrieve your entitlement key](/docs/block
 Occasionally, a five node ordering service that was deployed using v2.1.2 will be deleted by the Kubernetes garbage collector because it considers the nodes a resource that needs to be cleaned up. This process is both random and unrecoverable --- if the ordering service is deleted, all of the channels hosted on it are permanently lost. To prevent this, the `ownerReferences` field in the configuration of each ordering node must be removed **before upgrading to v2.1.3**. For the steps about how to pull the configuration file, remove `ordererReferences`, and apply the change, see [Known issues](https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-sw-known-issues#sw-known-issues-ordering-service-delete) in the v2.1.2 documentation.
 {:important}
 
-## Step one: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
+## Step one: Update the ClusterRole
+{: #upgrade-k8-clusterrole}
+
+This step is only required if you are upgrading from v2.1.0 or v2.1.1. If you are running v2.1.2 you can skip to [Step two](#upgrade-k8-operator).
+{: note}
+
+You need to update the ClusterRole that is applied to your project. Copy the following text to a file on your local system and save the file as `ibp-clusterrole.yaml`. Edit the file and replace `<NAMESPACE>` with the name of your project.
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: <NAMESPACE>
+rules:
+- apiGroups:
+  - apiextensions.k8s.io
+  resources:
+  - persistentvolumeclaims
+  - persistentvolumes
+  - customresourcedefinitions
+  verbs:
+  - '*'
+- apiGroups:
+  - "*"
+  resources:
+  - pods
+  - services
+  - endpoints
+  - persistentvolumeclaims
+  - persistentvolumes
+  - events
+  - configmaps
+  - secrets
+  - ingresses
+  - roles
+  - rolebindings
+  - serviceaccounts
+  - nodes
+  - routes
+  - routes/custom-host
+  verbs:
+  - '*'
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  - nodes
+  verbs:
+  - get
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  - daemonsets
+  - replicasets
+  - statefulsets
+  verbs:
+  - '*'
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - servicemonitors
+  verbs:
+  - get
+  - create
+- apiGroups:
+  - apps
+  resourceNames:
+  - ibp-operator
+  resources:
+  - deployments/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ibp.com
+  resources:
+  - '*'
+  - ibpservices
+  - ibpcas
+  - ibppeers
+  - ibpfabproxies
+  - ibporderers
+  verbs:
+  - '*'
+- apiGroups:
+  - ibp.com
+  resources:
+  - '*'
+  verbs:
+  - '*'
+- apiGroups:
+  - config.openshift.io
+  resources:
+  - '*'
+  verbs:
+  - '*'
+```
+{:codeblock}
+
+After you save and edit the file, run the following commands. Replace `<NAMESPACE>` with your Kubernetes namespace.
+```
+kubectl apply -f ibp-clusterrole.yaml
+```
+{:codeblock}
+
+## Step two: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
 {: #upgrade-k8-operator}
 
 You can upgrade the {{site.data.keyword.blockchainfull_notm}} operator by fetching the operator deployment spec from your cluster. When the upgraded operator is running, the new operator will upgrade your console and download the latest images for your blockchain nodes.
@@ -156,7 +262,89 @@ ibpconsole     1         1         1            1           8m
 
 If you experience a problem while you are upgrading the operator, go to this [troubleshooting topic](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-troubleshooting#ibp-v2-troubleshooting-deployment-cr) for a list of commonly encountered problems. You can run the command to apply the original operator file, `kubectl apply -f operator.yaml` to restore your original operator deployment.
 
-## Step two: Upgrade your blockchain nodes
+## Step three: Enable new features
+{: #upgrade-k8-features}
+
+After you upgrade your console, you need to enable the Hardware Security Module (HSM) and the ability add or remove ordering nodes.
+
+1. Copy the `ibpconsole ConfigMap` to a file by running the following command replacing `<NAMESPACE>` with the name of you Kubernetes namespace or OpenShift Container Platform project.
+
+  ```
+  kubectl get cm ibpconsole-console -n <NAMESPACE> -o yaml > ibpconsole-cm.yaml
+  ```
+  {: codeblock}
+
+2. Edit the `ibpconsole-cm.yaml` file and add the following flags under `feature_flags` section of the file:
+
+  ```
+  hsm_enabled: true
+  scale_raft_nodes_enabled: true
+  ```
+  {: codeblock}
+
+  The feature_flags section should look similar to:
+  ```
+      feature_flags:
+        capabilities_enabled: true
+        create_channel_enabled: true
+        enable_ou_identifier: true
+        high_availability: true
+        infra_import_options:
+          platform: ""
+          supported_cas:
+          - openshift
+          - kubernetes
+          - icp
+          - ibmcloud
+          supported_orderers:
+          - openshift
+          - kubernetes
+          - icp
+          - ibmcloud
+          supported_peers:
+          - openshift
+          - kubernetes
+          - icp
+          - ibmcloud
+        remote_peer_config_enabled: true
+        saas_enabled: true
+        templates_enabled: false
+        hsm_enabled: true
+        scale_raft_nodes_enabled: true
+  ```
+  {: codeblock}
+3. Apply the changes you made to the `ibpconsole-cm.yaml` file by running the following command, replacing `<NAMESPACE>` with the name of your Kubernetes namespace or OpenShift Container Platform project.
+
+  ```
+  kubectl apply -f  ibpconsole-cm.yaml -n <NAMESPACE>
+  ```
+  {: codeblock}
+
+4. Restart the console pod to refresh it with these changes.
+  - Run the following command to get the name of the pod that corresponds to the console:
+
+    ```
+    kubectl get po | grep ibpconsole
+    ```
+    {: codeblock}
+
+    The output would look similar to:
+
+    ```
+    kubectl get po | grep console
+    ibpconsole-7f45b7fc-plvcx        4/4     Running   0          1d
+    ```
+
+  - In the following command, replace `<CONSOLE-POD>` with the name of the console pod from the previous command, for example `ibpconsole-7f45b7fc-plvcx `.
+    ```
+    kubectl delete po <CONSOLE-POD>
+    ```
+    {: codeblock}
+    
+5. You can verify that these changes worked by clicking **Add Certificate Authority** on the **Nodes** tab of the console. Click **Create a Certificate Authority** and click **Next**. Look under the **Advanced deployment options**. You should now see a checkbox for **Hardware Security Module (HSM)**.
+
+
+## Step four: Upgrade your blockchain nodes
 {: #upgrade-k8-nodes}
 
 After you upgrade your console, you can use the console UI to upgrade the nodes of your blockchain network. Browse to the console UI open the nodes overview tab. You can find the **Patch available** text on a node tile if there is an update available for the component. You can install this patch whenever you are ready. These patches are optional, but they are recommended. You cannot patch nodes that were imported into the console.
@@ -258,7 +446,113 @@ docker push <LOCAL_REGISTRY>/ibp-fluentd:2.1.3-20200324-amd64
 
 After you complete these steps, you can use the following instructions to deploy the {{site.data.keyword.blockchainfull_notm}} Platform with the images in your registry.
 
-### Step two: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
+### Step two: Update the ClusterRole
+{: #upgrade-k8-fw-clusterrole}
+
+This step is only required if you are upgrading from v2.1.0 or v2.1.1. If you are running v2.1.2 you can skip to [Step three](#upgrade-k8-operator-firewall).
+{: note}
+
+You need to update the ClusterRole that is applied to your project. Copy the following text to a file on your local system and save the file as `ibp-clusterrole.yaml`. Edit the file and replace `<NAMESPACE>` with the name of your project.
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: <NAMESPACE>
+rules:
+- apiGroups:
+  - apiextensions.k8s.io
+  resources:
+  - persistentvolumeclaims
+  - persistentvolumes
+  - customresourcedefinitions
+  verbs:
+  - '*'
+- apiGroups:
+  - "*"
+  resources:
+  - pods
+  - services
+  - endpoints
+  - persistentvolumeclaims
+  - persistentvolumes
+  - events
+  - configmaps
+  - secrets
+  - ingresses
+  - roles
+  - rolebindings
+  - serviceaccounts
+  - nodes
+  - routes
+  - routes/custom-host
+  verbs:
+  - '*'
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  - nodes
+  verbs:
+  - get
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  - daemonsets
+  - replicasets
+  - statefulsets
+  verbs:
+  - '*'
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - servicemonitors
+  verbs:
+  - get
+  - create
+- apiGroups:
+  - apps
+  resourceNames:
+  - ibp-operator
+  resources:
+  - deployments/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ibp.com
+  resources:
+  - '*'
+  - ibpservices
+  - ibpcas
+  - ibppeers
+  - ibpfabproxies
+  - ibporderers
+  verbs:
+  - '*'
+- apiGroups:
+  - ibp.com
+  resources:
+  - '*'
+  verbs:
+  - '*'
+- apiGroups:
+  - config.openshift.io
+  resources:
+  - '*'
+  verbs:
+  - '*'
+```
+{:codeblock}
+
+After you save and edit the file, run the following commands. Replace `<NAMESPACE>` with your Kubernetes namespace.
+```
+kubectl apply -f ibp-clusterrole.yaml
+```
+{:codeblock}
+
+### Step three: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
 {: #upgrade-k8-operator-firewall}
 
 You can upgrade the {{site.data.keyword.blockchainfull_notm}} operator by fetching the operator deployment spec from your cluster. You can then update the spec with the latest operator image that you pushed to your local registry. When the upgraded operator is running, the new operator will download the images that you pushed to your local registry and upgrade your console.
@@ -356,7 +650,89 @@ kubectl apply -f console-upgrade.yaml
 ```
 {:codeblock}
 
-### Step three: Upgrade your blockchain nodes
+### Step four: Enable new features
+{: #upgrade-k8-fw-features}
+
+After you upgrade your console, you need to enable the Hardware Security Module (HSM) and the ability add or remove ordering nodes.
+
+1. Copy the `ibpconsole ConfigMap` to a file by running the following command replacing `<NAMESPACE>` with the name of you Kubernetes namespace or OpenShift Container Platform project.
+
+  ```
+  kubectl get cm ibpconsole-console -n <NAMESPACE> -o yaml > ibpconsole-cm.yaml
+  ```
+  {: codeblock}
+
+2. Edit the `ibpconsole-cm.yaml` file and add the following flags under `feature_flags` section of the file:
+
+  ```
+  hsm_enabled: true
+  scale_raft_nodes_enabled: true
+  ```
+  {: codeblock}
+
+  The feature_flags section should look similar to:
+  ```
+      feature_flags:
+        capabilities_enabled: true
+        create_channel_enabled: true
+        enable_ou_identifier: true
+        high_availability: true
+        infra_import_options:
+          platform: ""
+          supported_cas:
+          - openshift
+          - kubernetes
+          - icp
+          - ibmcloud
+          supported_orderers:
+          - openshift
+          - kubernetes
+          - icp
+          - ibmcloud
+          supported_peers:
+          - openshift
+          - kubernetes
+          - icp
+          - ibmcloud
+        remote_peer_config_enabled: true
+        saas_enabled: true
+        templates_enabled: false
+        hsm_enabled: true
+        scale_raft_nodes_enabled: true
+  ```
+  {: codeblock}
+3. Apply the changes you made to the `ibpconsole-cm.yaml` file by running the following command, replacing `<NAMESPACE>` with the name of your Kubernetes namespace or OpenShift Container Platform project.
+
+  ```
+  kubectl apply -f  ibpconsole-cm.yaml -n <NAMESPACE>
+  ```
+  {: codeblock}
+
+4. Restart the console pod to refresh it with these changes.
+  - Run the following command to get the name of the pod that corresponds to the console:
+
+    ```
+    kubectl get po | grep ibpconsole
+    ```
+    {: codeblock}
+
+    The output would look similar to:
+
+    ```
+    kubectl get po | grep console
+    ibpconsole-7f45b7fc-plvcx        4/4     Running   0          1d
+    ```
+
+  - In the following command, replace `<CONSOLE-POD>` with the name of the console pod from the previous command, for example `ibpconsole-7f45b7fc-plvcx `.
+    ```
+    kubectl delete po <CONSOLE-POD>
+    ```
+    {: codeblock}
+    
+5. You can verify that these changes worked by clicking **Add Certificate Authority** on the **Nodes** tab of the console. Click **Create a Certificate Authority** and click **Next**. Look under the **Advanced deployment options**. You should now see a checkbox for **Hardware Security Module (HSM)**.
+
+
+### Step five: Upgrade your blockchain nodes
 {: #upgrade-k8-nodes-firewall}
 
 After you upgrade your console, you can use the console UI to upgrade the nodes of your blockchain network. For more information, see [Upgrade your blockchain nodes](#upgrade-k8-nodes).
