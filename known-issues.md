@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-23"
+lastupdated: "2020-03-31"
 
 keywords: catalina, chrome, external CA, TLS, orderer, error
 
@@ -22,12 +22,21 @@ subcollection: blockchain-sw-213
 # Known issues
 {: #sw-known-issues}
 
+This page describes known issues that you might encounter when you use {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3.
+{:shortdesc}
+
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;">
   <p style="line-height: 10px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
     <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-sw-known-issues">2.1.2</a>
     </p>
 </div>
+
+
+## Use of Intermediate Certificate Authorities (CAs)
+{: #known-issues-ica}
+
+The creation of intermediate CAs using the console or APIs on the {{site.data.keyword.blockchainfull_notm}} Platform network is not currently supported.
 
 
 ## Chrome browser on Mac OS Catalina
@@ -59,3 +68,5 @@ The console will not work in the Chrome browser on Mac OS Catalina when the {{si
       ```
       {: codeblock}
     When the pod restart completes, you should now be able to log in to your console URL from a Chrome Browser.
+
+
