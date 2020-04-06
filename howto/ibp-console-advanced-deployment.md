@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-04-06"
 
 keywords: deployment, advanced, CouchDB, LevelDB, external CA, HSM, resource allocation
 
@@ -69,17 +69,13 @@ Because your instance of the {{site.data.keyword.blockchainfull_notm}} Platform 
 2. **Check whether you have enough resources in your Kubernetes cluster**.  If you do not have enough space in your cluster to deploy or resize resources, you need to increase the size of your cluster. Check the documentation of your cloud provider to learn how to scale clusters. If you have enough space in your cluster, you can continue with step 3.
 3. **Use the console to deploy or resize your node**. If your Kubernetes pod is large enough to accommodate the new size of the node, the reallocation should proceed smoothly. If the worker node that the pod is running on is running out of resources, you can add a new larger worker node to your cluster and then delete the existing working node.
 
-
-
-
 | **Component** (all containers) | CPU**  | Memory (GB) | Storage (GB) |
 |--------------------------------|---------------|-----------------------|------------------------|
-| **Peer**                       | 1.1           | 2.8                   | 200 (includes 100 GB for peer and 100 GB for state DB)|
+| **Peer**                       | 1.1           | 2.8                   | 200 (includes 100GB for peer and 100GB for state database)|
 | **CA**                         | 0.1           | 0.2                   | 20                     |
 | **Ordering node**              | 0.35          | 0.7                   | 100                    |
-| **Console**                    | 1.2           | 2.4                   | 10                     |
 | **Operator**                   | 0.1           | 0.2                   | 0                      |
-
+| **Console**                    | 1.2           | 2.4                   | 10                     |
 
 {: caption="Table 2. Default resources for nodes on {{site.data.keyword.blockchainfull_notm}} Platform" caption-side="bottom"}
 **  Actual VPC allocations are visible in the blockchain console when a node is deployed.
