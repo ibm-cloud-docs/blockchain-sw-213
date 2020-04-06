@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-25"
+lastupdated: "2020-04-06"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall
 
@@ -92,7 +92,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 can be deployed us
 | OpenShift Container Platform | 4.1 |  x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg)  |
 | OpenShift Container Platform | 4.2 |  x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | OpenShift Container Platform on Microsoft Azure | 4.1 |  x86_64 | |
-| OpenShift Container Platform on LinuxONE | 4.2 | s390x |  |
+| OpenShift Container Platform on LinuxONE | 4.2 | s390x | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | IBM Cloud Private  | 3.2.1 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | IBM Cloud Private on LinuxONE | 3.2.1 | s390x | ![Checkmark icon](../../icons/checkmark-icon.svg)  |
 | Kubernetes ***    | v1.14 - v1.16 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) Rancher v2.3.2|
