@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-07"
 
 keywords: IBM Blockchain Platform, support case, Hyperledger Fabric Community, Cloud tickets, Rocket Chat, dWAnswers
 
@@ -49,6 +49,9 @@ It is recommended to start with [free digital support resources](/docs/blockchai
   You can also talk to a Fabric expert in [Rocket.Chat](https://chat.hyperledger.org/channel/fabric){: external} to get answers to questions about Fabric.
 
   You can also post questions or check if your question has been answered in [Stack Overflow](https://stackoverflow.com/questions/tagged/hyperledger-fabric){: external}.
+
+**Developer resources**  
+  [IBM Developer](https://developer.ibm.com/technologies/blockchain/) provides tutorials, code patterns, and videos for blockchain developers. Application developers can use the [Blockchain Design patterns](https://developer.ibm.com/technologies/blockchain/articles/getting-started-with-blockchain-design-patterns) to learn about common patterns and best practices for building applications that communicate with blockchain networks.
 
 ## Submitting support cases
 {: #blockchain-support-cases}
