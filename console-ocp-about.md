@@ -23,7 +23,7 @@ subcollection: blockchain-sw-213
 # About {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3
 {: #console-ocp-about}
 
-<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;">
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 10px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
     <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-console-ocp-about">2.1.2</a>
@@ -100,8 +100,9 @@ The {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 can be deployed us
 *** If you want to use {{site.data.keyword.IBM_notm}} Kubernetes Service, we recommend that you check out the [IBM Blockchain Platform for IBM Cloud](/docs/blockchain?topic=blockchain-ibp-v2-deploy-iks){: external} offering unless you specifically require this offering. See [Is IBM Blockchain Platform v2.1.3 suitable for you](/docs/blockchain-sw-213?topic=blockchain-sw-213-get-started-console-ocp#get-started-console-ocp-suitable).  
 
 If you are running on Azure Kubernetes Service, Amazon Elastic Kubernetes Service, or IBM Kubernetes Service, then you need to setup the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}.
-
 {: important}
+
+
 
 ## License and pricing
 {: #console-ocp-about-license}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-26"
+lastupdated: "2020-04-07"
 
 keywords: APIs, build a network, authentication, service credentials, API key, API endpoint, IAM access token, Fabric CA client, import a network, generate certificates
 
@@ -24,7 +24,7 @@ subcollection: blockchain-sw-213
 # Using the {{site.data.keyword.blockchainfull_notm}} Platform APIs
 {: #ibp-v2-apis}
 
-<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;">
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 10px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
     <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-ibp-v2-apis">2.1.2</a>
@@ -249,7 +249,7 @@ curl -X DELETE \
 
 You can also use the API's to create, delete, or edit your blockchain nodes. You can view the complete set of APIs that manage your nodes and console settings in the [{{site.data.keyword.blockchainfull_notm}} Platform API reference](https://cloud.ibm.com/apidocs/blockchain).
 
-Because you are using the APIs to communicate with your console on your Kubernetes, you need to substitute the authentication provided by {{site.data.keyword.cloud_notm}} with the API Key provided by your console. Replace the `Bearer Auth` in the API reference with  `-u <api_key>:<api_secret>`. You also need to add a `-k` or ``--insecure`` flag to the command, or download the console TLS certificate using your browser. You can not use the **Try it out** tab to test the APIs for networks deployed with {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3.
+Because you are using the APIs to communicate with your console on your Kubernetes, you need to substitute the authentication provided by {{site.data.keyword.cloud_notm}} with the API Key provided by your console. Replace the `Bearer Auth` in the API reference with  `-u <api_key>:<api_secret>`. You also need to add a `-k` or ``--insecure`` flag to the command, or download the console TLS certificate using your browser.
 
 As an example, the API call below will return information about all of the components that are managed by your console.
 
