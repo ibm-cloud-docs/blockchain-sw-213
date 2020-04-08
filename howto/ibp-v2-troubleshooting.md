@@ -451,7 +451,7 @@ After upgrading from {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2 t
 
 To resolve this problem, you need to restart the Operator pod in your cluster.
 {: tsResolve}
-  - Run the following command to get the name of the pod that corresponds to the console:
+  - Run the following command to get the name of the pod that corresponds to the operator:
 
     ```
     kubectl get po | grep ibp-operator
