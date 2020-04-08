@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-08"
 
 keywords: deployment, advanced, CouchDB, LevelDB, external CA, HSM, resource allocation
 
@@ -21,13 +21,6 @@ subcollection: blockchain-sw-213
 
 # Advanced deployment options
 {: #ibp-console-adv-deployment}
-
-<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 10px;">
-    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-ibp-console-adv-deployment">2.1.2</a>
-    </p>
-</div>
 
 
 
@@ -94,7 +87,9 @@ After you have deployed the node, you need to **monitor the resource consumption
 
 All of the containers that are associated with a node have **CPU** and **memory**, while certain containers that are associated with the peer, ordering node, and CA also have **storage**. For more information about storage, see [storage](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp#deploy-ocp-storage). 
 
-You are responsible for monitoring your CPU, memory, and storage consumption in your cluster. If you do happen to request more resources for a blockchain node than are available, the node will not start. However, existing nodes will not be affected.  For information about how to increase the CPU, memory, and storage, consult the documentation of your cloud provider.
+You are responsible for monitoring your CPU, memory, and storage consumption in your cluster. If you do happen to request more resources for a blockchain node than are available, the node will not start. However, existing nodes will not be affected. 
+
+For information about how to increase the CPU, memory, and storage, consult the documentation of your cloud provider.
 {:note}
 
 Every node has a gRPC web proxy container that bootstraps the communication layer between the console and a node. This container has fixed resource values and is included on the Resource allocation panel to provide an accurate estimate of how much space is required on your Kubernetes cluster in order for the node to deploy. Because the values for this container cannot be changed, we will not discuss the gRPC web proxy in the following sections.
@@ -1293,7 +1288,7 @@ When a CA, peer, or ordering node is configured to use an HSM, their private key
 * If multiple partitions are configured, a PKCS #11 proxy must be created for each partition.
 * An HSM is not configured for an ordering service. Rather it is configured at the ordering node level inside the ordering service. Consider the case when different organizations contribute ordering nodes to an ordering service, it is possible that some organizations may want to use an HSM for the private key for their ordering node, while other organizations may not have that requirement. But all of the ordering nodes can still function together in the ordering service nonetheless.
 * The use of an HSM introduces overhead in transaction processing, therefore you can expect a performance hit when using an HSM to manage the private keys for your nodes.
-* An HSM can be configured for a node only when the node is initially deployed. You cannot add HSM capability to existing nodes.
+* An HSM can be configured for a node only when the node is initially deployed. You cannot add HSM capability to existing nodes at this time.
 
 Configuring a node to use HSM is a three-part process:
 1. **Deploy an HSM**. Utilize the HSM appliance that is available in [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog/infrastructure/hardware-security-module){: external} or configure your own HSM. Record the value of the HSM `partition` and `PIN` to be used in the subsequent steps.
