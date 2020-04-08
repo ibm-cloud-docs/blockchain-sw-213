@@ -446,10 +446,7 @@ Replace:
 {: #ibp-v2-troubleshooting-ca-upgrade-fails}
 {: troubleshoot}
 
-After upgrading from {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2 to v2.1.3, when I try to update my CA by clicking **Update version**, it fails with the error `ECONNRESET`. The CA logs include an error similar to the following text:
-```
-"error":"CA instance 'org1ca' encountered error: Code: 23 - failed to migrate ca: no matches for kind \"IBPCA\" in version \"ibp.com/v212\
-```
+After upgrading from {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2 to v2.1.3, when I try to update my CA by clicking **Update version**, it fails with the error `ECONNRESET`. The CA logs include an error similar to the following text `"error":"CA instance 'org1ca' encountered error: Code: 23 - failed to migrate ca: no matches for kind \"IBPCA\" in version \"ibp.com/v212\`.
 {: tsSymptoms}
 
 To resolve this problem, you need to restart the Operator pod in your cluster.
@@ -472,7 +469,7 @@ To resolve this problem, you need to restart the Operator pod in your cluster.
     kubectl delete po <CONSOLE-POD>
     ```
     {: codeblock}
-    
+
 ## Why are my transactions returning an endorsement policy error: signature set did not satisfy policy?
 {: #ibp-v2-troubleshooting-endorsement-sig-failure}
 {: troubleshoot}
