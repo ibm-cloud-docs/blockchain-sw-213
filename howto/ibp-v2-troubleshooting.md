@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-08"
+lastupdated: "2020-04-12"
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
 subcollection: blockchain-sw-213
@@ -469,7 +469,8 @@ To resolve this problem, you need to restart the Operator pod in your cluster.
     kubectl delete po <CONSOLE-POD>
     ```
     {: codeblock}
-
+After the operator pod restarts, the CA node is successfully upgraded.
+   
 ## Why are my transactions returning an endorsement policy error: signature set did not satisfy policy?
 {: #ibp-v2-troubleshooting-endorsement-sig-failure}
 {: troubleshoot}
