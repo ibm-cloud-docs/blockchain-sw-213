@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-13"
 
 
 keywords: release note, latest changes, Hyperledger Fabric
@@ -32,6 +32,13 @@ subcollection: blockchain-sw-213
 Use these release notes that are grouped by date to learn about the latest changes to {{site.data.keyword.blockchainfull}} Platform v2.1
 {:shortdesc}
 
+
+## 16 April 2020
+{: #04-16-2020}
+
+**Peer and ordering node patch 1.4.3-2**  
+
+**Miscellaneous bug fixes**
 
 ## 24 March 2020
 {: #03-24-2020}
