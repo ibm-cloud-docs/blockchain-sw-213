@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-11"
+lastupdated: "2020-04-13"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -22,15 +22,7 @@ subcollection: blockchain-sw-213
 # Installing the v2.1.3 Fix Pack
 {: #install-fixpack}
 
-<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 10px;">
-    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-install-fixpack">2.1.2</a>
-    </p>
-</div>
-
-
-Users who installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 before April 16, 2020 should apply the v2.1.3 Fix Pack. The Fix Pack contains important bug fixes and should be applied to your network as soon as possible. If you installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 after April 16, 2020, the bug fixes in the Fix Pack will have been incorporated into the platform, and it is not necessary to apply the Fix Pack.
+Users who installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 before April 16, 2020 should install the v2.1.3 Fix Pack. The Fix Pack contains important bug fixes and should be applied to your network as soon as possible. If you installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 after April 16, 2020, the platform will contain all the bug fixes provided by the Fix Pack, and you do not need to apply the Fix Pack.
 {:shortdesc}
 
 You can install the Fix Pack by updating the {{site.data.keyword.blockchainfull_notm}} Platform deployment on your Kubernetes cluster to pull the latest images from the {{site.data.keyword.IBM_notm}} Entitlement registry. You can apply the Fix Pack by using the following steps:
@@ -39,7 +31,7 @@ You can install the Fix Pack by updating the {{site.data.keyword.blockchainfull_
 2. [Update the {{site.data.keyword.blockchainfull_notm}} console](#install-fixpack-console)
 3. [Update your blockchain nodes](#install-fixpack-nodes)
 
-You will need to apply the Fix Pack for each v2.1.3 network that you deployed. The steps need to be repeated for each seperate namespace. If you experience any problems, see the instructions for [rolling back the Fix Pack installation](#upgrade-k8-rollback). You can install the Fix Pack without disrupting a running network. However, you cannot use the console to deploy new nodes, install or instantiate smart contracts, or create new channels during the process.
+You will need to apply the Fix Pack for each v2.1.3 network that runs on a separate namespace. If you experience any problems, see the instructions for [rolling back the Fix Pack installation](#install-fixpack-rollback). You can install the Fix Pack without disrupting a running network. However, you cannot use the console to deploy new nodes, install or instantiate smart contracts, or create new channels during the process.
 
 ## Before you begin
 
@@ -48,9 +40,9 @@ To upgrade your network, you need to [retrieve your entitlement key](/docs/block
 ## Step one: Update the {{site.data.keyword.blockchainfull_notm}} operator
 {: #install-fixpack-operator}
 
-You can start applying the Fix Pack to your network by updating your {{site.data.keyword.blockchainfull_notm}} operator. Log in to your cluster by using the kubectl CLI. Run `kubectl get namespace` to get the name of the namespace that you used to deploy your network. You will need to reference this namespace in future commands.
+You can start applying the Fix Pack to your network by updating the {{site.data.keyword.blockchainfull_notm}} operator. Log in to your cluster by using the kubectl CLI. You can use the `kubectl get namespace` to find the name of the namespace that you used to deploy your network. You will need to reference this namespace in future commands.
 
-Run the following command to download the operator deployment spec to your local file system. Replace `<namespace>` with the name of our namespace:
+Run the following command to download the operator deployment spec to your local file system. Replace `<namespace>` with the name of your namespace:
 ```
 kubectl get deployment ibp-operator -n <namespace> -o yaml > operator.yaml
 ```
@@ -68,11 +60,11 @@ kubectl apply -f operator-fixpack.yaml
 ```
 {:codeblock}
 
-You can use the `kubectl get deployment ibp-operator -o yaml` command to confirm that the fix was applied.
+You can use the `kubectl get deployment ibp-operator -o yaml` command to confirm that new images was added to your deployment.
 
 After you apply the `operator-fixpack.yaml` operator spec to your namespace, the operator will restart and pull the latest image. While the operator is restarting, you can still access your console UI. However, you cannot use the console to install and instantiate chaincode, or use the console or the APIs to create or remove a node.
 
-You can check that the fix was applied successfully by running `kubectl get deployment ibp-operator`. If the upgrade is successful, then you can see the following tables with four ones displayed.
+You can check that the fix was applied successfully by running the `kubectl get deployment ibp-operator` command. If the upgrade is successful, then you can see the following table with four ones displayed.
 ```
 NAME           READY     UP-TO-DATE   AVAILABLE   AGE
 ibp-operator   1/1       1            1           1m
@@ -83,14 +75,14 @@ If you experience a problem while you are updating the operator, go to this [tro
 ## Step two: Update the {{site.data.keyword.blockchainfull_notm}} console
 {: #install-fixpack-console}
 
-After you update to the {{site.data.keyword.blockchainfull_notm}} operator, you need to apply the Fix Pack to your console. You can update your console by removing the ConfigMap and deployment spec that was created when the V2.1.3 console was deployed. Removing these artifacts will allow your console to pull the latest configuration and images from the updated operator.
+After you update to the {{site.data.keyword.blockchainfull_notm}} operator, you need to apply the Fix Pack to your console. You can update your console by removing the original ConfigMap and deployment spec that was created when the console was deployed. Removing these artifacts will allow your console to pull the latest configuration and images from the updated operator.
 
 Start by fetching the name of your console ConfigMap:
-
 ```
 kubectl get configmap -n <namespace>
 ```
-You can find the name of your console ConfigMap from the results from the command. You will be able to see the word console in the ConfigMap name. Use the following command to delete the console ConfigMap. Replace `<console-configmap>` with the console configmap name from the previous command.
+
+You can find the name of your console ConfigMap from the results returned by the command. You will be able to see the word console in the ConfigMap name. You can then run the following command to delete the console ConfigMap. Replace `<console-configmap>` with the name of the console console returned by the previous command.
 ```
 kubectl delete configmap -n <namespace> <console-configmap>
 ```
@@ -99,19 +91,18 @@ You then need to fetch the console deployment:
 ```
 kubectl get deployment -n <namespace>
 ```
-Find the deployment of your console from the list of results. The deployment will be named `ibpconsole` unless you changed the name when you first deployed the platform. Use the following command to delete the console deployment. Replace `<console-configmap>` with the name of the console deployment from the previous command.
+Find the deployment of your console from the list of results. The deployment will be named `ibpconsole` unless you changed the name when you first deployed the platform. Use the following command to delete the console deployment. Replace `<console-configmap>` with the name of the console deployment returned by the previous command.
 ```
 kubectl delete deployment -n <namespace> <console-deployment>
 ```
 
-After you delete the console deployment and ConfigMap, the console will download the new images and configuration settings of the v2.1.3 Fix Pack from the updated operator. You use the following commands to confirm that the console has the updated with the latest images. New images have the tags with the date `20200416`.
+After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings of the v2.1.3 Fix Pack from the updated operator. You can use the following commands to confirm that the console has the updated with the latest images and configuration. The new new images used by the console and your blockchain nodes will have the tags with the date `20200416`.
 ```
 kubectl get deployment -n <namespace> ibpconsole -o yaml
 kubectl get configmap -n <namespace> ibpconsole-configmap -o yaml
 ```
 
-
-You can check that the upgrade is complete by running `kubectl get deployment ibp-operator`. If the upgrade is successful, then you can see the following tables with four ones displayed for your operator and your console.
+You can check that the upgrade is complete by running `kubectl get deployment ibpconsole`. If the upgrade is successful, then you can see the following tables with four ones displayed for your operator and your console.
 ```
 NAME           READY     UP-TO-DATE   AVAILABLE   AGE
 ibpconsole     1/1       1            1           1m
@@ -128,6 +119,6 @@ Apply patches to nodes one at a time. Your nodes are unavailable to process requ
 ## Rolling back the Fix Pack installation
 {: #install-fixpack-rollback}
 
-When you apply the Fix Pack to your operator, it saves the secrets, deployment spec, and network information of your console before it restarts and attempts to apply the fixes to the console. If the Fix Pack fails for any reason, {{site.data.keyword.IBM_notm}} Support can roll back your upgrade and restore your previous deployment by using the information on your cluster. If you need to roll back your upgrade, you can submit a support case from the [mysupport](https://www.ibm.com/support/pages/support-ibm-blockchain-platform-v21x){: external} page.
+When you apply the Fix Pack to your operator, it saves the secrets, deployment spec, and network information of your deployment before it restarts and attempts to apply the fixes to the console. If the Fix Pack installation fails for any reason, {{site.data.keyword.IBM_notm}} Support can roll back your upgrade and restore your previous deployment by using the information on your cluster. If you need to roll back your upgrade, you can submit a support case from the [mysupport](https://www.ibm.com/support/pages/support-ibm-blockchain-platform-v21x){: external} page.
 
 You can roll back an upgrade after you use the console to operate your network. However, after you use the console to upgrade your blockchain nodes, you can no longer roll back your console to a previous version of the platform.
