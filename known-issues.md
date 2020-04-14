@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-14"
 
 keywords: catalina, chrome, external CA, TLS, orderer, error
 
@@ -32,6 +32,11 @@ This page describes known issues that you might encounter when you use {{site.da
     </p>
 </div>
 
+
+## Certicicate Authority patch install fails
+{: #sw-known-issues-ca-upgrade}
+
+After upgrading from {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2 to v2.1.3, installing the patch on a CA node fails. To resolve this problem see the [Troubleshooting](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-troubleshooting#ibp-v2-troubleshooting-ca-upgrade-fails) topic.
 
 ## Use of Intermediate Certificate Authorities (CAs)
 {: #known-issues-ica}
