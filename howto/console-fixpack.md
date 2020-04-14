@@ -22,7 +22,7 @@ subcollection: blockchain-sw-213
 # Installing the v2.1.3 Fix Pack
 {: #install-fixpack}
 
-Users who installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 before April 16, 2020 should install the v2.1.3 Fix Pack. The Fix Pack contains important bug fixes and should be applied to your network as soon as possible. If you installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 after April 16, 2020, the platform will contain all the bug fixes provided by the Fix Pack, and you do not need to apply the Fix Pack.
+Users who installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 before April 16, 2020 should install the v2.1.3 Fix Pack. The Fix Pack contains important bug fixes and should be applied to your network as soon as possible. The Fix Pack also provides support for using an HSM on Amazon Web Services. For more information, see the [April 16, 2020 Release notes](/docs/blockchain-sw-213?topic=blockchain-sw-213-release-notes-saas-20#04-16-2020). If you installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 after April 16, 2020, the platform will contain all the bug fixes and improvements provided by the Fix Pack, and you do not need to apply the Fix Pack.
 {:shortdesc}
 
 You can install the Fix Pack by updating the {{site.data.keyword.blockchainfull_notm}} Platform deployment on your Kubernetes cluster to pull the latest images from the {{site.data.keyword.IBM_notm}} Entitlement registry. You can apply the Fix Pack by using the following steps:
@@ -40,15 +40,13 @@ To upgrade your network, you need to [retrieve your entitlement key](/docs/block
 ## Step one: Update the {{site.data.keyword.blockchainfull_notm}} operator
 {: #install-fixpack-operator}
 
-You can start applying the Fix Pack to your network by updating the {{site.data.keyword.blockchainfull_notm}} operator. Log in to your cluster by using the kubectl CLI. You will need to provide the name of the Kubernetes namespace that you created to deploy your {{site.data.keyword.blockchainfull_notm}} network. If you deployed your network on Kubernetes or on  {{site.data.keyword.cloud_notm}} Private, you can use the `kubectl get namespace` command to find the name of your namespace. If you deployed the platform on the OpenShift Container Platform, you can find the name of your of your OpenShift project using the `oc get project` command. Use the project name as the value of your`<namespace>`.
+You can start applying the Fix Pack to your network by updating the {{site.data.keyword.blockchainfull_notm}} operator. Log in to your cluster by using the kubectl CLI. You will need to provide the name of the Kubernetes namespace that you created to deploy your {{site.data.keyword.blockchainfull_notm}} network. If you deployed your network on Kubernetes or on  {{site.data.keyword.cloud_notm}} Private, you can use the `kubectl get namespace` command to find the name of your namespace. If you deployed the platform on the OpenShift Container Platform, you can find the name of your of your OpenShift project using the `oc get project` command. Use the project name as the value for `<namespace>`.
 
-Run the following command to download the operator deployment spec to your local file system. Replace `<namespace>` with the name of your namespace or OpenShift project:
+Run the following command to download the operator deployment spec to your local file system. The default name of the operator deployment is `ibp-operator`. If changed the name during the deployment process, you can use the `kubectl get deployment -n <namespace>` command to get the name of the deployments on your namespace. Replace `<namespace>` with the name of your namespace or OpenShift project:
 ```
 kubectl get deployment ibp-operator -n <namespace> -o yaml > operator.yaml
 ```
 {:codeblock}
-
-The default name of the operator deployment is `ibp-operator`. If changed the name during the deployment process, you can use the `kubectl get deployment -n <namespace>` command to get the name of your deployments.
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-fixpack.yaml`. You need to update the `image:` field with the new operator image. You can find the name and tag of the latest operator image below:
 ```
@@ -62,9 +60,9 @@ kubectl apply -f operator-fixpack.yaml
 ```
 {:codeblock}
 
-You can use the `kubectl get deployment ibp-operator -o yaml` command to confirm that new images was added to your deployment.
+You can use the `kubectl get deployment ibp-operator -o yaml` command to confirm that new image was added to your deployment.
 
-After you apply the `operator-fixpack.yaml` operator spec to your namespace, the operator will restart and pull the latest image. While the operator is restarting, you can still access your console UI. However, you cannot use the console to install and instantiate chaincode, or use the console or the APIs to create or remove a node.
+After you apply the `operator-fixpack.yaml` operator spec to your namespace, the operator will restart and pull the latest operator image. While the operator is restarting, you can still access your console UI. However, you cannot use the console to install and instantiate chaincode, or use the console or the APIs to create or remove a node.
 
 You can check that the fix was applied successfully by running the `kubectl get deployment ibp-operator` command. If the upgrade is successful, then you can see the following table with four ones displayed.
 ```
@@ -79,23 +77,19 @@ If you experience a problem while you are updating the operator, go to this [tro
 
 After you update to the {{site.data.keyword.blockchainfull_notm}} operator, you need to apply the Fix Pack to your console. You can update your console by removing the original ConfigMap and deployment spec that was created when the console was deployed. Removing these artifacts will allow your console to pull the latest configuration and images from the updated operator.
 
-You can start by running the following command to delete the console ConfigMap. Replace `<namespace>` with the name of your namespace or OpenShift project:
+You can start by running the following command to delete the console ConfigMap. The default name of the console ConfigMap is `ibpconsole-configmap`. If you changed the name of the console during the deployment process, you can use the `kubectl get configmap -n <namespace>` command to get the list of ConfigMaps on your namespace. Replace `<namespace>` with the name of your namespace or OpenShift project:
 ```
 kubectl delete configmap -n <namespace> ibpconsole-configmap
 ```
 {:codeblock}
 
-The default name of the console ConfigMap is `ibpconsole-configmap`. If you changed the name of the console during the deployment process, you can use the `kubectl get configmap -n <namespace>` command to get the list of ConfigMaps on your namespace.
-
-You can then delete the console deployment using the following command:
+You can then delete the console deployment. The default name of the console deployment is `ibpconsole`, unless you changed the name during the deployment process. You can find the name of your console deployment by using the `kubectl get deployment -n <namespace>` command to get the name of the deployments on your namespace. Delete the deployment using the following command:
 ```
 kubectl delete deployment -n <namespace> ibpconsole
 ```
 {:codeblock}
 
-The default name of the console deployment is `ibpconsole`, unless you changed the name during the deployment process. You can find the name of your console deployment by using the `kubectl get deployment -n <namespace>` command to get the name of the deployments on your namespace.
-
-After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings of the v2.1.3 Fix Pack from the updated operator. You can use the following commands to confirm that the console has the updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20200416`.
+After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the v2.1.3 Fix Pack from the updated operator. You can use the following commands to confirm that the console has the updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20200416`.
 ```
 kubectl get deployment -n <namespace> ibpconsole -o yaml
 kubectl get configmap -n <namespace> ibpconsole-configmap -o yaml
