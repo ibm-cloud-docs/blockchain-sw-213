@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-13"
+lastupdated: "2020-04-14"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -95,7 +95,7 @@ kubectl delete deployment -n <namespace> ibpconsole
 
 The default name of the console deployment is `ibpconsole`, unless you changed the name during the deployment process. You can find the name of your console deployment by using the `kubectl get deployment -n <namespace>` command to get the name of the deployments on your namespace.
 
-After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings of the v2.1.3 Fix Pack from the updated operator. You can use the following commands to confirm that the console has the updated with the latest images and configuration. The new new images used by the console and your blockchain nodes will have the tags with the date `20200416`.
+After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings of the v2.1.3 Fix Pack from the updated operator. You can use the following commands to confirm that the console has the updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20200416`.
 ```
 kubectl get deployment -n <namespace> ibpconsole -o yaml
 kubectl get configmap -n <namespace> ibpconsole-configmap -o yaml
