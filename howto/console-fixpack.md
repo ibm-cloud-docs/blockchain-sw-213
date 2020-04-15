@@ -31,7 +31,7 @@ You can install the Fix Pack by updating the {{site.data.keyword.blockchainfull_
 2. [Update the {{site.data.keyword.blockchainfull_notm}} console](#install-fixpack-console)
 3. [Update your blockchain nodes](#install-fixpack-nodes)
 
-You can use these steps if you deployed the platform on the OpenShift Container Platform, {{site.data.keyword.cloud_notm}} Private, or open source Kubernetes. You will need to apply the Fix Pack for each v2.1.3 network that runs on a separate namespace. If you experience any problems, see the instructions for [rolling back the Fix Pack installation](#install-fixpack-rollback). You can install the Fix Pack without disrupting a running network. However, you cannot use the console to deploy new nodes, install or instantiate smart contracts, or create new channels during the process.
+You can use these steps if you deployed the platform on the OpenShift Container Platform, {{site.data.keyword.cloud_notm}} Private, or open source Kubernetes. You will need to apply the Fix Pack for each v2.1.3 network that runs on a separate namespace. If you experience any problems, see the instructions for [rolling back the Fix Pack installation](#install-fixpack-rollback).  If you deployed your network behind a firewall, without access to the external internet, see the separate set of instructions for [Installing the v2.1.3 Fix Pack behind a firewall](#install-fixpack-firewall). You can install the Fix Pack without disrupting a running network. However, you cannot use the console to deploy new nodes, install or instantiate smart contracts, or create new channels during the process.
 
 ## Before you begin
 
@@ -116,3 +116,106 @@ Apply patches to nodes one at a time. Your nodes are unavailable to process requ
 When you apply the Fix Pack to your operator, it saves the secrets, deployment spec, and network information of your deployment before it restarts and attempts to apply the fixes to the console. If the Fix Pack installation fails for any reason, {{site.data.keyword.IBM_notm}} Support can roll back your upgrade and restore your previous deployment by using the information on your cluster. If you need to roll back your upgrade, you can submit a support case from the [mysupport](https://www.ibm.com/support/pages/support-ibm-blockchain-platform-v21x){: external} page.
 
 You can roll back an upgrade after you use the console to operate your network. However, after you use the console to upgrade your blockchain nodes, you can no longer roll back your console to a previous version of the platform.
+
+## Installing the v2.1.3 Fix Pack behind a firewall
+{: #install-fixpack-firewall}
+
+If you deployed the {{site.data.keyword.blockchainfull_notm}} Platform behind a firewall, without access to the external internet, you can install the  v2.1.3 Fix by using the following steps:
+
+1. [Pull the latest {{site.data.keyword.blockchainfull_notm}} Platform images](#install-fixpack-firewall)
+2. [Update the {{site.data.keyword.blockchainfull_notm}} Platform operator](#install-fixpack-operator-firewall)
+3. [Update the {{site.data.keyword.blockchainfull_notm}} console](#install-fixpack-console-firewall)
+4. [Update your blockchain nodes](#install-fixpack-nodes-firewall)
+
+You can continue to submit transactions to your network while you are upgrading your network. However, you cannot use the console to deploy new nodes, install or instantiate smart contracts, or create new channels during the upgrade process.
+
+### Before you begin
+
+To upgrade your network, you need to [retrieve your entitlement key](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8-firewall#deploy-k8-entitlement-key-firewall) from the My {{site.data.keyword.IBM_notm}} Dashboard, and [create a Kubernetes secret](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8#deploy-k8-docker-registry-secret) to store the key on your namespace. If the Entitlement key secret was removed from your cluster, or if your key is expired, then you need to download another key and create a new secret.
+
+### Step one: Pull the latest {{site.data.keyword.blockchainfull_notm}} Platform images
+{: #install-fixpack-images-firewall}
+
+To upgrade your network, download the latest set of {{site.data.keyword.blockchainfull_notm}} Platform images and push them to a docker registry that you can access from behind your firewall.
+
+Use the following command to log in to the {{site.data.keyword.IBM_notm}} Entitlement Registry:
+```
+docker login --username cp --password <KEY> cp.icr.io
+```
+{:codeblock}
+
+- Replace `<KEY>` with your entitlement key.
+
+After you log in, use the following command to pull the images for {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3:
+```
+docker pull cp.icr.io/cp/ibp-operator:2.1.3-20200416-amd64
+docker pull cp.icr.io/cp/ibp-init:2.1.3-20200416-amd64
+docker pull cp.icr.io/cp/ibp-peer:1.4.6-20200416-amd64
+docker pull cp.icr.io/cp/ibp-orderer:1.4.6-20200416-amd64
+docker pull cp.icr.io/cp/ibp-ca:1.4.6-20200416-amd64
+docker pull cp.icr.io/cp/ibp-dind:1.4.6-20200416-amd64
+docker pull cp.icr.io/cp/ibp-console:2.1.3-20200416-amd64
+docker pull cp.icr.io/cp/ibp-grpcweb:2.1.3-20200416-amd64
+docker pull cp.icr.io/cp/ibp-utilities:1.4.6-20200416-amd64
+docker pull cp.icr.io/cp/ibp-couchdb:2.3.1-20200416-amd64
+docker pull cp.icr.io/cp/ibp-deployer:2.1.3-20200416-amd64
+docker pull cp.icr.io/cp/ibp-fluentd:2.1.3-20200416-amd64
+```
+{:codeblock}
+
+After you download the images, you must change the image tags to refer to your docker registry. Replace `<LOCAL_REGISTRY>` with the url of your local registry and run the following commands:
+```
+docker tag cp.icr.io/cp/ibp-operator:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200416-amd64
+docker tag cp.icr.io/cp/ibp-init:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-init:2.1.3-20200416-amd64
+docker tag cp.icr.io/cp/ibp-peer:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-peer:1.4.6-20200416-amd64
+docker tag cp.icr.io/cp/ibp-orderer:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-orderer:1.4.6-20200416-amd64
+docker tag cp.icr.io/cp/ibp-ca:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-ca:1.4.6-20200416-amd64
+docker tag cp.icr.io/cp/ibp-dind:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-dind:1.4.6-20200416-amd64
+docker tag cp.icr.io/cp/ibp-console:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-console:2.1.3-20200416-amd64
+docker tag cp.icr.io/cp/ibp-grpcweb:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-grpcweb:2.1.3-20200416-amd64
+docker tag cp.icr.io/cp/ibp-utilities:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-utilities:1.4.6-20200416-amd64
+docker tag cp.icr.io/cp/ibp-couchdb:2.3.1-20200416-amd64 <LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20200416-amd64
+docker tag cp.icr.io/cp/ibp-deployer:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-deployer:2.1.3-20200416-amd64
+docker tag cp.icr.io/cp/ibp-fluentd:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-fluentd:2.1.3-20200416-amd64
+```
+{:codeblock}
+
+You can use the `docker images` command to check that the new tags were added. You can then push the images with the new tags to your docker registry. Log in to your registry by using the following command:
+```
+docker login --username <USER> --password <LOCAL_REGISTRY_PASSWORD> <LOCAL_REGISTRY>
+```
+{:codeblock}
+
+- Replace `<USER>` with your username
+- Replace `<LOCAL_REGISTRY_PASSWORD>` with the password to your registry.
+- Replace `<LOCAL_REGISTRY>` with the url of your local registry.
+
+Then, run the following command to push the images. Replace `<LOCAL_REGISTRY>` with the url of your local registry.
+```
+docker push <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200416-amd64
+docker push <LOCAL_REGISTRY>/ibp-init:2.1.3-20200416-amd64
+docker push <LOCAL_REGISTRY>/ibp-peer:1.4.6-20200416-amd64
+docker push <LOCAL_REGISTRY>/ibp-orderer:1.4.6-20200416-amd64
+docker push <LOCAL_REGISTRY>/ibp-ca:1.4.6-20200416-amd64
+docker push <LOCAL_REGISTRY>/ibp-dind:1.4.6-20200416-amd64
+docker push <LOCAL_REGISTRY>/ibp-console:2.1.3-20200416-amd64
+docker push <LOCAL_REGISTRY>/ibp-grpcweb:2.1.3-20200416-amd64
+docker push <LOCAL_REGISTRY>/ibp-utilities:1.4.6-20200416-amd64
+docker push <LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20200416-amd64
+docker push <LOCAL_REGISTRY>/ibp-deployer:2.1.3-20200416-amd64
+docker push <LOCAL_REGISTRY>/ibp-fluentd:2.1.3-20200416-amd64
+```
+{:codeblock}
+
+After you complete these steps, you can use the following instructions to deploy the {{site.data.keyword.blockchainfull_notm}} Platform with the images in your registry.
+
+### Step two: Update the {{site.data.keyword.blockchainfull_notm}} operator
+{: #install-fixpack-operator-firewall}
+
+### Step three: Update the {{site.data.keyword.blockchainfull_notm}} console
+{: #install-fixpack-console-firewall}
+
+### Step five: Upgrade your blockchain nodes
+{: #install-fixpack-nodes-firewall}
+
+After you upgrade your console, you can use the console UI to upgrade the nodes of your blockchain network. For more information, see [Upgrade your blockchain nodes](#upgrade-k8-nodes).
