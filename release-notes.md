@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-04-15"
 
 
 keywords: release note, latest changes, Hyperledger Fabric
@@ -36,7 +36,7 @@ Use these release notes that are grouped by date to learn about the latest chang
 ## 16 April 2020
 {: #04-16-2020}
 
-**Peer and ordering node patch 1.4.6-1**  
+**CA, peer, and ordering node patch 1.4.6-1**  
 
 ### Support for AWS HSM
 {: #04-16-2020-AWS-HSM}
