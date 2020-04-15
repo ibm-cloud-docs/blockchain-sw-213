@@ -56,7 +56,8 @@ You can upgrade an {{site.data.keyword.blockchainfull_notm}} Platform network by
 
 1. [Update the ClusterRole](#upgrade-k8-clusterrole)
 2. [Upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator](#upgrade-ocp-operator)
-3. [Use your console to upgrade your running blockchain nodes](#upgrade-ocp-nodes)
+3. [Enable new features](#upgrade-ocp-features)
+4. [Use your console to upgrade your running blockchain nodes](#upgrade-ocp-nodes)
 
 After you upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator, the operator will automatically upgrade the console that is deployed on your namespace. You can then use the upgraded console to upgrade your blockchain nodes.
 
@@ -366,7 +367,8 @@ If you deployed the {{site.data.keyword.blockchainfull_notm}} Platform behind a 
 1. [Pull the latest {{site.data.keyword.blockchainfull_notm}} Platform images](#upgrade-k8-images-firewall)
 2. [Update the ClusterRole](#upgrade-k8-clusterrole-firewall)
 3. [Upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator](#upgrade-k8-operator-firewall)
-4. [Use your console to upgrade your running blockchain nodes](#upgrade-k8-nodes-firewall)
+4. [Enable new features](#upgrade-k8-features-firewall)
+5. [Use your console to upgrade your running blockchain nodes](#upgrade-k8-nodes-firewall)
 
 You can continue to submit transactions to your network while you are upgrading your network. However, you cannot use the console to deploy new nodes, install or instantiate smart contracts, or create new channels during the upgrade process.
 
@@ -656,7 +658,7 @@ kubectl apply -f console-upgrade.yaml
 {:codeblock}
 
 ### Step four: Enable new features
-{: #upgrade-k8-fw-features}
+{: #upgrade-k8-features-firewall}
 
 After you upgrade your console, you need to enable the Hardware Security Module (HSM) and the ability to add or remove ordering nodes.
 
