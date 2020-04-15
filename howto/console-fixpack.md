@@ -290,7 +290,7 @@ spec:
 
 Save the updated file as `console-upgrade.yaml` on your local system. You can then issue the following command upgrade your console:
 ```
-kubectl apply -f console-upgrade.yaml
+kubectl apply -f console-fixpack.yaml
 ```
 {:codeblock}
 
