@@ -54,8 +54,9 @@ If you are using {{site.data.keyword.blockchainfull_notm}} Platform v2.1.0 or v2
 
 You can upgrade an {{site.data.keyword.blockchainfull_notm}} Platform network by using the following steps:
 
-1. [Upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator](#upgrade-k8-operator)
-2. [Use your console to upgrade your running blockchain nodes](#upgrade-k8-nodes)
+1. [Update the ClusterRole](#upgrade-k8-clusterrole)
+2. [Upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator](#upgrade-ocp-operator)
+3. [Use your console to upgrade your running blockchain nodes](#upgrade-ocp-nodes)
 
 After you upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator, the operator will automatically upgrade the console that is deployed on your namespace. You can then use the upgraded console to upgrade your blockchain nodes.
 
@@ -363,8 +364,9 @@ To apply a patch to a node, open the node tile and click the **Install patch** b
 If you deployed the {{site.data.keyword.blockchainfull_notm}} Platform behind a firewall, without access to the external internet, you can upgrade your network by using the following steps:
 
 1. [Pull the latest {{site.data.keyword.blockchainfull_notm}} Platform images](#upgrade-k8-images-firewall)
-2. [Upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator](#upgrade-k8-operator-firewall)
-3. [Use your console to upgrade your running blockchain nodes](#upgrade-k8-nodes-firewall)
+2. [Update the ClusterRole](#upgrade-k8-clusterrole-firewall)
+3. [Upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator](#upgrade-k8-operator-firewall)
+4. [Use your console to upgrade your running blockchain nodes](#upgrade-k8-nodes-firewall)
 
 You can continue to submit transactions to your network while you are upgrading your network. However, you cannot use the console to deploy new nodes, install or instantiate smart contracts, or create new channels during the upgrade process.
 
@@ -572,7 +574,7 @@ kubectl get deployment ibp-operator -o yaml > operator.yaml
 ```
 {:codeblock}
 
-Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. You need to update the `image:` field with the updated version of the operator image. Open `operator-upgrade.yaml` a text editor. You need to update the `image:` field with the updated version of the operator image:
+Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. You need to update the `image:` field with the updated version of the operator image:
 ```
 <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200416-amd64
 ```
