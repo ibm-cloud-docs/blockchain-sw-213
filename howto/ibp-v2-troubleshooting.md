@@ -169,7 +169,7 @@ There are three ways to resolve this problem:
       kubectl delete po <pod-name>
       ```
       {: codeblock}
-   When the pod restart completes, you should now be able to login to your console URL from a Chrome Browser.
+   When the pod restart completes, you should now be able to log in to your console URL from a Chrome Browser.
 
 ## Why is my channel creation failing or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"?
 {: #ibp-v2-troubleshooting-accept-tls}
@@ -430,7 +430,7 @@ or
 ```
 
 
-This problem happens when the PKCS #11 proxy that is associated with the HSM is unreachable to due a network problem or if the proxy restarts after the node has connected to it.
+This problem happens when the PKCS #11 proxy that is associated with the HSM is unreachable due to a network problem or if the proxy restarts after the node has connected to it.
 {: tsCauses}
 
 To re-establish communications between the node and the proxy, restart the failing node by deleting the pod associated with the node. A new pod will be created and the connection with the PKCS #11 proxy is restored. Use the following steps to restart the failing node:
