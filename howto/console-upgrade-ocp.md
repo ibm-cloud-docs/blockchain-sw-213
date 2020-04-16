@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-15"
+lastupdated: "2020-04-16"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -64,8 +64,7 @@ You can upgrade an {{site.data.keyword.blockchainfull_notm}} Platform network by
 
 1. [Update the ClusterRole](#upgrade-ocp-clusterrole)
 2. [Upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator](#upgrade-ocp-operator)
-3. [Enable new features](#upgrade-ocp-features)
-4. [Use your console to upgrade your running blockchain nodes](#upgrade-ocp-nodes)
+3. [Use your console to upgrade your running blockchain nodes](#upgrade-ocp-nodes)
 
 After you upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator, the operator will automatically upgrade the console that is deployed on your OpenShift project. You can then use the upgraded console to upgrade your blockchain nodes.
 
@@ -270,89 +269,7 @@ ibpconsole     1/1       1            1           4m
 
 If you experience a problem while you are upgrading the operator, go to this [troubleshooting topic](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-troubleshooting#ibp-v2-troubleshooting-deployment-cr) for a list of commonly encountered problems. You can run the command to apply the original operator file, `kubectl apply -f operator.yaml` to restore your original operator deployment.
 
-## Step three: Enable new features
-{: #upgrade-ocp-features}
-
-After you upgrade your console, you need to enable the Hardware Security Module (HSM) and the ability to add or remove ordering nodes.
-
-1. Copy the `ibpconsole ConfigMap` to a file by running the following command. Replace `<NAMESPACE>` with the name of you Kubernetes namespace or OpenShift Container Platform project.
-
-  ```
-  kubectl get cm ibpconsole-console -n <NAMESPACE> -o yaml > ibpconsole-cm.yaml
-  ```
-  {: codeblock}
-
-2. Edit the `ibpconsole-cm.yaml` file and add the following flags under `feature_flags` section of the file:
-
-  ```
-  hsm_enabled: true
-  scale_raft_nodes_enabled: true
-  ```
-  {: codeblock}
-
-  The feature_flags section should look similar to:
-  ```
-      feature_flags:
-        capabilities_enabled: true
-        create_channel_enabled: true
-        enable_ou_identifier: true
-        high_availability: true
-        infra_import_options:
-          platform: ""
-          supported_cas:
-          - openshift
-          - kubernetes
-          - icp
-          - ibmcloud
-          supported_orderers:
-          - openshift
-          - kubernetes
-          - icp
-          - ibmcloud
-          supported_peers:
-          - openshift
-          - kubernetes
-          - icp
-          - ibmcloud
-        remote_peer_config_enabled: true
-        saas_enabled: true
-        templates_enabled: false
-        hsm_enabled: true
-        scale_raft_nodes_enabled: true
-  ```
-  {: codeblock}
-3. Apply the changes that you made to the `ibpconsole-cm.yaml` file by running the following command. Replace `<NAMESPACE>` with the name of your Kubernetes namespace or OpenShift Container Platform project.
-
-  ```
-  kubectl apply -f  ibpconsole-cm.yaml -n <NAMESPACE>
-  ```
-  {: codeblock}
-
-4. Restart the console pod to refresh it with these changes.
-  - Run the following command to get the name of the pod that corresponds to the console:
-
-    ```
-    kubectl get po | grep ibpconsole
-    ```
-    {: codeblock}
-
-    The output would look similar to:
-
-    ```
-    kubectl get po | grep console
-    ibpconsole-7f45b7fc-plvcx        4/4     Running   0          1d
-    ```
-
-  - In the following command, replace `<CONSOLE-POD>` with the name of the console pod from the previous command, for example `ibpconsole-7f45b7fc-plvcx `.
-    ```
-    kubectl delete po <CONSOLE-POD>
-    ```
-    {: codeblock}
-
-5. You can verify that these changes worked by clicking **Add Certificate Authority** on the **Nodes** tab of the console. Click **Create a Certificate Authority** and click **Next**. Look under the **Advanced deployment options**. You should now see a checkbox for **Hardware Security Module (HSM)**.
-
-
-## Step four: Upgrade your blockchain nodes
+## Step three: Upgrade your blockchain nodes
 {: #upgrade-ocp-nodes}
 
 After you upgrade your console, you can use the console UI to upgrade the nodes of your blockchain network. Browse to the console UI and open the nodes overview tab. You can find the **Patch available** text on a node tile if there is an update available for the component. You can install this patch whenever you are ready. These patches are optional, but they are recommended. You cannot patch nodes that were imported into the console.
@@ -370,8 +287,7 @@ If you deployed the {{site.data.keyword.blockchainfull_notm}} Platform behind a 
 1. [Pull the latest {{site.data.keyword.blockchainfull_notm}} Platform images](#upgrade-ocp-images-firewall)
 2. [Update the ClusterRole](#upgrade-ocp-clusterrole-firewall)
 3. [Upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator](#upgrade-ocp-operator-firewall)
-4. [Enable new features](#upgrade-ocp-features-firewall)
-5. [Use your console to upgrade your running blockchain nodes](#upgrade-ocp-nodes-firewall)
+4. [Use your console to upgrade your running blockchain nodes](#upgrade-ocp-nodes-firewall)
 
 You can continue to submit transactions to your network while you are upgrading your network. However, you cannot use the console to deploy new nodes, install or instantiate smart contracts, or create new channels during the upgrade process.
 
@@ -659,89 +575,7 @@ kubectl apply -f console-upgrade.yaml
 ```
 {:codeblock}
 
-### Step four: Enable new features
-{: #upgrade-ocp-features-firewall}
-
-After you upgrade your console, you need to enable the Hardware Security Module (HSM) and the ability to add or remove ordering nodes.
-
-1. Copy the `ibpconsole ConfigMap` to a file by running the following command. Replace `<NAMESPACE>` with the name of you Kubernetes namespace or OpenShift Container Platform project.
-
-  ```
-  kubectl get cm ibpconsole-console -n <NAMESPACE> -o yaml > ibpconsole-cm.yaml
-  ```
-  {: codeblock}
-
-2. Edit the `ibpconsole-cm.yaml` file and add the following flags under `feature_flags` section of the file:
-
-  ```
-  hsm_enabled: true
-  scale_raft_nodes_enabled: true
-  ```
-  {: codeblock}
-
-  The feature_flags section should look similar to:
-  ```
-      feature_flags:
-        capabilities_enabled: true
-        create_channel_enabled: true
-        enable_ou_identifier: true
-        high_availability: true
-        infra_import_options:
-          platform: ""
-          supported_cas:
-          - openshift
-          - kubernetes
-          - icp
-          - ibmcloud
-          supported_orderers:
-          - openshift
-          - kubernetes
-          - icp
-          - ibmcloud
-          supported_peers:
-          - openshift
-          - kubernetes
-          - icp
-          - ibmcloud
-        remote_peer_config_enabled: true
-        saas_enabled: true
-        templates_enabled: false
-        hsm_enabled: true
-        scale_raft_nodes_enabled: true
-  ```
-  {: codeblock}
-3. Apply the changes that you made to the `ibpconsole-cm.yaml` file by running the following command. Replace `<NAMESPACE>` with the name of your Kubernetes namespace or OpenShift Container Platform project.
-
-  ```
-  kubectl apply -f  ibpconsole-cm.yaml -n <NAMESPACE>
-  ```
-  {: codeblock}
-
-4. Restart the console pod to refresh it with these changes.
-  - Run the following command to get the name of the pod that corresponds to the console:
-
-    ```
-    kubectl get po | grep ibpconsole
-    ```
-    {: codeblock}
-
-    The output would look similar to:
-
-    ```
-    kubectl get po | grep console
-    ibpconsole-7f45b7fc-plvcx        4/4     Running   0          1d
-    ```
-
-  - In the following command, replace `<CONSOLE-POD>` with the name of the console pod from the previous command, for example `ibpconsole-7f45b7fc-plvcx `.
-    ```
-    kubectl delete po <CONSOLE-POD>
-    ```
-    {: codeblock}
-
-5. You can verify that these changes worked by clicking **Add Certificate Authority** on the **Nodes** tab of the console. Click **Create a Certificate Authority** and click **Next**. Look under the **Advanced deployment options**. You should now see a checkbox for **Hardware Security Module (HSM)**.
-
-
-### Step five: Upgrade your blockchain nodes
+### Step four: Upgrade your blockchain nodes
 {: #upgrade-ocp-nodes-firewall}
 
 After you upgrade your console, you can use the console UI to upgrade the nodes of your blockchain network. For more information, see [Upgrade your blockchain nodes](#upgrade-ocp-nodes).
