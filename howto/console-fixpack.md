@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-15"
+lastupdated: "2020-04-16"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -40,7 +40,7 @@ To upgrade your network, you need to [retrieve your entitlement key](/docs/block
 ## Step one: Update the {{site.data.keyword.blockchainfull_notm}} operator
 {: #install-fixpack-operator}
 
-You can start applying the Fix Pack to your network by updating the {{site.data.keyword.blockchainfull_notm}} operator. Log in to your cluster by using the kubectl CLI. You will need to provide the name of the Kubernetes namespace that you created to deploy your {{site.data.keyword.blockchainfull_notm}} network. If you deployed your network on Kubernetes or on  {{site.data.keyword.cloud_notm}} Private, you can use the `kubectl get namespace` command to find the name of your namespace. If you deployed the platform on the OpenShift Container Platform, log in to your cluster using the oc CLI. You can find the name of your of your OpenShift project using the `oc get project` command. Use the project name as the value for `<namespace>`.
+You can start applying the Fix Pack to your network by updating the {{site.data.keyword.blockchainfull_notm}} operator. Log in to your cluster by using the kubectl CLI. You will need to provide the name of the Kubernetes namespace that you created to deploy your {{site.data.keyword.blockchainfull_notm}} network. If you deployed your network on Kubernetes or on  {{site.data.keyword.cloud_notm}} Private, you can use the `kubectl get namespace` command to find the name of your namespace. If you deployed the platform on the OpenShift Container Platform, log in to your cluster using the oc CLI. You can find the name of your OpenShift project using the `oc get project` command. Use the project name as the value for `<namespace>`.
 
 Run the following command to download the operator deployment spec to your local file system. The default name of the operator deployment is `ibp-operator`. If you changed the name during the deployment process, you can use the `kubectl get deployment -n <namespace>` command to get the name of the deployments on your namespace. Replace `<namespace>` with the name of your namespace or OpenShift project:
 ```
@@ -213,7 +213,7 @@ After you complete these steps, you can use the following instructions to deploy
 ### Step two: Update the {{site.data.keyword.blockchainfull_notm}} operator
 {: #install-fixpack-operator-firewall}
 
-You can start applying the Fix Pack to your network by updating the {{site.data.keyword.blockchainfull_notm}} operator. Log in to your cluster by using the kubectl CLI. You will need to provide the name of the Kubernetes namespace that you created to deploy your {{site.data.keyword.blockchainfull_notm}} network. If you deployed your network on Kubernetes or on  {{site.data.keyword.cloud_notm}} Private, you can use the `kubectl get namespace` command to find the name of your namespace. If you deployed the platform on the OpenShift Container Platform, log in to your cluster using the oc Cli. You can find the name of your of your OpenShift project using the `oc get project` command. Use the project name as the value for `<namespace>`.
+You can start applying the Fix Pack to your network by updating the {{site.data.keyword.blockchainfull_notm}} operator. Log in to your cluster by using the kubectl CLI. You will need to provide the name of the Kubernetes namespace that you created to deploy your {{site.data.keyword.blockchainfull_notm}} network. If you deployed your network on Kubernetes or on  {{site.data.keyword.cloud_notm}} Private, you can use the `kubectl get namespace` command to find the name of your namespace. If you deployed the platform on the OpenShift Container Platform, log in to your cluster using the oc Cli. You can find the name of your OpenShift project using the `oc get project` command. Use the project name as the value for `<namespace>`.
 
 Run the following command to download the operator deployment spec to your local file system. The default name of the operator deployment is `ibp-operator`. If you changed the name during the deployment process, you can use the `kubectl get deployment -n <namespace>` command to get the name of the deployments on your namespace. Replace `<namespace>` with the name of your namespace or OpenShift project:
 ```
