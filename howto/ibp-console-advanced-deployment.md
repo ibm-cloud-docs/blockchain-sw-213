@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-04-16"
+lastupdated: "2020-04-22"
 
 keywords: deployment, advanced, CouchDB, LevelDB, external CA, HSM, resource allocation
 
@@ -71,7 +71,7 @@ Because your instance of the {{site.data.keyword.blockchainfull_notm}} Platform 
 | **Console**                    | 1.2           | 2.4                   | 10                     |
 
 {: caption="Table 2. Default resources for nodes on {{site.data.keyword.blockchainfull_notm}} Platform" caption-side="bottom"}
-**  Actual VPC allocations are visible in the blockchain console when a node is deployed.
+** Actual VPC allocations are visible in the blockchain console when a node is deployed.
 
 
 
