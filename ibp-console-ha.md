@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-04-21"
 
 keywords: high availability, HA, failures, zone failure, region failure, component failure, worker node failure
 
@@ -105,7 +105,7 @@ The following table contains a list of options to consider as you plan for incre
 {: caption="Table 1. Comparison of deployment scenarios to increase your network HA" caption-side="top"}
 {: summary="This table has row and column headers. The row headers identify the deployment scenarios. The column headers identify available options in each scenario to increase your HA."}
 
-*** The {{site.data.keyword.blockchainfull_notm}} Platform deployer attempts to spread peers, ordering nodes, and CA replica sets across different worker nodes but cannot guarantee that it will happen due to resource limitations. You can also use the {{site.data.keyword.blockchainfull_notm}} Platform APIs or the blockchain console to deploy peers or ordering nodes to specific zones in order to ensure that they are resilient to a zone failure. For more information see [Multizone HA](#ibp-console-ha-multi-zone).  
+*** The {{site.data.keyword.blockchainfull_notm}} Platform deployer attempts to spread peers, ordering nodes, and CA replica sets across different worker nodes but cannot guarantee that it will happen due to resource limitations. You can also use the {{site.data.keyword.blockchainfull_notm}} Platform APIs or the blockchain console to deploy peers or ordering nodes to specific zones in order to ensure that they are resilient to a zone failure. For more information see [Multizone HA](#ibp-console-ha-multi-zone). 
 
 ## Potential points of failure
 {: #ibp-console-ha-points-of-failure}

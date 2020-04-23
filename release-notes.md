@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-15"
+lastupdated: "2020-04-21"
 
 
 keywords: release note, latest changes, Hyperledger Fabric
@@ -44,6 +44,8 @@ Use these release notes that are grouped by date to learn about the latest chang
 If you plan to use AWS HSM, you must include the `immutable` and `AltId` parameters in your BCCSP configuration. See [Fabric documentation](https://hyperledger-fabric.readthedocs.io/en/release-1.4/hsm.html#example) for details.
 
 **Miscellaneous bug fixes**
+
+Users who installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 before April 16, 2020 should install the [v2.1.3 Fix Pack](/docs/blockchain-sw-213?topic=blockchain-sw-213-install-fixpack#install-fixpack). If you installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 after April 16, 2020, the platform will contain all the bug fixes and improvements provided by the Fix Pack, and you do not need to apply the Fix Pack.
 
 ## 24 March 2020
 {: #03-24-2020}

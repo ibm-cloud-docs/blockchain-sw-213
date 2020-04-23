@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-22"
 
 keywords: security, encryption, storage, tls, iam, roles, keys
 
@@ -66,6 +66,7 @@ Note that users can also be managed with [APIs](/docs/blockchain-sw-213?topic=bl
 
 
 
+
 If you are using a client application to send requests to the console, either via the blockchain APIs or the Fabric SDKs, the standard `HTTPS` (443) port needs to be exposed in your firewall.
 
 
@@ -114,11 +115,7 @@ You can use the blockchain console to select which ACLs to apply to resources on
 ### API authentication
 {: #ibp-security-ibp-apis}
 
-In order to use the blockchain [APIs](https://cloud.ibm.com/apidocs/blockchain){: external} to create and manage network components, your application needs to be able to authenticate and connect to your network. 
-
-
-See this topic on how to [Connect to your console using API keys](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-apis#console-icp-manage-api-key) for more details.
-
+In order to use the blockchain [APIs](https://cloud.ibm.com/apidocs/blockchain){: external} to create and manage network components, your application needs to be able to authenticate and connect to your network.   See this topic on how to [Connect to your console using API keys](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-apis#console-icp-manage-api-key) for more details.
 
 ## Best practices for security on the customer Kubernetes cluster
 {: #ibp-security-Kubernetes}
@@ -143,12 +140,12 @@ The best place to start is to learn about the security features of the underlyin
 
 
 
-With {{site.data.keyword.cloud_notm}} Private, **Pod Security Policies** provide a way to control the security level of the pods and containers in your cluster. The Pod Security Policy that is applied to the namespace on a cluster is the default security setting for any new pod that is created in that namespace. If you are using {{site.data.keyword.cloud_notm}} Private, review the [Security guide](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.0/user_management/admin.html){: external} for best practices.
-
 
 For OpenShift Container Platform security considerations, you should review the [Red Hat Container Security Guide Service](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html-single/container_security_guide/index){: external}. You will need to use [security context constraints](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html-single/architecture/index#security-context-constraints){: external} (SCCs) to define a set of conditions that a pod must run with in order to be accepted into the system. Details are included in the {{site.data.keyword.blockchainfull_notm}} Platform deployment instructions.  
 
 If you are running on Azure Kubernetes Service, Amazon Elastic Kubernetes Service, or IBM Kubernetes Service, then you need to setup the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}
+
+With {{site.data.keyword.cloud_notm}} Private, **Pod Security Policies** provide a way to control the security level of the pods and containers in your cluster. The Pod Security Policy that is applied to the namespace on a cluster is the default security setting for any new pod that is created in that namespace. If you are using {{site.data.keyword.cloud_notm}} Private, review the [Security guide](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.0/user_management/admin.html){: external} for best practices.
 
 
 ### Network security
@@ -195,8 +192,9 @@ Customers are responsible for encrypting their own storage and the encryption mu
 
 
 
+
 - For more information about encryption on {{site.data.keyword.cloud_notm}} Private:
-[Encrypting volumes that are used by IBM Cloud Private](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/installing/fips_encrypt_volumes.html){: external} 
+[Encrypting volumes that are used by IBM Cloud Private](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.1.2/installing/fips_encrypt_volumes.html){: external}
 - For more information on securing your persistent storage on OpenShift, see this topic on [Volume Security](https://docs.openshift.com/container-platform/3.11/install_config/persistent_storage/pod_security_context.html){: external}.
 
 
