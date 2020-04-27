@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-15"
+lastupdated: "2020-04-24"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall
 
@@ -59,7 +59,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform includes the following ke
   - [Private data collections](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-smart-contracts#ibp-console-smart-contracts-private-data) that provide increased data privacy by ensuring that ledger data is shared to only authorized peers via the gossip protocol.
   - [Fabric Node OUs](https://hyperledger-fabric.readthedocs.io/en/release-1.4/membership/membership.html#node-ou-roles-and-msps){: external}
   - [Service discovery](https://hyperledger-fabric.readthedocs.io/en/release-1.4/discovery-overview.html){: external}, allowing you to dynamically discover and update how your application interacts with your network.
-  - [Channel access control lists](https://hyperledger-fabric.readthedocs.io/en/release-1.4/access_control.html){: external} that allow you additional control the governance of your channels and smart contracts.
+  - [Channel access control lists](https://hyperledger-fabric.readthedocs.io/en/release-1.4/access_control.html){: external} that allow you additional control of the governance of your channels and smart contracts.
 
 **OPERATE --- Total control of your deployments**
 - **Host or join a network**. Deploy peers that are hosted in your cluster to multiple channels on multiple clouds, or invite other organizations to join your consortium or channels while the organizations manage their nodes independently across infrastructures.
@@ -91,6 +91,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 can be deployed us
 | OpenShift Container Platform | 3.11 | x86_64 |  |
 | OpenShift Container Platform | 4.1 |  x86_64 |  |
 | OpenShift Container Platform | 4.2 |  x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| OpenShift Container Platform | 4.3 |  x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | OpenShift Container Platform on IBM Cloud | 3.11 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg)  |
 | OpenShift Container Platform on Microsoft Azure | 4.1 |  x86_64 | |
 | OpenShift Container Platform on LinuxONE | 4.2 | s390x | ![Checkmark icon](../../icons/checkmark-icon.svg) |
