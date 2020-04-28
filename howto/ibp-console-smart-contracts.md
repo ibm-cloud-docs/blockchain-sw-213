@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2020-04-06"
+lastupdated: "2020-04-28"
 
 keywords: smart contract, private data, private data collection, anchor peer
 
@@ -131,7 +131,10 @@ After a smart contract has been instantiated on a channel, you can use a client 
 
 ### Connect with SDK
 {: #ibp-console-smart-contracts-connect-to-SDK-panel}
+
 The **Smart Contracts** tab contains the information that you need to connect to an instantiated smart contract from a client app. Next to each instantiated smart contract, navigate to the overflow menu. Click the **Connect with your SDK** button. This opens a side panel that provides the information that you need to connect to this smart contract: the contract name, the channel name, and your connection profile. For more information, see [Creating applications](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-app#ibp-console-app).
+
+
 
 ## Specifying an endorsement policy
 {: #ibp-console-smart-contracts-endorse}
