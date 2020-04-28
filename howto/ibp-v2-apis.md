@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-09"
+lastupdated: "2020-04-28"
 
 keywords: APIs, build a network, authentication, service credentials, API key, API endpoint, IAM access token, Fabric CA client, import a network, generate certificates
 
@@ -75,16 +75,18 @@ Use the request below to create an API key and secret. You can then use this key
 
 ### Example curl request: Create API key
 {: #console-icp-manage-create-api-key-example}
-```
+```curl
 curl -X POST \
   https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v2/permissions/keys \
   -u user@email.com:password \
+  -k \
   -H 'Content-Type: application/json' \
   -d '{
      "roles": ["writer", "manager"],
      "description": "newkey"
      }'
 ```
+{: codeblock}
 
 Once you have created an API key and secret, you can use the APIs to view or remove the keys that you have created. The keys and secrets do not expire until they are deleted.
 
@@ -100,11 +102,13 @@ Once you have created an API key and secret, you can use the APIs to view or rem
 
 ### Example curl request: view API keys
 {: #console-icp-manage-view-api-key-example}
-```
+```curl
 curl -X GET \
   https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v2/permissions/keys \
+  -k \
   -u <api_key>:<api_secret>
 ```
+{: codeblock}
 
 ### Delete API keys
 {: #console-icp-manage-delete-api-keys}
@@ -118,11 +122,13 @@ curl -X GET \
 {: #console-icp-manage-delete-api-keys-example}
 
 
-```
+```curl
 curl -X DELETE \
   https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v2/permissions/keys/<api_key> \
+  -k \
   -u <api_key>:<api_secret>
 ```
+{: codeblock}
 
 ## Managing users using the APIs
 {: #console-icp-manage-users-apis}
@@ -157,6 +163,7 @@ curl -X GET \
   -u <api_key>:<api_secret> \
   -k
 ```
+{: codeblock}
 
 ### Edit users
 {: #console-icp-manage-edit-users-api}
@@ -187,6 +194,7 @@ curl -X PUT \
           }
         }'
 ```
+{: codeblock}
 
 ### Add users
 {: #console-icp-manage-add-users-api}
@@ -215,6 +223,7 @@ curl -X POST \
           }
         }'
 ```
+{: codeblock}
 
 ### Remove users
 {: #console-icp-manage-remove-users-api}
@@ -244,6 +253,7 @@ curl -X DELETE \
           ]
         }'
 ```
+{: codeblock}
 
 ## Use the APIs to manage your components
 
@@ -259,6 +269,7 @@ curl -X GET \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Bearer eyJraWQ.....zJPsw
 ```
+{: codeblock}
 
 The same API call would resemble the request below for a console deployed with {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3.
 
@@ -269,6 +280,7 @@ https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v2/compo
   -u kO25ME32Nu8TikR_:buYImbg0co8SxneoBWzHueYwrf9Xhg5f \
   -k
 ```
+{: codeblock}
 
 In order to create nodes using the {{site.data.keyword.blockchainfull_notm}} APIs, you need to use the APIs in a certain sequence in conjunction with Fabric CA client. To learn how to create nodes, see [Build a network by using APIs](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-apis#ibp-v2-apis-build-with-apis).
 
