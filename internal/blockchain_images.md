@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-04-30"
 
 keywords: IBM Blockchain Platform, images
 
@@ -392,14 +392,14 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
   ```
   {:codeblock}
 
-2. You need TLS certificates and keys to secure communication between your the console and your node. Create a folder that you will use to the TLS material. and change into that directory.
+2. You need TLS certificates and keys to secure communication between your the console and your node. Create a folder that you will use for the TLS material and change into that directory.
   ```
   mkdir peer0.org1-proxy-certs
   cd peer0.org1-proxy-certs
   ```
   {:codeblock}
 
-  This folder will be mounted in the gRPC web proxy container in a latest ste
+  This folder will be mounted in the gRPC web proxy container in a later step.
 
 3. In a production environment, you would use the TLS certificates that secure the domain name of your deployment environment. For this example, we will generate self signed certificates using the OpenSSL tool.
 
@@ -474,7 +474,7 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
   ca.crt		private.csr	private.key	public.crt	ssl.conf
   ```
 
-5. Change back into the main directory of the BYFN example, and save the following Docker Compose file for the gRPC web proxy image as `docker-compose-proxy`:
+5. Change back into the main directory of the BYFN example and save the following Docker Compose file for the gRPC web proxy image as `docker-compose-proxy`:
 
   ```yaml
   version: '2'
