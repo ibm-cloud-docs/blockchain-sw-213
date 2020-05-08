@@ -778,7 +778,7 @@ Before attempting to install {{site.data.keyword.blockchainfull_notm}} Platform 
 
 1. Ensure a load balancer with a public IP is configured in front of the Kubernetes cluster.
 2. Create a DNS entry for the IP address of the load balancer.
-3. Create a wild card host entry in DNS for the load balancer. This is a DNS record with a wild card host.
+3. Create a wild card host entry in DNS for the load balancer. This is a DNS A record with a wild card host.
 
     For example, if the DNS entry for the load balancer is `test.example.com`, the DNS entry would be:
     ```
