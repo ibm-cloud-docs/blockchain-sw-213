@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-21"
+lastupdated: "2020-05-12"
 
 keywords: high availability, HA, failures, zone failure, region failure, component failure, worker node failure
 
@@ -50,7 +50,7 @@ Before proceeding, we recommend that you review the platform-specific guidance f
 - If you are using {{site.data.keyword.cloud_notm}} Private, review [Implementing HA on {{site.data.keyword.cloud_notm}} Private](https://www.ibm.com/cloud/garage/practices/manage/high-availability-ibm-cloud-private){: external}.  
 
 
-Then you can use this topic for details on blockchain-specific HA guidance along with the recommendations from the platform-specific topic above.
+Then, you can use this topic for details on blockchain-specific HA guidance along with the recommendations from the platform-specific topic above.
 
 ## Overview of potential points of failure in {{site.data.keyword.blockchainfull_notm}} Platform
 {: #ibp-console-ha-points-of-failure-overview}
@@ -68,7 +68,7 @@ For even more robust HA coverage, you can stand up multiple clusters in multiple
 
 **Anchor peers** on a channel facilitate cross-organization communication that is required for private data, gossip, and service discovery to work. If only one anchor peer exists on a channel, and that peer becomes unavailable, the organizations are no longer connected and the cross-organization gossip is no longer possible. Therefore, when you create redundant peers for an organization, be sure to add redundant [anchor peers on the channel](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern#ibp-console-govern-channels-anchor-peers) as well.
 
-Finally, your peer redundancy strategy needs to take into account your chaincode endorsement policies to ensure that you always have enough peers available to satisfy the endorsement policy requirements. For example, if an endorsement policy requires a specific number of endorsements, your peer HA strategy needs to ensure there are always that number of peers available. Alternatively, if the endorsement policy requires a `MAJORITY` of peers to endorse the transactions, then you need to ensure that a majority of the peers are always available in order for transactions to continue to be processed.
+Finally, your peer redundancy strategy needs to take into account your chaincode endorsement policies to ensure that you always have enough peers available to satisfy the endorsement policy requirements. For example, if an endorsement policy requires a specific number of endorsements, your peer HA strategy needs to ensure that there are always that number of peers available. Alternatively, if the endorsement policy requires a `MAJORITY` of peers to endorse the transactions, then you need to ensure that a majority of the peers are always available in order for transactions to continue to be processed.
 
 ### Ordering service considerations
 {: #ibp-console-ha-ordering-service}
