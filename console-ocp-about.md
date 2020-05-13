@@ -140,6 +140,8 @@ The {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 uses a [Kubernetes
 
 It is also possible to deploy the {{site.data.keyword.blockchainfull_notm}} Platform behind a firewall, without having access to the public internet. For more information, see [Deploying IBM Blockchain Platform v2.1.3 on the OpenShift Container Platform behind a firewall](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp-firewall). Otherwise, for other Kubernetes distributions see [Deploying IBM Blockchain Platform v2.1.3 on Kubernetes behind a firewall](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8-firewall).
 
+
+
 ## Security Considerations
 {: #console-ocp-about-security}
 
