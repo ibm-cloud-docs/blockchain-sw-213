@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-08"
+lastupdated: "2020-05-13"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall
 
@@ -68,7 +68,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform includes the following ke
 - **Unified operation**. The {{site.data.keyword.blockchainfull_notm}} Platform console allows you to deploy and manage all of your organizations and nodes in **one console**. You can also add or remove members from a blockchain consortium, create and join channels, and install and instantiate smart contracts from your console.
 - **Dynamic signature collection** that allows better control over collaborative governance over channel configurations.
 - **Manage access** of the users who can administer or monitor your nodes.
-- **Interact directly with your pods** using <blockchain-sw-w213>your Kubernetes service.</blockchain-sw-w213>
+- **Interact directly with your pods** using <blockchain-sw-w213>your Kubernetes service</blockchain-sw-w213>.
 - **Direct access to the logs** of your nodes from your  Kubernetes service. Use  any supported third-party service to extract and analyze your logs.
 - **Kubernetes service integration.** Leverage services such as LogDNA for logging and Prometheus and Sysdig for monitoring.
 

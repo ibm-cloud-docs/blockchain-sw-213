@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-12"
+lastupdated: "2020-05-13"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -810,12 +810,17 @@ Before attempting to install {{site.data.keyword.blockchainfull_notm}} Platform 
 
     This section may not be exact for your installation. The key is to ensure the last line that enables `ssl-passthrough` is present.
 
-    - /nginx-ingress-controller
-    - --configmap=$(POD_NAMESPACE)/nginx-configuration
-    - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
-    - --udp-services-configmap=$(POD_NAMESPACE)/udp-services
-    - --publish-service=$(POD_NAMESPACE)/ingress-nginx
-    - --annotations-prefix=nginx.ingress.kubernetes.io
-    - --enable-ssl-passthrough=true
+    ```
+    /nginx-ingress-controller
+    --configmap=$(POD_NAMESPACE)/nginx-configuration
+    --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
+    --udp-services-configmap=$(POD_NAMESPACE)/udp-services
+    --publish-service=$(POD_NAMESPACE)/ingress-nginx
+    --annotations-prefix=nginx.ingress.kubernetes.io
+    --enable-ssl-passthrough=true
+    ```
+    {: codeblock}
 
 7. Verify all pods are running before attempting to install the {{site.data.keyword.blockchainfull_notm}} Platform.
+
+You can now [resume your installation](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8#deploy-k8-login).
