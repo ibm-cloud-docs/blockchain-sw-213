@@ -12,19 +12,21 @@ IBM Blockchain Platform v2.1.3
 	blockchain_component_overview.md
 
 	{: .topicgroup}
-	Tutorials
+	Getting started tutorials
 		howto/ibp-console-build-network.md
 		howto/ibp-console-join-network.md
 		howto/ibp-console-smart-contracts.md
 		howto/ibp-console-create-app.md
-		howto/ibp-console-add-remove-raft.md
 		reference/videos.md
-		howto/ibp-console-ic-ha-howto.md
-		howto/ibp-console-ha-ca.md
-		reference/hsm-gemalto.md
 
 	security.md
-	ibp-console-ha.md
+
+	{: .topicgroup}
+	High availability
+		ibp-console-ha.md
+		howto/ibp-console-ic-ha-howto.md
+		howto/ibp-console-ha-ca.md
+
 	data-residency.md
 	howto/ibp-v2-faq.md
 	/blockchain/blockchain-disclaimer
@@ -50,8 +52,10 @@ IBM Blockchain Platform v2.1.3
 
 	{: .topicgroup}
 	Using the IBM Blockchain Platform console
+		howto/console-ocp-manage.md
 		howto/ibp-console-advanced-deployment.md
 		howto/ibp-console-advanced-channel.md
+		howto/ibp-console-add-remove-raft.md
 		howto/ibp-console-import-nodes.md
 		howto/ibp-console-identities.md
 		howto/ibp-console-organizations.md
@@ -63,12 +67,16 @@ IBM Blockchain Platform v2.1.3
 		vscode-extension.md
 		best_practices.md
 
-	howto/console-ocp-manage.md
+	{: .topicgroup}
+	Advanced tutorials
+		reference/hsm-gemalto.md
+
 	howto/ibp-v2-apis.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
 	[API reference](https://cloud.ibm.com/apidocs/blockchain)
+
 	/blockchain/blockchain-hyperledger-fabric
 	/blockchain/blockchain-k8s-overview
 	glossary.md

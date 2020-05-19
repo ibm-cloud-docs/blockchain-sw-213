@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-05-14"
 
 keywords: IBM Blockchain Platform, images
 
@@ -392,14 +392,14 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
   ```
   {:codeblock}
 
-2. You need TLS certificates and keys to secure communication between your the console and your node. Create a folder that you will use to the TLS material. and change into that directory.
+2. You need TLS certificates and keys to secure communication between your the console and your node. Create a folder that you will use for the TLS material and change into that directory.
   ```
   mkdir peer0.org1-proxy-certs
   cd peer0.org1-proxy-certs
   ```
   {:codeblock}
 
-  This folder will be mounted in the gRPC web proxy container in a latest ste
+  This folder will be mounted in the gRPC web proxy container in a later step.
 
 3. In a production environment, you would use the TLS certificates that secure the domain name of your deployment environment. For this example, we will generate self signed certificates using the OpenSSL tool.
 
@@ -474,7 +474,7 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
   ca.crt		private.csr	private.key	public.crt	ssl.conf
   ```
 
-5. Change back into the main directory of the BYFN example, and save the following Docker Compose file for the gRPC web proxy image as `docker-compose-proxy`:
+5. Change back into the main directory of the BYFN example and save the following Docker Compose file for the gRPC web proxy image as `docker-compose-proxy`:
 
   ```yaml
   version: '2'
@@ -537,7 +537,7 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
   Use the following values to complete the file:
   - `"name"`: The display name for the peer in the {{site.data.keyword.blockchainfull_notm}} Platform console.
   - `"grpcwp_url"`: The external address of the web proxy that you selected using the `EXTERNAL_ADDRESS` variable.
-  - `"api_url"`: The public address the the node used by your client applications and pointed to using the `BACKEND_ADDRESS` variable.
+  - `"api_url"`: The public address of the node used by your client applications and is specified in the `BACKEND_ADDRESS` variable.
   - `"operations_url"`: The URL and port that was opened for the operations service. We used the `CORE_OPERATIONS_LISTENADDRESS` variable to specify that the operations service will use port `9443` in step one. As a result, the console can use the address https://peer0.org1.example.com:9443 to check the health of our peer.
   - `"type"`: select `fabric-peer`, `fabric-orderer`, or `fabric-ca`.
   - `"msp_id"`: The MSPID of the organization that operates the node.

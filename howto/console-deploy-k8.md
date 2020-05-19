@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-05-13"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -82,7 +82,9 @@ When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PP
 
 2. You need to install and connect to your cluster by using the [kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl){: external} to deploy the platform. If you are using {{site.data.keyword.cloud_notm}} Private, install the [{{site.data.keyword.cloud_notm}} Private CLI 3.2.1](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.1/manage_cluster/install_cli.html){: external}. The {{site.data.keyword.cloud_notm}} Private CLI includes the kubectl CLI.
 
-3. If you are not running the platform on Red Hat OpenShift Container Platform, Red Hat Open Kubernetes Distribution, or {{site.data.keyword.cloud_notm}} Private then you need to setup the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}.
+3. If you are not running the platform on Red Hat OpenShift Container Platform, Red Hat Open Kubernetes Distribution, or {{site.data.keyword.cloud_notm}} Private then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](#console-deploy-k8-considerations).
+
+
 
 ## Log in to your cluster
 {: #deploy-k8-login}
@@ -515,11 +517,11 @@ spec:
 {:codeblock}
 
 You need to provide the following values to this file:
-- Replace `<DOMAIN>` with the Proxy IP address your cluster. You  can retrieve the value your Proxy IP address from the {{site.data.keyword.cloud_notm}} Private console. **Note:** You need to be a [Cluster administrator](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.0/user_management/assign_role.html){: external} to access your proxy IP. Log in to the {{site.data.keyword.cloud_notm}} Private cluster. In the left navigation panel, click **Platform** and then **Nodes** to view the nodes that are defined in the cluster. Click the node with the role `proxy` and then copy the value of the `Host IP` from the table.
+- Replace `<DOMAIN>` with the Proxy IP address your cluster. You  can retrieve the value of your Proxy IP address from the {{site.data.keyword.cloud_notm}} Private console. **Note:** You need to be a [Cluster administrator](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.0/user_management/assign_role.html){: external} to access your proxy IP. Log in to the {{site.data.keyword.cloud_notm}} Private cluster. In the left navigation panel, click **Platform** and then **Nodes** to view the nodes that are defined in the cluster. Click the node with the role `proxy` and then copy the value of the `Host IP` from the table.
 - Replace `<CONSOLE_PORT>` with a number between 30000 and 32767. This port is used to access the Console UI from your browser.
 - Replace `<PROXY_PORT>` with a number between 30000 and 32767. Select a different port than the one you selected for your console port. This port is used by the console to communicate with your blockchain nodes.
 
-If you are deploying on {{site.data.keyword.cloud_notm}} Private on LinuxONE (s390x), you need to replace the `arch:` field in the in the `spec:` section:
+If you are deploying on {{site.data.keyword.cloud_notm}} Private on LinuxONE (s390x), you need to replace the `arch:` field in the `spec:` section:
 ```yaml
 arch:
 - amd64
@@ -743,7 +745,7 @@ Your console URL looks similar to the following example:
 https://blockchain-project-ibpconsole-console.xyz.abc.com:443
 ```
 
-If you are deploying the platform on **{{site.data.keyword.cloud_notm}} Private**, you can access the console by browsing to  the following URL:
+If you are deploying the platform on **{{site.data.keyword.cloud_notm}} Private**, you can access the console by browsing to the following URL:
 ```
 https://<DOMAIN>:<CONSOLE_PORT>
 ```
@@ -755,7 +757,7 @@ Your console URL looks similar to the following example:
 https://9.30.252.107:32615
 ```
 
-If you navigate to the console URL in your browser, you can see the console log in screen:
+If you navigate to the console URL in your browser, you can see the console login screen:
 - For the **User ID**, use the value you provided for the `email:` field in the `ibp-console.yaml` file.
 - For the **Password**, use the value you encoded for the `password:` field in the `ibp-console.yaml` file. This password becomes the default password for the console that all new users use to log in to the console. After you log in for the first time, you will be asked to provide a new password that you can use to log in to the console.
 
@@ -770,3 +772,57 @@ The administrator who provisions the console can grant access to other users and
 When you access your console, you can view the **nodes** tab of your console UI. You can use this screen to deploy components on the cluster where you deployed the console. See the [Build a network tutorial](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-network#ibp-console-build-network) to get started with the console. You can also use this tab to operate nodes that are created on other clouds. For more information, see [Importing nodes](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-import-nodes#ibp-console-import-nodes).
 
 To learn how to manage the users that can access the console, view the logs of your console and your blockchain components, see [Administering your console](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-manage#console-icp-manage).
+
+## Considerations when using Kubernetes distributions
+{: #console-deploy-k8-considerations}
+
+Before attempting to install {{site.data.keyword.blockchainfull_notm}} Platform on Azure, AWS, Rancher, or GKE, you should perform the following steps. Refer to your Kubernetes distribution documentation for more details.
+
+1. Ensure a load balancer with a public IP is configured in front of the Kubernetes cluster.
+2. Create a DNS entry for the IP address of the load balancer.
+3. Create a wild card host entry in DNS for the load balancer. This is a `DNS A` record with a wild card host.
+
+    For example, if the DNS entry for the load balancer is `test.example.com`, the DNS entry would be:
+    ```
+    *.test.example.com
+    ```
+
+    that ultimately resolves to
+    ```
+    test.example.com
+    ```
+
+    When this is configured, the following examples should all resolve to test.example.com:
+    ```
+    console.test.example.com
+    peer.test.example.com
+    ```
+
+    You can use `nslookup` to verify that DNS is configured correctly:
+
+    ```
+    $ nslookup console.test.example.com
+    ```
+
+4. The DNS entry for the load balancer should then be used as the **Domain name** during the installation of IBM Blockchain Platform.
+
+5. The NGINX ingress controller must be used. See the [ingress controller installation guide](https://github.com/kubernetes/ingress-nginx/blob/master/docs/deploy/index.md){: external} that can be used for most Kubernetes distributions.
+
+6. Use the following instructions to edit the NGINX ingress controller deployment to enable ssl-passthrough or refer to the [Kubernetes instructions](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough).
+
+    This section may not be exact for your installation. The key is to ensure the last line that enables `ssl-passthrough` is present.
+
+    ```
+    /nginx-ingress-controller
+    --configmap=$(POD_NAMESPACE)/nginx-configuration
+    --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
+    --udp-services-configmap=$(POD_NAMESPACE)/udp-services
+    --publish-service=$(POD_NAMESPACE)/ingress-nginx
+    --annotations-prefix=nginx.ingress.kubernetes.io
+    --enable-ssl-passthrough=true
+    ```
+    {: codeblock}
+
+7. Verify all pods are running before attempting to install the {{site.data.keyword.blockchainfull_notm}} Platform.
+
+You can now [resume your installation](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8#deploy-k8-login).
