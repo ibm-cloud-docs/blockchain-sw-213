@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-12"
+lastupdated: "2020-05-20"
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
 subcollection: blockchain-sw-213
@@ -408,9 +408,8 @@ Failed to initialize local MSP: admin 0 is invalid [The identity does not contai
 Sometimes a node can fail to deploy, for example, due to lack of resources in your Kubernetes cluster. After you understand the cause of the node deployment failure, you need to cleanup the failed node in your cluster.
 {: tsSymptoms}
 
-Do not attempt to use Kubernetes commands to remove the node. Instead, it is extremely important that you use the {{site.data.keyword.blockchainfull_notm}} Platform console or the APIs to remove the failed node to ensure that the associated metadata and storage are also cleaned up. 
+Do not attempt to use Kubernetes commands to remove the node. Instead, it is extremely important that you use the {{site.data.keyword.blockchainfull_notm}} Platform console or the APIs to remove the failed node to ensure that the associated metadata and storage are also cleaned up.
 {: tsResolve}
-
 
 ## How can I view my smart contract container logs?
 {: #ibp-console-smart-contracts-troubleshoot-entry2}

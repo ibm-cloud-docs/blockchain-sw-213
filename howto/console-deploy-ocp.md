@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-20"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -59,9 +59,10 @@ If you are deploying the OpenShift platform on {{site.data.keyword.cloud_notm}},
 {: #deploy-ocp-browsers}
 The {{site.data.keyword.blockchainfull_notm}} Platform console has been successfully tested on the following browsers:
 
-- Chrome Version 80.0.3987.122 (Official Build) (64-bit)
+- Chrome Version 81.0.4044.122 (Official Build) (64-bit)
 - Firefox (non-ESR): Version 69.0.1
 - Safari Version 13.0.3 (15608.3.10.1.4)
+
 
 ## Storage
 {: #deploy-ocp-storage}
@@ -430,7 +431,7 @@ spec:
         - name: docker-key-secret
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.1.3-20200416-amd64
+          image: cp.icr.io/cp/ibp-operator:2.1.3-20200520-amd64
           command:
           - ibp-operator
           imagePullPolicy: Always
@@ -562,7 +563,7 @@ kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
 {:codeblock}
 
-Replace `<PROJECT_NAME>` with the name of your project. Before you install the console, you might want to review the advanced deployment options in the next section. The console can take a few minutes to deploy.
+Replace `<PROJECT_NAME>` with the name of your project. The console can take a few minutes to deploy.
 
 ### Advanced deployment options
 {: #console-deploy-ocp-advanced}
@@ -748,14 +749,17 @@ You can use your browser to access the console by browsing to the console URL:
 ```
 https://<PROJECT_NAME>-ibpconsole-console.<DOMAIN>
 ```
+{: codeblock}
 
 - Replace `<PROJECT_NAME>` with the name of the OpenShift project that you created.
 - Replace `<DOMAIN>` with the name of your cluster domain. You passed this value to the `DOMAIN:` field of the `ibp-console.yaml` file.
 
 Your console URL looks similar to the following example:
+
 ```
 https://blockchain-project-ibpconsole-console.xyz.abc.com
 ```
+{: codeblock}
 
 You can also find your console URL by logging in to your OpenShift cluster and running the following command. Replace `<PROJECT_NAME>` with the name of your project:
 ```

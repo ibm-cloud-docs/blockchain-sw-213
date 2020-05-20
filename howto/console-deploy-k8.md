@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-13"
+lastupdated: "2020-05-20"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -52,9 +52,10 @@ Ensure that your Kubernetes cluster has sufficient resources for the {{site.data
 {: #deploy-k8-browsers}
 The {{site.data.keyword.blockchainfull_notm}} Platform console has been successfully tested on the following browsers:
 
-- Chrome Version 80.0.3987.122 (Official Build) (64-bit)
+- Chrome Version 81.0.4044.122 (Official Build) (64-bit)
 - Firefox (non-ESR): Version 69.0.1
 - Safari Version 13.0.3 (15608.3.10.1.4)
+
 
 ## Storage
 {: #deploy-k8-storage}
@@ -387,7 +388,7 @@ spec:
         - name: "docker-key-secret"
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.1.3-20200416-amd64
+          image: cp.icr.io/cp/ibp-operator:2.1.3-20200520-amd64
           command:
           - ibp-operator
           imagePullPolicy: Always

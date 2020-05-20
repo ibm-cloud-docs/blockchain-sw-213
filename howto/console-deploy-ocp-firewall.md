@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-14"
+lastupdated: "2020-05-20"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -61,9 +61,10 @@ Ensure that your OpenShift cluster has sufficient resources for the {{site.data.
 {: #deploy-ocp-browsers-firewall}
 The {{site.data.keyword.blockchainfull_notm}} Platform console has been successfully tested on the following browsers:
 
-- Chrome Version 80.0.3987.122 (Official Build) (64-bit)
+- Chrome Version 81.0.4044.122 (Official Build) (64-bit)
 - Firefox (non-ESR): Version 69.0.1
 - Safari Version 13.0.3 (15608.3.10.1.4)
+
 
 ## Storage
 {: #deploy-ocp-storage-firewall}
@@ -107,18 +108,18 @@ docker login --username cp --password <KEY> cp.icr.io
 
 After you log in, use the following command to pull all of the component images of the {{site.data.keyword.blockchainfull_notm}} Platform:
 ```
-docker pull cp.icr.io/cp/ibp-operator:2.1.3-20200416-amd64
-docker pull cp.icr.io/cp/ibp-init:2.1.3-20200416-amd64
-docker pull cp.icr.io/cp/ibp-peer:1.4.6-20200416-amd64
-docker pull cp.icr.io/cp/ibp-orderer:1.4.6-20200416-amd64
-docker pull cp.icr.io/cp/ibp-ca:1.4.6-20200416-amd64
-docker pull cp.icr.io/cp/ibp-dind:1.4.6-20200416-amd64
-docker pull cp.icr.io/cp/ibp-console:2.1.3-20200416-amd64
-docker pull cp.icr.io/cp/ibp-grpcweb:2.1.3-20200416-amd64
-docker pull cp.icr.io/cp/ibp-utilities:1.4.6-20200416-amd64
-docker pull cp.icr.io/cp/ibp-couchdb:2.3.1-20200416-amd64
-docker pull cp.icr.io/cp/ibp-deployer:2.1.3-20200416-amd64
-docker pull cp.icr.io/cp/ibp-fluentd:2.1.3-20200416-amd64
+docker pull cp.icr.io/cp/ibp-operator:2.1.3-20200520-amd64
+docker pull cp.icr.io/cp/ibp-init:2.1.3-20200520-amd64
+docker pull cp.icr.io/cp/ibp-peer:1.4.6-20200520-amd64
+docker pull cp.icr.io/cp/ibp-orderer:1.4.6-20200520-amd64
+docker pull cp.icr.io/cp/ibp-ca:1.4.6-20200520-amd64
+docker pull cp.icr.io/cp/ibp-dind:1.4.6-20200520-amd64
+docker pull cp.icr.io/cp/ibp-console:2.1.3-20200520-amd64
+docker pull cp.icr.io/cp/ibp-grpcweb:2.1.3-20200520-amd64
+docker pull cp.icr.io/cp/ibp-utilities:1.4.6-20200520-amd64
+docker pull cp.icr.io/cp/ibp-couchdb:2.3.1-20200520-amd64
+docker pull cp.icr.io/cp/ibp-deployer:2.1.3-20200520-amd64
+docker pull cp.icr.io/cp/ibp-fluentd:2.1.3-20200520-amd64
 ```
 {:codeblock}
 
@@ -127,18 +128,18 @@ If you are deploying the platform on LinuxONE on s390x, replace `amd64` in the i
 
 After you download the images, you must change the image tags to refer to your docker registry. Replace `<LOCAL_REGISTRY>` with the url of your local registry and run the following commands:
 ```
-docker tag cp.icr.io/cp/ibp-operator:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200416-amd64
-docker tag cp.icr.io/cp/ibp-init:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-init:2.1.3-20200416-amd64
-docker tag cp.icr.io/cp/ibp-peer:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-peer:1.4.6-20200416-amd64
-docker tag cp.icr.io/cp/ibp-orderer:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-orderer:1.4.6-20200416-amd64
-docker tag cp.icr.io/cp/ibp-ca:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-ca:1.4.6-20200416-amd64
-docker tag cp.icr.io/cp/ibp-dind:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-dind:1.4.6-20200416-amd64
-docker tag cp.icr.io/cp/ibp-console:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-console:2.1.3-20200416-amd64
-docker tag cp.icr.io/cp/ibp-grpcweb:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-grpcweb:2.1.3-20200416-amd64
-docker tag cp.icr.io/cp/ibp-utilities:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-utilities:1.4.6-20200416-amd64
-docker tag cp.icr.io/cp/ibp-couchdb:2.3.1-20200416-amd64 <LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20200416-amd64
-docker tag cp.icr.io/cp/ibp-deployer:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-deployer:2.1.3-20200416-amd64
-docker tag cp.icr.io/cp/ibp-fluentd:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-fluentd:2.1.3-20200416-amd64
+docker tag cp.icr.io/cp/ibp-operator:2.1.3-20200520-amd64 <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200520-amd64
+docker tag cp.icr.io/cp/ibp-init:2.1.3-20200520-amd64 <LOCAL_REGISTRY>/ibp-init:2.1.3-20200520-amd64
+docker tag cp.icr.io/cp/ibp-peer:1.4.6-20200520-amd64 <LOCAL_REGISTRY>/ibp-peer:1.4.6-20200520-amd64
+docker tag cp.icr.io/cp/ibp-orderer:1.4.6-20200520-amd64 <LOCAL_REGISTRY>/ibp-orderer:1.4.6-20200520-amd64
+docker tag cp.icr.io/cp/ibp-ca:1.4.6-20200520-amd64 <LOCAL_REGISTRY>/ibp-ca:1.4.6-20200520-amd64
+docker tag cp.icr.io/cp/ibp-dind:1.4.6-20200520-amd64 <LOCAL_REGISTRY>/ibp-dind:1.4.6-20200520-amd64
+docker tag cp.icr.io/cp/ibp-console:2.1.3-20200520-amd64 <LOCAL_REGISTRY>/ibp-console:2.1.3-20200520-amd64
+docker tag cp.icr.io/cp/ibp-grpcweb:2.1.3-20200520-amd64 <LOCAL_REGISTRY>/ibp-grpcweb:2.1.3-20200520-amd64
+docker tag cp.icr.io/cp/ibp-utilities:1.4.6-20200520-amd64 <LOCAL_REGISTRY>/ibp-utilities:1.4.6-20200520-amd64
+docker tag cp.icr.io/cp/ibp-couchdb:2.3.1-20200520-amd64 <LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20200520-amd64
+docker tag cp.icr.io/cp/ibp-deployer:2.1.3-20200520-amd64 <LOCAL_REGISTRY>/ibp-deployer:2.1.3-20200520-amd64
+docker tag cp.icr.io/cp/ibp-fluentd:2.1.3-20200520-amd64 <LOCAL_REGISTRY>/ibp-fluentd:2.1.3-20200520-amd64
 ```
 {:codeblock}
 
@@ -154,18 +155,18 @@ docker login --username <USER> --password <LOCAL_REGISTRY_PASSWORD> <LOCAL_REGIS
 
 Then, run the following command to push the images. Replace `<LOCAL_REGISTRY>` with the url of your local registry.
 ```
-docker push <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-init:2.1.3-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-peer:1.4.6-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-orderer:1.4.6-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-ca:1.4.6-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-dind:1.4.6-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-console:2.1.3-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-grpcweb:2.1.3-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-utilities:1.4.6-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-deployer:2.1.3-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-fluentd:2.1.3-20200416-amd64
+docker push <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-init:2.1.3-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-peer:1.4.6-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-orderer:1.4.6-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-ca:1.4.6-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-dind:1.4.6-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-console:2.1.3-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-grpcweb:2.1.3-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-utilities:1.4.6-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-deployer:2.1.3-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-fluentd:2.1.3-20200520-amd64
 ```
 {:codeblock}
 
@@ -512,7 +513,7 @@ spec:
         - name: docker-key-secret
       containers:
         - name: ibp-operator
-          image: <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200416-amd64
+          image: <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200520-amd64
           command:
           - ibp-operator
           imagePullPolicy: Always

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-28"
+lastupdated: "2020-05-20"
 
 
 keywords: release note, latest changes, Hyperledger Fabric
@@ -34,7 +34,26 @@ Use these release notes that are grouped by date to learn about the latest chang
 
 See [Installing patches](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-manage#ibp-console-manage-patch) for instructions on how to apply patches to your existing nodes.
 
+## 20 May 2020
+{: #05-20-2020}
 
+**CA, peer, and ordering node patch 1.4.6-2**
+
+Miscellaneous bug fixes and security patches.
+
+
+
+### Support for Intermediate Certificate Authorities (CAs)
+{: #05-20-2020-ICA}
+
+You now have the option to configure an intermediate CA using the console or APIs to override the default CA settings. See the tutorial on [Creating an intermediate Certificate Authority](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-ica) to learn more.
+
+### Updated connection profile
+{: #05-20-2020-connx-profile}
+
+The generated connection profile that client applications use to connect to the network has been streamlined and is now downloadable from the **Organizations** tab. See [Downloading a connection profile](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-organizations#ibp-console-organizations-connx-profile) to learn how.
+
+Users who installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 before May 20, 2020 should install the [v2.1.3 Fix Pack](/docs/blockchain-sw-213?topic=blockchain-sw-213-install-fixpack#install-fixpack). If you installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 after May 20, 2020, the platform will contain all the bug fixes and improvements that are provided by the Fix Pack, and you do not need to apply the Fix Pack.
 
 
 ## 16 April 2020
