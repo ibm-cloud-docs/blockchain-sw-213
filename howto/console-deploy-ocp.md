@@ -563,7 +563,7 @@ kubectl apply -f ibp-console.yaml -n <PROJECT_NAME>
 ```
 {:codeblock}
 
-Replace `<PROJECT_NAME>` with the name of your project. Before you install the console, you might want to review the advanced deployment options in the next section. The console can take a few minutes to deploy.
+Replace `<PROJECT_NAME>` with the name of your project. The console can take a few minutes to deploy.
 
 ### Advanced deployment options
 {: #console-deploy-ocp-advanced}
@@ -749,14 +749,17 @@ You can use your browser to access the console by browsing to the console URL:
 ```
 https://<PROJECT_NAME>-ibpconsole-console.<DOMAIN>
 ```
+{: codeblock}
 
 - Replace `<PROJECT_NAME>` with the name of the OpenShift project that you created.
 - Replace `<DOMAIN>` with the name of your cluster domain. You passed this value to the `DOMAIN:` field of the `ibp-console.yaml` file.
 
 Your console URL looks similar to the following example:
+
 ```
 https://blockchain-project-ibpconsole-console.xyz.abc.com
 ```
+{: codeblock}
 
 You can also find your console URL by logging in to your OpenShift cluster and running the following command. Replace `<PROJECT_NAME>` with the name of your project:
 ```
