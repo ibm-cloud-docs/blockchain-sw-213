@@ -80,6 +80,7 @@ IBM Blockchain Platform v2.1.3
 
 	/blockchain/blockchain-hyperledger-fabric
 	/blockchain/blockchain-k8s-overview
+	reference/metering.md
 	glossary.md
 	{: .navgroup-end}
 
