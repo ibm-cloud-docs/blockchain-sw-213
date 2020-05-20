@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-16"
+lastupdated: "2020-05-20"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -50,7 +50,7 @@ kubectl get deployment ibp-operator -n <namespace> -o yaml > operator.yaml
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-fixpack.yaml`. You need to update the `image:` field with the new operator image. You can find the name and tag of the latest operator image below:
 ```
-cp.icr.io/cp/ibp-operator:2.1.3-20200416-amd64
+cp.icr.io/cp/ibp-operator:2.1.3-20200520-amd64
 ```
 {:codeblock}
 
@@ -89,7 +89,7 @@ kubectl delete deployment -n <namespace> ibpconsole
 ```
 {:codeblock}
 
-After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the v2.1.3 Fix Pack from the updated operator. You can use the following commands to confirm that the console has been updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20200416`.
+After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the v2.1.3 Fix Pack from the updated operator. You can use the following commands to confirm that the console has been updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20200520`.
 ```
 kubectl get deployment -n <namespace> ibpconsole -o yaml
 kubectl get configmap -n <namespace> ibpconsole-deployer -o yaml
@@ -149,35 +149,35 @@ docker login --username cp --password <KEY> cp.icr.io
 
 After you log in, use the following command to pull the images for {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3:
 ```
-docker pull cp.icr.io/cp/ibp-operator:2.1.3-20200416-amd64
-docker pull cp.icr.io/cp/ibp-init:2.1.3-20200416-amd64
-docker pull cp.icr.io/cp/ibp-peer:1.4.6-20200416-amd64
-docker pull cp.icr.io/cp/ibp-orderer:1.4.6-20200416-amd64
-docker pull cp.icr.io/cp/ibp-ca:1.4.6-20200416-amd64
-docker pull cp.icr.io/cp/ibp-dind:1.4.6-20200416-amd64
-docker pull cp.icr.io/cp/ibp-console:2.1.3-20200416-amd64
-docker pull cp.icr.io/cp/ibp-grpcweb:2.1.3-20200416-amd64
-docker pull cp.icr.io/cp/ibp-utilities:1.4.6-20200416-amd64
-docker pull cp.icr.io/cp/ibp-couchdb:2.3.1-20200416-amd64
-docker pull cp.icr.io/cp/ibp-deployer:2.1.3-20200416-amd64
-docker pull cp.icr.io/cp/ibp-fluentd:2.1.3-20200416-amd64
+docker pull cp.icr.io/cp/ibp-operator:2.1.3-20200520-amd64
+docker pull cp.icr.io/cp/ibp-init:2.1.3-20200520-amd64
+docker pull cp.icr.io/cp/ibp-peer:1.4.6-20200520-amd64
+docker pull cp.icr.io/cp/ibp-orderer:1.4.6-20200520-amd64
+docker pull cp.icr.io/cp/ibp-ca:1.4.6-20200520-amd64
+docker pull cp.icr.io/cp/ibp-dind:1.4.6-20200520-amd64
+docker pull cp.icr.io/cp/ibp-console:2.1.3-20200520-amd64
+docker pull cp.icr.io/cp/ibp-grpcweb:2.1.3-20200520-amd64
+docker pull cp.icr.io/cp/ibp-utilities:1.4.6-20200520-amd64
+docker pull cp.icr.io/cp/ibp-couchdb:2.3.1-20200520-amd64
+docker pull cp.icr.io/cp/ibp-deployer:2.1.3-20200520-amd64
+docker pull cp.icr.io/cp/ibp-fluentd:2.1.3-20200520-amd64
 ```
 {:codeblock}
 
 After you download the images, you must change the image tags to refer to your docker registry. Replace `<LOCAL_REGISTRY>` with the url of your local registry and run the following commands:
 ```
-docker tag cp.icr.io/cp/ibp-operator:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200416-amd64
-docker tag cp.icr.io/cp/ibp-init:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-init:2.1.3-20200416-amd64
-docker tag cp.icr.io/cp/ibp-peer:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-peer:1.4.6-20200416-amd64
-docker tag cp.icr.io/cp/ibp-orderer:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-orderer:1.4.6-20200416-amd64
-docker tag cp.icr.io/cp/ibp-ca:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-ca:1.4.6-20200416-amd64
-docker tag cp.icr.io/cp/ibp-dind:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-dind:1.4.6-20200416-amd64
-docker tag cp.icr.io/cp/ibp-console:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-console:2.1.3-20200416-amd64
-docker tag cp.icr.io/cp/ibp-grpcweb:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-grpcweb:2.1.3-20200416-amd64
-docker tag cp.icr.io/cp/ibp-utilities:1.4.6-20200416-amd64 <LOCAL_REGISTRY>/ibp-utilities:1.4.6-20200416-amd64
-docker tag cp.icr.io/cp/ibp-couchdb:2.3.1-20200416-amd64 <LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20200416-amd64
-docker tag cp.icr.io/cp/ibp-deployer:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-deployer:2.1.3-20200416-amd64
-docker tag cp.icr.io/cp/ibp-fluentd:2.1.3-20200416-amd64 <LOCAL_REGISTRY>/ibp-fluentd:2.1.3-20200416-amd64
+docker tag cp.icr.io/cp/ibp-operator:2.1.3-20200520-amd64 <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200520-amd64
+docker tag cp.icr.io/cp/ibp-init:2.1.3-20200520-amd64 <LOCAL_REGISTRY>/ibp-init:2.1.3-20200520-amd64
+docker tag cp.icr.io/cp/ibp-peer:1.4.6-20200520-amd64 <LOCAL_REGISTRY>/ibp-peer:1.4.6-20200520-amd64
+docker tag cp.icr.io/cp/ibp-orderer:1.4.6-20200520-amd64 <LOCAL_REGISTRY>/ibp-orderer:1.4.6-20200520-amd64
+docker tag cp.icr.io/cp/ibp-ca:1.4.6-20200520-amd64 <LOCAL_REGISTRY>/ibp-ca:1.4.6-20200520-amd64
+docker tag cp.icr.io/cp/ibp-dind:1.4.6-20200520-amd64 <LOCAL_REGISTRY>/ibp-dind:1.4.6-20200520-amd64
+docker tag cp.icr.io/cp/ibp-console:2.1.3-20200520-amd64 <LOCAL_REGISTRY>/ibp-console:2.1.3-20200520-amd64
+docker tag cp.icr.io/cp/ibp-grpcweb:2.1.3-20200520-amd64 <LOCAL_REGISTRY>/ibp-grpcweb:2.1.3-20200520-amd64
+docker tag cp.icr.io/cp/ibp-utilities:1.4.6-20200520-amd64 <LOCAL_REGISTRY>/ibp-utilities:1.4.6-20200520-amd64
+docker tag cp.icr.io/cp/ibp-couchdb:2.3.1-20200520-amd64 <LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20200520-amd64
+docker tag cp.icr.io/cp/ibp-deployer:2.1.3-20200520-amd64 <LOCAL_REGISTRY>/ibp-deployer:2.1.3-20200520-amd64
+docker tag cp.icr.io/cp/ibp-fluentd:2.1.3-20200520-amd64 <LOCAL_REGISTRY>/ibp-fluentd:2.1.3-20200520-amd64
 ```
 {:codeblock}
 
@@ -193,18 +193,18 @@ docker login --username <USER> --password <LOCAL_REGISTRY_PASSWORD> <LOCAL_REGIS
 
 Then, run the following command to push the images. Replace `<LOCAL_REGISTRY>` with the url of your local registry.
 ```
-docker push <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-init:2.1.3-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-peer:1.4.6-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-orderer:1.4.6-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-ca:1.4.6-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-dind:1.4.6-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-console:2.1.3-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-grpcweb:2.1.3-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-utilities:1.4.6-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-deployer:2.1.3-20200416-amd64
-docker push <LOCAL_REGISTRY>/ibp-fluentd:2.1.3-20200416-amd64
+docker push <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-init:2.1.3-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-peer:1.4.6-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-orderer:1.4.6-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-ca:1.4.6-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-dind:1.4.6-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-console:2.1.3-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-grpcweb:2.1.3-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-utilities:1.4.6-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-deployer:2.1.3-20200520-amd64
+docker push <LOCAL_REGISTRY>/ibp-fluentd:2.1.3-20200520-amd64
 ```
 {:codeblock}
 
@@ -223,7 +223,7 @@ kubectl get deployment ibp-operator -n <namespace> -o yaml > operator.yaml
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-fixpack.yaml`. You need to update the `image:` field with the new operator image. You can find the name and tag of the latest operator image below:
 ```
-cp.icr.io/cp/ibp-operator:2.1.3-20200416-amd64
+cp.icr.io/cp/ibp-operator:2.1.3-20200520-amd64
 ```
 {:codeblock}
 
@@ -262,7 +262,7 @@ kubectl delete deployment -n <namespace> ibpconsole
 ```
 {:codeblock}
 
-After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the v2.1.3 Fix Pack from the updated operator. You can use the following commands to confirm that the console has been updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20200416`.
+After you delete the console deployment and ConfigMap, the console will restart and download the new images and configuration settings provided by the v2.1.3 Fix Pack from the updated operator. You can use the following commands to confirm that the console has been updated with the latest images and configuration. The new images used by the console and your blockchain nodes will have the tags with the date `20200520`.
 ```
 kubectl get deployment -n <namespace> ibpconsole -o yaml
 kubectl get configmap -n <namespace> ibpconsole-deployer -o yaml

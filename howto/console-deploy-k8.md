@@ -388,7 +388,7 @@ spec:
         - name: "docker-key-secret"
       containers:
         - name: ibp-operator
-          image: cp.icr.io/cp/ibp-operator:2.1.3-20200416-amd64
+          image: cp.icr.io/cp/ibp-operator:2.1.3-20200520-amd64
           command:
           - ibp-operator
           imagePullPolicy: Always
