@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-05-20"
 
 keywords: HA, highly availability, multiregion
 
@@ -45,8 +45,8 @@ To set up multiregion HA support for peers, you need to complete the following t
 
 To configure multiregion HA by creating redundant peers for each organization, complete the following steps when you configure your blockchain network:
 
-1. Create three   Kubernetes clusters  on OpenShift Container Platform in the regions you prefer. These clusters can be located in any region you want, although for high performance they should be relatively close together. For example, the regions, East Coast US, and West Coast US, and Canada are better than the regions, West Coast US, London, and Tokyo.
-2. Deploy a new {{site.data.keyword.blockchainfull_notm}} Platform instance on the cluster in one of the regions.   Repeat these steps in the second and third regions. When you are finished, you have three separate {{site.data.keyword.blockchainfull_notm}} Platform consoles for three separate clusters.
+1. Create three Kubernetes clusters   on OpenShift Container Platform in the regions you prefer. These clusters can be located in any region you want, although for high performance they should be relatively close together. For example, the regions, East Coast US, and West Coast US, and Canada are better than the regions, West Coast US, London, and Tokyo.
+2. Deploy a new {{site.data.keyword.blockchainfull_notm}} Platform instance on the cluster in one of the regions.   Repeat these steps in the second and third regions. When you are finished, you have three separate {{site.data.keyword.blockchainfull_notm}} Platform consoles in three separate clusters, each in a different region.
 
 This tutorial assumes that an ordering service exists with a channel defined that the peers can join.
 {: important}

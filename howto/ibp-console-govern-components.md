@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-06"
+lastupdated: "2020-05-20"
 
 keywords: network components, Kubernetes, OpenShift, allocate resources, batch timeout, reallocate resources, LevelDB, CouchDB, ordering nodes, ordering, add and remove, governance
 
@@ -30,7 +30,7 @@ subcollection: blockchain-sw-213
 </div>
 
 
-After creating CAs, peers, and ordering nodes, you need to monitor the resource usage by the nodes and potentially reallocate resources.
+After creating CAs, peers, and ordering nodes, you need to monitor the resources used by the nodes and potentially reallocate resources.
 {:shortdesc}
 
 **Target audience:** This topic is designed for network operators who are responsible for creating, monitoring, and managing their components in the blockchain network.

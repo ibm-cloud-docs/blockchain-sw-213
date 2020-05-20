@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-28"
+lastupdated: "2020-05-20"
 
 keywords: APIs, build a network, authentication, service credentials, API key, API endpoint, IAM access token, Fabric CA client, import a network, generate certificates
 
@@ -437,7 +437,7 @@ For more information about deploying a customized CA, and which fields you can c
 
 You can use configuration override to deploy a CA with replica sets that share the same database, ensuring that the data is consistent between replicas. This configuration ensures that the CA will be available in the event of a Kubernetes worker node failure. To deploy an HA CA, you need to deploy a PostgreSQL database on {{site.data.keyword.cloud_notm}} or in the environment of your choice. You then need to use the information about your database to create a connection file that will be used by your CA. For more information, see [Building a high availability Certificate Authority](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-ha-ca#ibp-console-build-ha-ca).
 
-To use the APIs to deploy an HA CA, you need to provide the database connection file to the `"db"` section of the config override JSON string. For example, the API request below will a CA with two replicas that connect to a database located on {{site.data.keyword.cloud_notm}}.
+To use the APIs to deploy an HA CA, you need to provide the database connection file to the `"db"` section of the config override JSON string. For example, the API request below will deploy a CA with two replicas that connect to a database located on {{site.data.keyword.cloud_notm}}.
 ```
 curl -X POST \
   https://<API endpoint>/ak/api/v2/kubernetes/components/fabric-ca \
