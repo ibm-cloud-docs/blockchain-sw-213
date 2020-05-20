@@ -41,6 +41,8 @@ See [Installing patches](/docs/blockchain-sw-213?topic=blockchain-sw-213-console
 
 Miscellaneous bug fixes and security patches.
 
+
+
 ### Support for Intermediate Certificate Authorities (CAs)
 {: #05-20-2020-ICA}
 
