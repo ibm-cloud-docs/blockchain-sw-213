@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-05-21"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -22,7 +22,7 @@ subcollection: blockchain-sw-213
 # Installing the v2.1.3 Fix Pack
 {: #install-fixpack}
 
-Users who installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 before April 16, 2020 should install the v2.1.3 Fix Pack. The Fix Pack contains important bug fixes and should be applied to your network as soon as possible. The Fix Pack also provides support for using an HSM on Amazon Web Services. For more information, see the [April 16, 2020 Release notes](/docs/blockchain-sw-213?topic=blockchain-sw-213-release-notes-saas-20#04-16-2020). If you installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 after April 16, 2020, the platform will contain all the bug fixes and improvements provided by the Fix Pack, and you do not need to apply the Fix Pack.
+Users who installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 before May 20, 2020 should install the v2.1.3 Fix Pack. The Fix Pack contains important bug fixes and should be applied to your network as soon as possible. For more information, see the [May 20, 2020 Release notes](/docs/blockchain-sw-213?topic=blockchain-sw-213-release-notes-saas-20#05-20-2020). If you installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 after May 20, 2020, the platform will contain all the bug fixes and improvements provided by the Fix Pack, and you do not need to apply the Fix Pack.
 {:shortdesc}
 
 You can install the Fix Pack by updating the {{site.data.keyword.blockchainfull_notm}} Platform deployment on your Kubernetes cluster to pull the latest images from the {{site.data.keyword.IBM_notm}} Entitlement registry. You can apply the Fix Pack by using the following steps:
