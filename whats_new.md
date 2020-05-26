@@ -30,8 +30,6 @@ subcollection: blockchain-sw-213
 </div>
 
 
-{: #whats-new}
-
 ## March 24, 2020
 {: #whats-new-03-24-2020}
 
