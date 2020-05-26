@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-05-22"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall
 
@@ -92,8 +92,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 can be deployed wi
 | OpenShift Container Platform | 4.1 |  x86_64 |  |
 | OpenShift Container Platform | 4.2 |  x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | OpenShift Container Platform | 4.3 |  x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| OpenShift Container Platform on IBM Cloud | 3.11 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg)  |
-| OpenShift Container Platform on Microsoft Azure | 4.1 |  x86_64 | |
+| OpenShift Container Platform on {{site.data.keyword.cloud_notm}} | 3.11, 4.3 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg)  |
 | OpenShift Container Platform on LinuxONE | 4.2 | s390x | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | OpenShift Container Platform on LinuxONE | 4.3 | s390x | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | IBM Cloud Private  | 3.2.1 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
@@ -101,6 +100,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 can be deployed wi
 | Kubernetes ***    | v1.14 - v1.17 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) Rancher v2.3.2|
 {: caption="Table 1. Supported platforms" caption-side="bottom"}
 *** If you want to use {{site.data.keyword.IBM_notm}} Kubernetes Service, we recommend that you check out the [IBM Blockchain Platform for IBM Cloud](/docs/blockchain?topic=blockchain-ibp-v2-deploy-iks){: external} offering unless you specifically require this offering. See [Is IBM Blockchain Platform v2.1.3 suitable for you](/docs/blockchain-sw-213?topic=blockchain-sw-213-get-started-console-ocp#get-started-console-ocp-suitable).  
+
 
 If you are running on Azure Kubernetes Service, Amazon Elastic Kubernetes Service, or IBM Kubernetes Service, then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8#console-deploy-k8-considerations).
 {: important}
@@ -111,7 +111,7 @@ If you are running on Azure Kubernetes Service, Amazon Elastic Kubernetes Servic
 
 Your {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 entitlement includes both the full platform and the {{site.data.keyword.blockchainfull_notm}} images.
 
-The entitlement does not include a Kubernetes distribution. You must procure that separately. And if you plan to use {{site.data.keyword.cloud_notm}} Private, you need to purchase a separate entitlement.
+The entitlement does not include a Kubernetes distribution. You must procure that separately.  And if you plan to use {{site.data.keyword.cloud_notm}} Private, you need to purchase a separate entitlement.
 {: note}
 
 After you purchase an entitlement, you can access your [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. This key is required to deploy the release. **When  you choose this option, you are responsible for provisioning your own Kubernetes cluster.**
