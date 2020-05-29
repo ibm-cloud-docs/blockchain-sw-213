@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-05-29"
 
 keywords: APIs, build a network, authentication, service credentials, API key, API endpoint, IAM access token, Fabric CA client, import a network, generate certificates
 
@@ -231,8 +231,8 @@ curl -X POST \
 | **Request** |  |
 |-------------|-----------|
 | Path | DELETE `<API_endpoint>`/ak/api/v2/permissions/users |
-| **Request body fields** | |
-| <ul><li>`users`</li></ul>| <ul><li>`string` user id</li></ul>|
+| **Requests query parameter** | |
+| <ul><li>`uuids`</li></ul>| <ul><li>`string` user id</li></ul>|
 | **Response body fields** | |
 | <ul><li>`uuids`</li></ul>| <ul><li>`string` user id</li></ul>|
 | Authorization | manager |
