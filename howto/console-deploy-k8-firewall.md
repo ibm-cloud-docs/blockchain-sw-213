@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-05-29"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises
 
@@ -662,6 +662,7 @@ Replace `<NAMESPACE>` with the name of your namespace. Before you install the co
 {: #console-deploy-ocp-advanced-firewall}
 
 You can edit the `ibp-console.yaml` file to allocate more resources to your console or use zones for high availability in a multizone cluster. To take advantage of these deployment options, you can use the console resource definition with the `resources:` and `clusterdata:` sections added:
+
 ```yaml
 apiVersion: ibp.com/v1alpha1
 kind: IBPConsole
@@ -763,6 +764,7 @@ kubectl create secret generic console-tls-secret --from-file=tls.crt=./tlscert.p
 {:codeblock}
 
 After you create the secret, add the following field to the `spec:` section of `ibp-console.yaml` with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key stored in a secret named `"console-tls-secret"`:
+
 ```yaml
 apiVersion: ibp.com/v1alpha1
 kind: IBPConsole
