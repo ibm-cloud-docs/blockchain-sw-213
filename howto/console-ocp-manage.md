@@ -376,7 +376,7 @@ Component logs can be viewed from the command line by using the [kubectl CLI com
 If you encounter issues with your smart contract, you can view the smart contract, or chaincode, container logs to debug an issue. You can run the following command to view the smart contract container logs:
 
 ```
-kubectl  logs -f <peer_ped> -c chaincode-logs
+kubectl  logs -f <peer_pod> -c chaincode-logs
 ```
 {:codeblock}
 
