@@ -109,9 +109,9 @@ If you are running on Azure Kubernetes Service, Amazon Elastic Kubernetes Servic
 ## License and pricing
 {: #console-ocp-about-license}
 
-Your {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 entitlement includes both the full platform and the {{site.data.keyword.blockchainfull_notm}} images. And if you plan to use {{site.data.keyword.cloud_notm}} Private, you need to purchase a separate entitlement.
+Your {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 entitlement includes both the full platform and the {{site.data.keyword.blockchainfull_notm}} images.
 
-The entitlement does not include a Kubernetes distribution. You must procure that separately.
+The entitlement does not include a Kubernetes distribution. You must procure that separately. And if you plan to use {{site.data.keyword.cloud_notm}} Private, you need to purchase a separate entitlement.
 {: note}
 
 After you purchase an entitlement, you can access your [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. This key is required to deploy the release. **When  you choose this option, you are responsible for provisioning your own Kubernetes cluster.**
