@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-06-18"
 
 keywords: intermediate CA, root CA, parent server, Certificate Authority
 
@@ -25,7 +25,12 @@ subcollection: blockchain-sw-213
 {: help}
 {: support}
 
-
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
+  <p style="line-height: 10px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-ica">2.5</a>
+    </p>
+</div>
 
 For customers who prefer to include intermediate CAs in their network, the {{site.data.keyword.blockchainfull}} Platform offers this configuration option when you deploy a CA. This tutorial describes the process for creating an intermediate CA.
 {: shortdesc}
@@ -300,4 +305,3 @@ If you want to learn more about creating MSPs, see [Managing organizations](http
 {: #ibp-ica-next-steps-scale}
 
 Because the intermediate CA can process all requests that the root CA handles, you can effectively turn off your root CA by scaling down the root CA CPU to 0.001 CPU. Taking this action renders the root CA non-functional while in this state. As long as you don't need the root CA to issue identities or enroll other intermediate CAs, it can be safely scaled down. See the topic on [Reallocating resources](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-govern-components) for the steps to scale down the CPU. If the root CA is needed later, for example to enroll another intermediate CA, you can always repeat the steps to scale back up the CPU. The minimum CPU required for a CA to be operational is `0.1 CPU`.
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-06-02"
+lastupdated: "2020-06-18"
 
 keywords: IBM Blockchain, IBM Blockchain Platform, terms, Fabric, Raft, CouchDB, consortium
 
@@ -23,7 +23,8 @@ subcollection: blockchain-sw-213
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 10px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-glossary">2.1.2</a>
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-glossary">2.1.2</a>,
+    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-glossary">2.5</a>
     </p>
 </div>
 
@@ -214,4 +215,3 @@ A user is a participant in a blockchain network that has indirect access to the 
 ## World state
 {: #glossary-world-state}
 See [Current state](/docs/blockchain-sw-213?topic=blockchain-sw-213-glossary#glossary-current-state).
-

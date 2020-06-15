@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-01"
+lastupdated: "2020-06-18"
 
 keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall
 
@@ -26,7 +26,8 @@ subcollection: blockchain-sw-213
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 10px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-console-ocp-about">2.1.2</a>
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-console-ocp-about">2.1.2</a>,
+    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-console-ocp-about">2.5</a>
     </p>
 </div>
 
@@ -68,7 +69,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform includes the following ke
 - **Unified operation**. The {{site.data.keyword.blockchainfull_notm}} Platform console allows you to deploy and manage all of your organizations and nodes in **one console**. You can also add or remove members from a blockchain consortium, create and join channels, and install and instantiate smart contracts from your console.
 - **Dynamic signature collection** that allows better control over collaborative governance over channel configurations.
 - **Manage access** of the users who can administer or monitor your nodes.
-- **Interact directly with your pods** using <blockchain-sw-w213>your Kubernetes service</blockchain-sw-w213>.
+- **Interact directly with your pods** using your Kubernetes service.
 - **Direct access to the logs** of your nodes from your  Kubernetes service. Use  any supported third-party service to extract and analyze your logs.
 - **Kubernetes service integration.** Leverage services such as LogDNA for logging and Prometheus and Sysdig for monitoring.
 
@@ -88,32 +89,29 @@ Check out this [blog](https://www.ibm.com/blogs/blockchain/2020/03/the-latest-in
 
 The {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 can be deployed with the Kubernetes distributions on the following Platforms:
 
+
 | Kubernetes distribution | Version | Hardware |  Tested configuration|
 |----|----|----|-----|
 | OpenShift Container Platform | 3.11 | x86_64 |  |
 | OpenShift Container Platform | 4.1 |  x86_64 |  |
-| OpenShift Container Platform | 4.2 |  x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | OpenShift Container Platform | 4.3 |  x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | OpenShift Container Platform on {{site.data.keyword.cloud_notm}} | 3.11, 4.3 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg)  |
 | OpenShift Container Platform on LinuxONE | 4.2 | s390x | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 | OpenShift Container Platform on LinuxONE | 4.3 | s390x | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| IBM Cloud Private  | 3.2.1 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
-| IBM Cloud Private on LinuxONE | 3.2.1 | s390x | ![Checkmark icon](../../icons/checkmark-icon.svg)  |
-| Kubernetes ***    | v1.14 - v1.17 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
+| Kubernetes ***    | v1.15 - v1.18 | x86_64 | ![Checkmark icon](../../icons/checkmark-icon.svg) |
 {: caption="Table 1. Supported platforms" caption-side="bottom"}
 *** If you want to use {{site.data.keyword.IBM_notm}} Kubernetes Service, we recommend that you check out the [IBM Blockchain Platform for IBM Cloud](/docs/blockchain?topic=blockchain-ibp-v2-deploy-iks){: external} offering unless you specifically require this offering. See [Is IBM Blockchain Platform v2.1.3 suitable for you](/docs/blockchain-sw-213?topic=blockchain-sw-213-get-started-console-ocp#get-started-console-ocp-suitable).  
 
-
 If you are running on Azure Kubernetes Service, Amazon Elastic Kubernetes Service, or IBM Kubernetes Service, then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8#console-deploy-k8-considerations).
 {: important}
-
+<!-- See [Bringing your own Ingress controller](https://cloud.ibm.com/docs/containers?topic=containers-ingress-user_managed){: external} for instructions on how to do this on {{site.data.keyword.IBM_notm}} Kubernetes Service.-->
 
 ## License and pricing
 {: #console-ocp-about-license}
 
 Your {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 entitlement includes both the full platform and the {{site.data.keyword.blockchainfull_notm}} images.
 
-The entitlement does not include a Kubernetes distribution. You must procure that separately.  And if you plan to use {{site.data.keyword.cloud_notm}} Private, you need to purchase a separate entitlement.
+The entitlement does not include a Kubernetes distribution. You must procure that separately.
 {: note}
 
 After you purchase an entitlement, you can access your [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. This key is required to deploy the release. **When  you choose this option, you are responsible for provisioning your own Kubernetes cluster.**
@@ -142,7 +140,7 @@ The {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 uses a [Kubernetes
 
 It is also possible to deploy the {{site.data.keyword.blockchainfull_notm}} Platform behind a firewall, without having access to the public internet. For more information, see [Deploying IBM Blockchain Platform v2.1.3 on the OpenShift Container Platform behind a firewall](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp-firewall). Otherwise, for other Kubernetes distributions see [Deploying IBM Blockchain Platform v2.1.3 on Kubernetes behind a firewall](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8-firewall).
 
-
+**Looking for a way to script the deployment of the service?** Check out the [Ansible playbooks](/docs/blockchain-sw-213?topic=blockchain-sw-213-ansible), a powerful tool for scripting the deployment of components in your blockchain network.
 
 ## Security Considerations
 {: #console-ocp-about-security}

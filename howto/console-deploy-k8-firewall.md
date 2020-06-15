@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-29"
+lastupdated: "2020-06-18"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises
 
@@ -25,7 +25,8 @@ subcollection: blockchain-sw-213
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 10px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-deploy-k8-firewall">2.1.2</a>
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-deploy-k8-firewall">2.1.2</a>,
+    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8-firewall">2.5/a>
     </p>
 </div>
 
@@ -570,6 +571,7 @@ ibp-operator   1/1     1            1           1m
 When the operator is running on your namespace, you can apply a custom resource to start the {{site.data.keyword.blockchainfull_notm}} Platform console on your cluster. You can then access the console from your browser. You can deploy only one console per Kubernetes namespace.
 
 Save the custom resource definition below as `ibp-console.yaml` on your local system.
+
 ```yaml
 apiVersion: ibp.com/v1alpha1
 kind: IBPConsole
@@ -583,7 +585,8 @@ spec:
   email: "<EMAIL>"
   password: "<PASSWORD>"
   registryURL: <LOCAL_REGISTRY>
-  imagePullSecret: "docker-key-secret"
+  imagePullSecrets:
+    - name: "docker-key-secret"
   networkinfo:
     domain: <DOMAIN>
   storage:
@@ -598,6 +601,7 @@ You need to specify the external endpoint information of the console in the `ibp
 
 If you are deploying the platform on **{{site.data.keyword.cloud_notm}} Private**, you need to use a different console resource definition. Save the file below as `ibp-console.yaml` on your local system.
 
+
 ```yaml
 apiVersion: ibp.com/v1alpha1
 kind: IBPConsole
@@ -611,7 +615,8 @@ spec:
   email: "<EMAIL>"
   password: "<PASSWORD>"
   registryURL: <LOCAL_REGISTRY>
-  imagePullSecret: "docker-key-secret"
+  imagePullSecrets:
+    - name: "docker-key-secret"
   networkinfo:
     domain: <DOMAIN>
     consolePort: <CONSOLE_PORT>
@@ -663,6 +668,7 @@ Replace `<NAMESPACE>` with the name of your namespace. Before you install the co
 
 You can edit the `ibp-console.yaml` file to allocate more resources to your console or use zones for high availability in a multizone cluster. To take advantage of these deployment options, you can use the console resource definition with the `resources:` and `clusterdata:` sections added:
 
+
 ```yaml
 apiVersion: ibp.com/v1alpha1
 kind: IBPConsole
@@ -675,7 +681,8 @@ spec:
   serviceAccountName: default
   email: "<EMAIL>"
   password: "<PASSWORD>"
-  imagePullSecret: "docker-key-secret"
+  imagePullSecrets:
+    - name: "docker-key-secret"
   registryURL: <LOCAL_REGISTRY>
   networkinfo:
     domain: <DOMAIN>
@@ -765,6 +772,7 @@ kubectl create secret generic console-tls-secret --from-file=tls.crt=./tlscert.p
 
 After you create the secret, add the following field to the `spec:` section of `ibp-console.yaml` with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key stored in a secret named `"console-tls-secret"`:
 
+
 ```yaml
 apiVersion: ibp.com/v1alpha1
 kind: IBPConsole
@@ -779,7 +787,8 @@ metadata:
     email: "<EMAIL>"
     password: "<PASSWORD>"
     registryURL: <LOCAL_REGISTRY>
-    imagePullSecret: "docker-key-secret"
+    imagePullSecrets:
+      - name: "docker-key-secret"
     networkinfo:
         domain: <DOMAIN>
         consolePort: <CONSOLE_PORT>

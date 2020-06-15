@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-06-18"
 
 keywords: catalina, chrome, external CA, TLS, orderer, error
 
@@ -28,7 +28,8 @@ This page describes known issues that you might encounter when you use {{site.da
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 10px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-sw-known-issues">2.1.2</a>
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-sw-known-issues">2.1.2</a>,
+    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-sw-known-issues">2.5</a>
     </p>
 </div>
 
@@ -68,5 +69,3 @@ The console will not work in the Chrome browser on Mac OS Catalina when the {{si
       ```
       {: codeblock}
     When the pod restart completes, you should now be able to log in to your console URL from a Chrome Browser.
-
-

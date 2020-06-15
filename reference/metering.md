@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-06-18"
 
 keywords: metering, licensing service, license consumption, license tracking
 
@@ -25,6 +25,13 @@ subcollection: blockchain-sw-213
 
 # Tracking license consumption
 {: #metering}
+
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
+  <p style="line-height: 10px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-metering">2.5</a>
+    </p>
+</div>
 
 This page describes the licensing service that can be used with the {{site.data.keyword.blockchainfull}} Platform to track license consumption. The License Service collects and measures the license usage of Virtual Processor Core (VPC) metric at the cluster level.
 {:shortdesc}
