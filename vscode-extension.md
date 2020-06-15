@@ -18,7 +18,7 @@ subcollection: blockchain-sw-213
 {:important: .important}
 {:tip: .tip}
 {:pre: .pre}
-{:external: target="_blank" .external}_
+{:external: target="_blank" .external}
 
 # Developing smart contracts with Visual Studio Code extension
 {: #develop-vscode}
