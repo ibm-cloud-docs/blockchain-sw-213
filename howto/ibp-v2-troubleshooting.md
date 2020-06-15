@@ -111,7 +111,7 @@ NAME                            READY     STATUS             RESTARTS   AGE
 ibp-operator-769d94ffbc-w52n6   0/1       ImagePullBackOff   0          32s
 ```
 
-This problem occurs when your deployment cannot pull the {{site.data.keyword.blockchainfull_notm}} Platform images from the {{site.data.keyword.IBM_notm}} Entitlement registry. This can happen because you provided an incorrect name of your secret to the `imagePullSecret:` field, or if there was a problem with the url or the key that you provided to the entitlement key secret. This error can also occur if you supplied the wrong image tag to the file.
+This problem occurs when your deployment cannot pull the {{site.data.keyword.blockchainfull_notm}} Platform images from the {{site.data.keyword.IBM_notm}} Entitlement registry. This can happen because you provided an incorrect name of your secret to the `imagePullSecrets:` field, or if there was a problem with the url or the key that you provided to the entitlement key secret. This error can also occur if you supplied the wrong image tag to the file.
 {: tsCauses}
 
 When I try to apply the custom resource file, I receive a parsing error:
