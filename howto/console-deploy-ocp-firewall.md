@@ -510,7 +510,8 @@ spec:
                 operator: In
                 values:
                 - amd64
-      imagePullSecret: "docker-key-secret"
+      imagePullSecrets:
+       - name: "docker-key-secret"
       containers:
         - name: ibp-operator
           image: <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200520-amd64
