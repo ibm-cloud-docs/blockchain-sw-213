@@ -109,7 +109,7 @@ If you are running on Azure Kubernetes Service, Amazon Elastic Kubernetes Servic
 ## License and pricing
 {: #console-ocp-about-license}
 
-Your {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 entitlement includes both the full platform and the {{site.data.keyword.blockchainfull_notm}} images.
+Your {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 entitlement includes both the full platform and the {{site.data.keyword.blockchainfull_notm}} images. And if you plan to use {{site.data.keyword.cloud_notm}} Private, you need to purchase a separate entitlement.
 
 The entitlement does not include a Kubernetes distribution. You must procure that separately.
 {: note}
