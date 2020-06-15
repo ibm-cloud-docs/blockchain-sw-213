@@ -429,7 +429,7 @@ spec:
                 values:
                 - amd64
       imagePullSecrets:
-       - name: "docker-key-secret"
+        - name: docker-key-secret
       containers:
         - name: ibp-operator
           image: cp.icr.io/cp/ibp-operator:2.1.3-20200520-amd64

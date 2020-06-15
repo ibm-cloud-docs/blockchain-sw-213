@@ -182,6 +182,7 @@ You can use the console to configure resource allocation, HSM, or the CA databas
 					"name": "<<<adminUserName>>>",
 					"pass": "<<<adminPassword>>>",
 					"type": "client",
+					"affiliation": "",
 					"attrs": {
 						"hf.Registrar.Roles": "*",
 						"hf.Registrar.DelegateRoles": "*",
@@ -278,7 +279,7 @@ You can use the console to configure resource allocation, HSM, or the CA databas
 		}
 	}
 }
-```        
+```      
 {: codeblock}
 
 #### Providing your own customizations when you create a CA
@@ -337,8 +338,7 @@ Here is an example of the minimum required `JSON` parameters for any override wh
 			}
 		  }
 		]
-	  },
-		"affiliations": null,
+	  }
 	}
 }
 ```
@@ -393,7 +393,6 @@ You can insert additional fields or modify the `JSON` that is visible in the **C
 		  }
 		]
 		},
-		"affiliations": null,
 		"cfg": {
 			"identities": {
 				"passwordattempts": 3
