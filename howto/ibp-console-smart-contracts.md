@@ -52,7 +52,7 @@ This final tutorial is meant to show how to create and package a smart contract,
 
 Smart contracts are installed on peers and then instantiated on channels. **All members that want to submit transactions or read data by using a smart contract need to install the contract on their peer.** A smart contract is defined by its name and version. Therefore, both the name and version of the installed contract need to be consistent across all peers on the channel that plan to run the smart contract.
 
-After a smart contract is installed on the peers, a single network member instantiates the contract on the channel. The network member needs to have joined the channel in order to perform this action. Instantiation updates the ledger with the initial data that is used by the smart contract, and then starts smart contract pods. The peers can then use the smart contract.
+After a smart contract is installed on the peers, a single network member instantiates the contract on the channel. The network member needs to have joined the channel in order to perform this action. Instantiation updates the ledger with the initial data that is used by the smart contract, and then starts smart contract containers on peers  joined to the channel that have the contract installed. The peers can then use the smart contract.
 
 - **Only one network member needs to instantiate a smart contract.**
 - **If a peer with a smart contract installed joins a channel where the same smart contract version has already been instantiated, the smart contract container starts automatically.**  

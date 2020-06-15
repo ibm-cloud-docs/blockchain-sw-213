@@ -428,8 +428,7 @@ spec:
                 operator: In
                 values:
                 - amd64
-      imagePullSecrets:
-        - name: docker-key-secret
+      imagePullSecret: "docker-key-secret"
       containers:
         - name: ibp-operator
           image: cp.icr.io/cp/ibp-operator:2.1.3-20200520-amd64
@@ -521,8 +520,7 @@ spec:
   email: "<EMAIL>"
   password: "<PASSWORD>"
   registryURL: cp.icr.io/cp
-  imagePullSecrets:
-    - name: "docker-key-secret"
+  imagePullSecret: "docker-key-secret"
   networkinfo:
     domain: <DOMAIN>
   storage:
@@ -588,8 +586,7 @@ metadata:
     email: "<EMAIL>"
     password: "<PASSWORD>"
     registryURL: cp.icr.io/cp
-    imagePullSecrets:
-      - name: "docker-key-secret"
+    imagePullSecret: "docker-key-secret"
     networkinfo:
         domain: <DOMAIN>
     storage:
@@ -693,8 +690,7 @@ metadata:
     email: "<EMAIL>"
     password: "<PASSWORD>"
     registryURL: cp.icr.io/cp
-    imagePullSecrets:
-      - name: "docker-key-secret"
+    imagePullSecret: "docker-key-secret"
     networkinfo:
         domain: <DOMAIN>
     storage:

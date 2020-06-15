@@ -490,8 +490,7 @@ spec:
                 operator: In
                 values:
                 - amd64
-      imagePullSecrets:
-        - name: "docker-key-secret"
+      imagePullSecret: "docker-key-secret"
       containers:
         - name: ibp-operator
           image: <LOCAL_REGISTRY>/ibp-operator:2.1.3-20200520-amd64
@@ -585,8 +584,7 @@ spec:
   email: "<EMAIL>"
   password: "<PASSWORD>"
   registryURL: <LOCAL_REGISTRY>
-  imagePullSecrets:
-    - name: "docker-key-secret"
+  imagePullSecret: "docker-key-secret"
   networkinfo:
     domain: <DOMAIN>
   storage:
@@ -615,8 +613,7 @@ spec:
   email: "<EMAIL>"
   password: "<PASSWORD>"
   registryURL: <LOCAL_REGISTRY>
-  imagePullSecrets:
-    - name: "docker-key-secret"
+  imagePullSecret: "docker-key-secret"
   networkinfo:
     domain: <DOMAIN>
     consolePort: <CONSOLE_PORT>
@@ -681,8 +678,7 @@ spec:
   serviceAccountName: default
   email: "<EMAIL>"
   password: "<PASSWORD>"
-  imagePullSecrets:
-    - name: "docker-key-secret"
+  imagePullSecret: "docker-key-secret"
   registryURL: <LOCAL_REGISTRY>
   networkinfo:
     domain: <DOMAIN>
@@ -787,8 +783,7 @@ metadata:
     email: "<EMAIL>"
     password: "<PASSWORD>"
     registryURL: <LOCAL_REGISTRY>
-    imagePullSecrets:
-      - name: "docker-key-secret"
+    imagePullSecret: "docker-key-secret"
     networkinfo:
         domain: <DOMAIN>
         consolePort: <CONSOLE_PORT>

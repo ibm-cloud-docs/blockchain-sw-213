@@ -30,7 +30,7 @@ subcollection: blockchain-sw-213
 </div>
 
 
-Use these release notes that are grouped by date to learn about the latest changes to {{site.data.keyword.blockchainfull}} Platform v2.5.
+Use these release notes that are grouped by date to learn about the latest changes to {{site.data.keyword.blockchainfull}} Platform v2.1.3.
 {:shortdesc}
 
 See [Installing patches](/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-manage#ibp-console-manage-patch) for instructions on how to apply patches to your existing nodes.

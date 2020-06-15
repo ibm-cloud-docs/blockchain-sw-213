@@ -98,7 +98,7 @@ Perform the following steps from your console:
 4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the links below.
    * [Database and replica sets](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-ha-ca#ibp-console-build-ha-ca-create) (Creating an HA CA)
    * [Hardware Security Module (HSM)](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-cfg-hsm)
-   * [Deployment zone selection](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-ha#ibp-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
+   * [Kubernetes zone selection](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-ha#ibp-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
    * [Resource allocation](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-allocate-resources)
 5. Review the Summary page, then click **Add Certificate Authority**. The **Edit configuration JSON** button allows you to override configuration settings for the CA. For this tutorial, the default settings are sufficient. See [Customizing a CA configuration](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-adv-deployment#ibp-console-adv-deployment-ca-customization) to learn more about the options that are available.
 
