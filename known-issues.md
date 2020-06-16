@@ -34,7 +34,7 @@ This page describes known issues that you might encounter when you use {{site.da
 </div>
 
 
-## Certicicate Authority patch install fails
+## Certificate Authority patch install fails
 {: #sw-known-issues-ca-upgrade}
 
 After upgrading from {{site.data.keyword.blockchainfull_notm}} Platform v2.1.2 to v2.1.3, installing the patch on a CA node fails. To resolve this problem see the [Troubleshooting](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-troubleshooting#ibp-v2-troubleshooting-ca-upgrade-fails) topic.
