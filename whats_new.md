@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-05-26"
+lastupdated: "2020-06-18"
 
 keywords: IBM Blockchain Platform, release, new features
 
@@ -25,10 +25,24 @@ subcollection: blockchain-sw-213
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 10px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-whats-new">2.1.2</a>
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-whats-new">2.1.2</a>,
+    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-whats-new">2.5</a>
     </p>
 </div>
 
+## June 18, 2020
+{: #whats-new-06-18-2020}
+
+{{site.data.keyword.blockchainfull}} Platform 2.5 is now available.
+
+{{site.data.keyword.blockchainfull_notm}} Platform 2.5 provides tighter integration with Red Hat solutions, including additional deployment options on Red Hat OpenShift 4.3 and support for Ansible Playbooks and Red Hat CodeReady Workspaces. To learn more about the new features see the []{{site.data.keyword.blockchainfull_notm}} Platform 2.5 documentation](/docs/blockchain-sw-25?topic=blockchain-sw-25-whats-new){: external}.
+
+If you have an existing {{site.data.keyword.blockchainfull_notm}} Platform v2.1.x deployment and are interested in upgrading to {{site.data.keyword.blockchainfull_notm}} Platform 2.5, see the following topics in the {{site.data.keyword.blockchainfull_notm}} Platform 2.5 documentation:
+- [Upgrading your console and components on the OpenShift Container Platform](/docs/blockchain-sw-25?topic=blockchain-sw-25-upgrade-ocp)
+- [Upgrading your console and components on Kubernetes](/docs/blockchain-sw-25?topic=blockchain-sw-25-upgrade-k8)
+- [Upgrading the {{site.data.keyword.blockchainfull_notm}} images](/docs/blockchain-sw-25?topic=blockchain-sw-25-blockchain-images#blockchain-images-upgrade)  
+
+This update also helps organizations accelerate deployment through support of Ansible, an open source tool that automates provisioning, configuration management, and application deployment. Available in both {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 and 2.5, **Ansible Content Collections** are packages of modules, plug-ins, and other Ansible content that automate these processes. The platform has published a set of Ansible Content Collections to help organizations deploy blockchain components and networks with greater speed. See [Getting started with Ansible playbooks on the {{site.data.keyword.blockchainfull_notm}} Platform](/docs/blockchain-sw-213?topic=blockchain-sw-213-ansible) to learn more.
 
 ## March 24, 2020
 {: #whats-new-03-24-2020}
@@ -37,7 +51,7 @@ subcollection: blockchain-sw-213
 {{site.data.keyword.blockchainfull}} Platform v2.1.3 is now available.
 
 
-The following enhancements are included in this latest release: 
+The following enhancements are included in this latest release:
 - Red Hat OpenShift on LinuxONE (s390x)
 - Support for Hyperledger Fabric v1.4.6
 - Hardware Security Module (HSM) support for node identities

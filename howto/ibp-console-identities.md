@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-19"
+lastupdated: "2020-06-18"
 
 keywords: create identities, manage identities, Certificate Authorities, register, enroll, TLS CA, wallet, certificate expiration
 
@@ -24,7 +24,8 @@ subcollection: blockchain-sw-213
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 10px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
-    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-ibp-console-identities">2.1.2</a>
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-ibp-console-identities">2.1.2</a>,
+    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-console-identities">2.5</a>
     </p>
 </div>
 
@@ -35,7 +36,7 @@ The nodes of the {{site.data.keyword.blockchainfull_notm}} Platform are based on
 
 **Target audience:** This topic is designed for network operators who are responsible for creating, monitoring, and managing the blockchain network.
 
-
+<!-- ![A CA overview panel in the {{site.data.keyword.blockchainfull_notm}} Platform Console](../images/console_CA_overview.png " CA overview panel in the {{site.data.keyword.blockchainfull_notm}} Platform Console"){: caption="Figure 1. You can use your CA to register identities and generate certificates"  caption-side="bottom"} -->
 
 
 ## Managing Certificate Authorities (CAs)
@@ -310,4 +311,3 @@ Certificate:
          02:20:7a:34:af:7b:fb:65:6c:b8:22:a2:39:78:5d:30:5c:3c:
          b0:9b:0e:14:d8:76:78:9a:34:2b:bb:d2:97:d4:ce:81
 ```   
-

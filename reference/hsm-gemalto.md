@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-05-20"
+lastupdated: "2020-06-18"
 
 keywords: HSM, Gemalto, IBM Cloud
 
@@ -27,6 +27,12 @@ subcollection: blockchain-sw-213
 {: help}
 {: support}
 
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
+  <p style="line-height: 10px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-hsm-gemalto">2.5</a>
+    </p>
+</div>
 
 
 {{site.data.keyword.cloud_notm}} includes an [HSM](#x6704988){: term}
@@ -558,4 +564,3 @@ After you have used these instructions to configure your {{site.data.keyword.clo
 {: #ibp-hsm-gemalto-multiple-partitions}
 
 If your HSM has multiple partitions, only one PKCS #11 proxy is required to communicate with the HSM.
-
