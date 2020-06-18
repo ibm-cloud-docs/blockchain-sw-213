@@ -70,7 +70,7 @@ There are two main scenarios that the playbooks address:
 
 - **Deploying the {{site.data.keyword.blockchainfull_notm}} Platform on a Kubernetes cluster**.  If you are using your own Kubernetes distribution, you can purchase an [{{site.data.keyword.blockchainfull_notm}} v2.1.3 license](/docs/blockchain-sw-213?topic=blockchain-sw-213-get-started-console-ocp) and then use the `install-ibp.yml` playbook  to deploy the platform onto your Kubernetes cluster. The alternative is to install the service manually by following instructions for [OpenShift Container Platform](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp) or [Kubernetes](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp).
 
-  This option is not available if your cluster is running on {{site.data.keyword.cloud_notm}}. In that case, you must follow the standard [{{site.data.keyword.blockchainfull_notm}} Platform deployment process](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-v2-deploy-iks).
+  This option is not available if your cluster is running on {{site.data.keyword.cloud_notm}}. In that case, you must follow the standard [{{site.data.keyword.blockchainfull_notm}} Platform deployment process](/docs/blockchain?topic=blockchain-ibp-v2-deploy-iks).
   {: note}
 
 - **Deploying your blockchain network** After you deploy the {{site.data.keyword.blockchainfull_notm}} Platform to a Kubernetes cluster on {{site.data.keyword.cloud_notm}}, or on your supported Kubernetes distribution, there are three ways to build your network. To understand the benefit of using the Ansible playbooks, we compare the options:
