@@ -113,7 +113,7 @@ Apply patches to nodes one at a time. Your nodes are unavailable to process requ
 ## Rolling back the Fix Pack installation
 {: #install-fixpack-rollback}
 
-When you apply the Fix Pack to your operator, it saves the secrets, deployment spec, and network information of your deployment before it restarts and attempts to apply the fixes to the console. If the Fix Pack installation fails for any reason, {{site.data.keyword.IBM_notm}} Support can roll back your upgrade and restore your previous deployment by using the information on your cluster. If you need to roll back your upgrade, you can submit a support case from the [mysupport](https://www.ibm.com/support/pages/support-ibm-blockchain-platform-v21x){: external} page.
+When you apply the Fix Pack to your operator, it saves the secrets, deployment spec, and network information of your deployment before it restarts and attempts to apply the fixes to the console. If the Fix Pack installation fails for any reason, {{site.data.keyword.IBM_notm}} Support can roll back your upgrade and restore your previous deployment by using the information on your cluster. If you need to roll back your upgrade, you can submit a support case from the [mysupport](https://www.ibm.com/support/pages/node/1072956){: external} page.
 
 You can roll back an upgrade after you use the console to operate your network. However, after you use the console to upgrade your blockchain nodes, you can no longer roll back your console to a previous version of the platform.
 
