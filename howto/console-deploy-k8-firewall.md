@@ -26,7 +26,7 @@ subcollection: blockchain-sw-213
   <p style="line-height: 10px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
     <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-deploy-k8-firewall">2.1.2</a>,
-    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8-firewall">2.5/a>
+    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8-firewall">2.5</a>
     </p>
 </div>
 
