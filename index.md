@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-06-18"
+lastupdated: "2020-09-16"
 
 keywords: Kubernetes, IBM Cloud Private, OCP, OpenShift Container Platform, IBM Blockchain Platform
 
@@ -74,7 +74,7 @@ Check out the following topics for instructions on how to upgrade:
 ** {{site.data.keyword.blockchainfull_notm}} images - Your purchase of {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 includes an entitlement to images for peer, CA, ordering service, and smart contract containers that are signed by IBM. The images are based on the open source Hyperledger Fabric code base and contain a number of enhancements for stability and serviceability. The images are bundled with support from IBM. The {{site.data.keyword.blockchainfull_notm}}  images do not include the {{site.data.keyword.blockchainfull_notm}} management console or operator. This offering is intended for experienced Fabric users with existing Fabric deployments. For more information, see [Using the IBM Blockchain images](/docs/blockchain-sw-213?topic=blockchain-sw-213-blockchain-images).
 
 ### Developer Tools
-{: ##get-started-console-ocp-dev-tools}
+{: #get-started-console-ocp-dev-tools}
 
 Are you a developer? Check out the [**{{site.data.keyword.blockchainfull_notm}} Platform Extension for VS Code**](/docs/blockchain-sw-213?topic=blockchain-sw-213-develop-vscode#develop-vscode), a free IDE that provides an explorer and commands accessible from the command palette for developing smart contracts quickly.
 
