@@ -1,0 +1,65 @@
+<svg id="Smart_Contracts" data-name="Smart Contracts" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 831.01 210.63">
+  <defs>
+    <style>
+      .cls-3{fill:#fff}.cls-3,.cls-7{stroke:#857b7b}.cls-4,.cls-5{isolation:isolate}.cls-5{font-size:12px}.cls-5{fill:#010f5e}.cls-5{font-family:IBMPlexSans, IBM Plex Sans}.cls-7{fill:none}.cls-8{fill:#857b7b}
+    </style>
+  </defs>
+  <path id="Rectangle" d="M21.83,50.58h648.5v177.5H21.83Z" transform="translate(-21.33 -17.95)" style="fill:#dcdcdc;stroke:#dcdcdc"/>
+  <path id="Rectangle-2" d="M681.67,50.58H852.34v177.5H681.67Z" transform="translate(-21.33 -17.95)" style="fill:#011688"/>
+  <path id="Rectangle-3" class="cls-3" d="M39.27,73.25h135v55h-135Z" transform="translate(-21.33 -17.95)"/>
+  <g class="cls-4">
+    <text class="cls-5" transform="translate(44.49 78.87)">
+      Create a smart <tspan x="-1.85" y="14.4">contract project</tspan>
+    </text>
+  </g>
+  <path id="Rectangle-4" class="cls-3" d="M200.14,73.25h135v55h-135Z" transform="translate(-21.33 -17.95)"/>
+  <g class="cls-4">
+    <text class="cls-5" transform="translate(199.01 78.87)">
+      Develop contract <tspan x="3.98" y="14.4">code in VS Code</tspan>
+    </text>
+  </g>
+  <path id="Rectangle-5" class="cls-3" d="M359.34,73.25h135v55h-135Z" transform="translate(-21.33 -17.95)"/>
+  <g class="cls-4">
+    <text class="cls-5" transform="translate(371.18 78.87)">
+      Package the <tspan x="-5.18" y="14.4">smart contract</tspan>
+    </text>
+  </g>
+  <path id="Rectangle-6" class="cls-3" d="M357.83,152.25h135v55h-135Z" transform="translate(-21.33 -17.95)"/>
+  <g class="cls-4">
+    <text class="cls-5" transform="translate(358.03 158.49)">
+      Deploy locally to <tspan x="5.79" y="14.4">test and debug</tspan>
+    </text>
+  </g>
+  <path id="Rectangle-7" class="cls-3" d="M519.21,73.25h135v55h-135Z" transform="translate(-21.33 -17.95)"/>
+  <g class="cls-4">
+    <text class="cls-5" transform="translate(537.47 78.87)">
+      Export the<tspan x="5.38" y="14.4">package</tspan>
+    </text>
+  </g>
+  <path id="Rectangle-8" d="M700.27,73.25h135v55h-135Z" transform="translate(-21.33 -17.95)" style="fill:#fff"/>
+  <g class="cls-4">
+    <text class="cls-5" transform="translate(720.78 78.87)">
+      Deploy to<tspan x="-2.54" y="14.4">IBM Cloud</tspan>
+    </text>
+  </g>
+  <path class="cls-7" d="M175,100.75h16.82" transform="translate(-21.33 -17.95)"/>
+  <path class="cls-8" d="M190.37,105.74l8.63-5-8.63-5Z" transform="translate(-21.33 -17.95)"/>
+  <path class="cls-7" d="M334,100.75h16.82" transform="translate(-21.33 -17.95)"/>
+  <path class="cls-8" d="M349.37,105.74l8.63-5-8.63-5Z" transform="translate(-21.33 -17.95)"/>
+  <path class="cls-7" d="M266.5,179.75V135.43" transform="translate(-21.33 -17.95)"/>
+  <path class="cls-8" d="M271.49,136.88l-5-8.63-5,8.63Z" transform="translate(-21.33 -17.95)"/>
+  <path class="cls-7" d="M492.75,100.75h16.82" transform="translate(-21.33 -17.95)"/>
+  <path class="cls-8" d="M508.12,105.74l8.63-5-8.63-5Z" transform="translate(-21.33 -17.95)"/>
+  <path class="cls-7" d="M652,100.75h40.82" transform="translate(-21.33 -17.95)"/>
+  <path class="cls-8" d="M691.37,105.74l8.63-5-8.63-5Z" transform="translate(-21.33 -17.95)"/>
+  <path class="cls-7" d="M266.5,179.75H358m67.5-27.5v-24" transform="translate(-21.33 -17.95)"/>
+  <text transform="translate(17.79 194.43)" style="fill:#857b7b;font-family:IBMPlexSans, IBM Plex Sans;font-size:12px;isolation:isolate">
+    Visual Studio Code extension
+  </text>
+  <text transform="translate(677.59 196.62)" style="font-family:IBMPlexSans, IBM Plex Sans;font-size:12px;isolation:isolate;fill:#fff">
+    Service on IBM Cloud
+  </text>
+  <text transform="translate(.5 12.74)" style="font-size:15px;font-family:IBMPlexSans, IBM Plex Sans;isolation:isolate;fill:#011688">
+    Typical <tspan x="51.69" y="0" style="font-family:IBMPlexSans-SemiBold, IBM Plex Sans;font-weight:600">smart contract</tspan><tspan x="154.08" y="0"> development workflow with IBM Blockchain Platform</tspan>
+  </text>
+</svg>
