@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-21"
+lastupdated: "2020-09-25"
 
 
 keywords: vs code extension, Visual Studio Code extension, smart contract, development tools
@@ -26,7 +26,8 @@ subcollection: blockchain-sw-213
 <div style="background-color: #6fdc8c; padding-left: 20px; padding-right: 20px; border-bottom: 4px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 20px;">
     <strong>Important: You are not looking at the latest product documentation.  Make sure you are reading the documentation that matches the version of the software that you are using. Switch to product version </strong>
-    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-develop-vscode">2.1.2</a>
+    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-develop-vscode">2.1.2</a>,
+    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-security">2.5 (latest)</a>
     </p>
 </div>
 

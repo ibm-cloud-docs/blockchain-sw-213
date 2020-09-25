@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-09-21"
+lastupdated: "2020-09-25"
 
 keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, firewall, on-premises
 
@@ -26,7 +26,7 @@ subcollection: blockchain-sw-213
   <p style="line-height: 20px;">
     <strong>Important: You are not looking at the latest product documentation.  Make sure you are reading the documentation that matches the version of the software that you are using. Switch to product version </strong>
     <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-deploy-k8-firewall">2.1.2</a>,
-    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8-firewall">2.5/a>
+    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8-firewall">2.5 (latest)/a>
     </p>
 </div>
 
