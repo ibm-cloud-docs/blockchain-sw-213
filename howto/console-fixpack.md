@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-21"
+lastupdated: "2020-10-01"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -112,7 +112,7 @@ ibpconsole     1/1       1            1           1m
 ## Step three: Apply fix to your blockchain nodes
 {: #install-fixpack-nodes}
 
-After you apply the fix to your console, you need to use your console UI to update the nodes of your blockchain network. Browse to the console UI and open the nodes overview tab. To apply a patch to a node, open the node tile and click the **Install patch** button. You cannot patch nodes that you imported to the console.
+After you apply the fix to your console, you need to use your console UI to update the nodes of your blockchain network. Browse to the console UI and open the nodes overview tab. To apply a patch to a node, open the node tile and click the **Update available** button. You cannot patch nodes that you imported to the console.
 
 Apply patches to nodes one at a time. Your nodes are unavailable to process requests or transactions while the patch is being applied. Therefore, to avoid any disruption of service, you need to ensure that another node of the same type is available to process requests whenever possible. Installing patches on a node takes about a minute to complete and when the update is complete, the node is ready to process requests.
 {:important}
