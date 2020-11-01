@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-21"
+lastupdated: "2020-11-02"
 
 keywords: HSM, Gemalto, IBM Cloud
 
@@ -27,12 +27,8 @@ subcollection: blockchain-sw-213
 {: help}
 {: support}
 
-<div style="background-color: #6fdc8c; padding-left: 20px; padding-right: 20px; border-bottom: 4px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 20px;">
-    <strong>Important: You are not looking at the latest product documentation.  Make sure you are reading the documentation that matches the version of the software that you are using. Switch to product version </strong>
-    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-hsm-gemalto">2.5 (latest)</a>
-    </p>
-</div>
+{{site.data.keyword.blockchainfull}} Platform 2.5.1 is now available and includes a simpler and faster HSM solution. Upgrade your environment and [configure an HSM client image](/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-hsm-gemalto) instead of using the PKCS #11 proxy. For upgrade instructions, see upgrading your console and components for [Openshift](/docs/blockchain-sw-251?topic=blockchain-sw-251-upgrade-ocp) or [Kubernetes](/docs/blockchain-sw-251?topic=blockchain-sw-251-upgrade-k8).
+{: note}
 
 
 {{site.data.keyword.cloud_notm}} includes an [HSM](#x6704988){: term}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-09-21"
+lastupdated: "2020-11-02"
 
 keywords: FAQs, can I, upgrade, what version, peer ledger database, supported languages, why do I, regions
 
@@ -27,8 +27,9 @@ subcollection: blockchain-sw-213
 <div style="background-color: #6fdc8c; padding-left: 20px; padding-right: 20px; border-bottom: 4px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 20px;">
     <strong>Important: You are not looking at the latest product documentation.  Make sure you are reading the documentation that matches the version of the software that you are using. Switch to product version </strong>
-    <a href="https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-ibp-v2-faq">2.1.2</a>,
-    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-v2-faq">2.5 (latest)</a>
+    <a href="/docs/blockchain-sw?topic=blockchain-sw-ibp-v2-faq">2.1.2</a>,
+    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-v2-faq">2.5 </a>,
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-v2-faq">2.5.1 (latest)</a>
     </p>
 </div>
 
@@ -194,4 +195,4 @@ As a best practice it is recommended that you do not query the entire blockchain
 
 You can use block or chaincode events from your application to write transaction data to an off-chain database or analytics engine. For each block received, the block listener application would iterate through the block transactions and build a data store by using the key/value writes from each valid transaction's read-write set. The [Peer channel-based event services](https://hyperledger-fabric.readthedocs.io/en/release-1.4/peer_event_services.html#peer-channel-based-event-services) provide replayable events to ensure the integrity of downstream data stores. For an example of how you can use an event listener to write data to an external database, see the [Off chain data sample](https://github.com/hyperledger/fabric-samples/tree/release-1.4/off_chain_data) in the Fabric samples.
 
-Blockchain solutions can use any RDBMS or NoSQL DB such as IBM Cloudant for offchain data storage. Hyplerledger Fabric does not govern, interact with, or manage off-chain databases. In most cases, the off-chain database is used for reference data and non-transactional data. {{site.data.keyword.IBM_notm}} has successfully built blockchain products and solution accelerators with Hyperledger Fabric and NoSQL databases such as OrientDB. Additionally, {{site.data.keyword.IBM_notm}} offers an add-on solution, [Blockchain Document Store](/docs/blockchain-document-store?topic=blockchain-document-store-service-overview)(BDS), to coordinate document flow in a blockchain solution, both for on-chain and off-chain document storage.
+Blockchain solutions can use any RDBMS or NoSQL DB such as IBM Cloudant for offchain data storage. Hyplerledger Fabric does not govern, interact with, or manage off-chain databases. In most cases, the off-chain database is used for reference data and non-transactional data. {{site.data.keyword.IBM_notm}} has successfully built blockchain products and solution accelerators with Hyperledger Fabric and NoSQL databases such as OrientDB.

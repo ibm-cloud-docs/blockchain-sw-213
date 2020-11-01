@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-21"
+lastupdated: "2020-11-02"
 
 keywords: intermediate CA, root CA, parent server, Certificate Authority
 
@@ -28,7 +28,8 @@ subcollection: blockchain-sw-213
 <div style="background-color: #6fdc8c; padding-left: 20px; padding-right: 20px; border-bottom: 4px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 20px;">
     <strong>Important: You are not looking at the latest product documentation.  Make sure you are reading the documentation that matches the version of the software that you are using. Switch to product version </strong>
-    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-ica">2.5 (latest)</a>
+    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-ica">2.5 </a>,
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-ica">2.5.1 (latest)</a>
     </p>
 </div>
 
@@ -299,7 +300,7 @@ Your intermediate CA is now operational and can be used to register and enroll i
 
 When you build organization MSP definitions for your peer or ordering nodes, you can now reference the intermediate CA as the "root CA" instead of your root CA.
 ![Int CA MSP](../images/int-ca-msp.png "MSP using intermediate CA"){: caption="Figure 3. MSP using intermediate CA" caption-side="bottom"}
-If you want to learn more about creating MSPs, see [Managing organizations](https://cloud.ibm.com/docs/blockchain?topic=blockchain-ibp-console-organizations).
+If you want to learn more about creating MSPs, see [Managing organizations](/docs/blockchain?topic=blockchain-ibp-console-organizations).
 
 ### Scale down the root CA
 {: #ibp-ica-next-steps-scale}
