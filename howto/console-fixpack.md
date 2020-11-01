@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-10-01"
+lastupdated: "2020-11-02"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -22,12 +22,9 @@ subcollection: blockchain-sw-213
 # Installing the v2.1.3 Fix Pack
 {: #install-fixpack}
 
-<div style="background-color: #6fdc8c; padding-left: 20px; padding-right: 20px; border-bottom: 4px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 20px;">
-    <strong>Important: You are not looking at the latest product documentation.  Make sure you are reading the documentation that matches the version of the software that you are using. Switch to product version </strong>
-    <a href="https://cloud.ibm.com/docs/blockchain-sw-25?topic=blockchain-sw-25-install-fixpack">2.5 (latest)</a>
-    </p>
-</div>
+{{site.data.keyword.blockchainfull}} Platform 2.5.1 is now available. To take advantage of the latest features and for upgrade instructions, see upgrading your console and components for [OpenShift](/docs/blockchain-sw-251?topic=blockchain-sw-251-upgrade-ocp) or [Kubernetes](/docs/blockchain-sw-251?topic=blockchain-sw-251-upgrade-k8).
+{: note}
+
 
 Users who installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 before May 20, 2020 should install the v2.1.3 Fix Pack. The Fix Pack contains important bug fixes and should be applied to your network as soon as possible. For more information, see the [May 20, 2020 Release notes](/docs/blockchain-sw-213?topic=blockchain-sw-213-release-notes-saas-20#05-20-2020). If you installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 after May 20, 2020, the platform will contain all the bug fixes and improvements provided by the Fix Pack, and you do not need to apply the Fix Pack.
 {:shortdesc}
