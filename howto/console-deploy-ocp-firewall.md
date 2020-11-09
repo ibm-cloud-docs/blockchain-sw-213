@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-11-02"
+lastupdated: "2020-11-09"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
@@ -26,7 +26,7 @@ subcollection: blockchain-sw-213
   <p style="line-height: 20px;">
     <strong>Important: You are not looking at the latest product documentation.  Make sure you are reading the documentation that matches the version of the software that you are using. Switch to product version </strong>
     <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-ocp-firewall">2.1.2</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-ocp-firewall">2.5 </a>, 
+    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-ocp-firewall">2.5 </a>,
     <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-ocp-firewall">2.5.1 (latest)</a>
     </p>
 </div>
@@ -39,7 +39,7 @@ You can deploy the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3 ont
 
 ## Need to Know
 
-- If you are deploying the {{site.data.keyword.blockchainfull_notm}} Platform behind a firewall, without access to the public internet, your JavaScript or TypeScript smart contract will not be able to download external dependencies when it is instantiated. You need point to a local NPM registry for your smart contract to access the required dependencies. See [Building Node.js Contracts with limited internet access](https://hyperledgendary.github.io/docs/goodpractise/nodejs_building_limited_access.html){: external}. This problem does not occur if you are using smart contracts that are written in Go.
+- If you are deploying the {{site.data.keyword.blockchainfull_notm}} Platform behind a firewall, without access to the public internet, your JavaScript or TypeScript smart contract will not be able to download external dependencies when it is instantiated. You need point to a local NPM registry for your smart contract to access the required dependencies. See [Building Node.js Contracts with limited internet access](https://hyperledgendary.github.io/docs/goodpractice/nodejs_building_limited_access.html){: external}. This problem does not occur if you are using smart contracts that are written in Go.
 
 - After you deploy your peer and ordering nodes, you need to expose the ports of your nodes for your network to be able to respond to requests from applications or nodes outside your firewall. For more information about the ports that you need to expose, see [Internet Ports](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-security#ibp-security-ibp-ports) in the security guide.
 
