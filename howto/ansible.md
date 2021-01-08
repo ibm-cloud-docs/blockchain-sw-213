@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-11-02"
+  years: 2020, 2021
+lastupdated: "2021-01-08"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
@@ -27,7 +27,7 @@ subcollection: blockchain-sw-213
 <div style="background-color: #6fdc8c; padding-left: 20px; padding-right: 20px; border-bottom: 4px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 20px;">
     <strong>Important: You are not looking at the latest product documentation.  Make sure you are reading the documentation that matches the version of the software that you are using. Switch to product version </strong>
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ansible">2.5 </a>, 
+    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ansible">2.5 </a>,
     <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ansible">2.5.1 (latest)</a>
     </p>
 </div>
@@ -107,25 +107,6 @@ The Ansible collection documentation provides the complete set of steps for inst
 If you do not have Docker installed, see [install Docker](https://docs.docker.com/get-docker/){: external} to download and install it. You can also check out the [Docker site](https://www.docker.com/){: external} for more education and documentation.
 
 Advanced users can review the [Ansible collection documentation](https://ibm-blockchain.github.io/ansible-collection/installation.html){: external} for other installation options.
-
-
-### Build the Docker image
-{: #ansible-docker-build}
-
- You can skip this step if you plan to use the playbooks to **install the {{site.data.keyword.blockchainfull_notm}} Platform service** on your Kubernetes or OpenShift cluster because you will install all of the prereqs onto your system instead of using a Docker image.
-
-When you build a Docker image, you are creating an executable container that includes all of the prerequisites to run the Ansible playbooks.
-
-1. Copy the sample Dockerfile from [GitHub](https://github.com/IBM-Blockchain/ansible-collection/blob/master/docker/Dockerfile){: external} and save it to your local system as `Dockerfile`.
-
-2. Next, use the Dockerfile to build the Docker image. The following command builds the image and tags it with the name `mydockerorg/ansible`. We reference that tag later when we run the Docker image.
-  ```
-  docker build -t mydockerorg/ansible -f Dockerfile .
-
-  ```
-  {: codeblock}
-
-  The command can take several minutes to complete while it downloads and installs all of the prerequisites to the image.
 
 ## Next steps
 {: #ansible-next-steps}
