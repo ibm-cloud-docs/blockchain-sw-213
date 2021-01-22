@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020
-lastupdated: "2020-11-02"
+  years: 2020, 2021
+lastupdated: "2021-01-22"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
@@ -49,7 +49,7 @@ The Ansible scripts can be used to build the following network that includes two
 Before using the playbook, you need to complete the following steps:
 - Deploy an instance of the {{site.data.keyword.blockchainfull_notm}} Platform to your Kubernetes cluster.
 - Review the topic on [Getting started with Ansible playbooks on the {{site.data.keyword.blockchainfull_notm}} Platform](/docs/blockchain-sw-213?topic=blockchain-sw-213-ansible).
-- If you have not already installed the prerequisites locally, install Docker and create the [Docker image](/docs/blockchain-sw-213?topic=blockchain-sw-213-ansible#ansible-docker-build).
+- If you have not already installed the prerequisites locally, install [Docker](https://docs.docker.com/get-docker/){: external}.
 
 ## Step one: Gather console connection information
 {: #ansible-build-console}
@@ -120,7 +120,7 @@ There is also a common variables file, `common-vars.yml`. You do not need to edi
 ## Step four: Run a playbook
 {: #ansible-build-run-playbook}
 
-These instructions assume you have configured [Docker](/docs/blockchain-sw-213?topic=blockchain-sw-213-ansible#ansible-docker-build) to work with the Ansible playbooks. If you have installed all of the prerequisites locally on your system instead, you can refer to the [Ansible documentation](https://ibm-blockchain.github.io/ansible-collection/tutorials/building.html#exploring-the-playbooks){: external} for instructions on how to run the playbooks.
+These instructions assume you have installed [Docker](https://docs.docker.com/get-docker/){: external}) in order to use the Ansible playbooks. If you have installed all of the prerequisites locally on your system instead, you can refer to the [Ansible documentation](https://ibm-blockchain.github.io/ansible-collection/tutorials/building.html#exploring-the-playbooks){: external} for instructions on how to run the playbooks.
 {: note}
 
 1. We use a Docker command to run the first playbook that creates an ordering organization named **Ordering Org**, with a certificate authority named **Ordering Org CA**, and finally a single node ordering service named **Ordering Service**. If you have not already, go ahead and modify the console connection variables inside the `ordering-org-vars.yml` by using the instructions from the previous section. You are now ready to run an Ansible playbook from Docker.
