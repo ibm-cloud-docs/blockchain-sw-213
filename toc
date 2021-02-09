@@ -24,7 +24,6 @@ IBM Blockchain Platform v2.1.3
 
 	{: .topicgroup}
 	High availability
-		ibp-console-ha.md
 		howto/ibp-console-ic-ha-howto.md
 		howto/ibp-console-ha-ca.md
 
@@ -85,6 +84,7 @@ IBM Blockchain Platform v2.1.3
 		howto/ansible-install-ibp.md
 		howto/ansible-build-network.md
 
+	ibp-console-ha.md
 	/blockchain/blockchain-hyperledger-fabric
 	/blockchain/blockchain-k8s-overview
 	reference/metering.md
