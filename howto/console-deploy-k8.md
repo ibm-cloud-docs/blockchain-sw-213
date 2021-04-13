@@ -17,7 +17,87 @@ subcollection: blockchain-sw-213
 {:note: .note}
 {:important: .important}
 {:tip: .tip}
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
+{:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
+{:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
+{:download: .download}
+{:external: target="_blank" .external}
+{:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
+{:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
+{:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
+{:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
+{:new_window: target="_blank"}
+{:note .note}
+{:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
+{:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
+{:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
+{:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
+{:support: data-reuse='support'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
+{:table: .aria-labeledby="caption"}
+{:term: .term}
+{:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:troubleshoot: data-hd-content-type='troubleshoot'}
+{:tsCauses: .tsCauses}
+{:tsResolve: .tsResolve}
+{:tsSymptoms: .tsSymptoms}
+{:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vbnet: .ph data-hd-programlang='vb.net'}
+{:video: .video}
+ 
 
 # Deploying {{site.data.keyword.blockchainfull_notm}} Platform v2.1.3
 {: #deploy-k8}
@@ -25,9 +105,10 @@ subcollection: blockchain-sw-213
 <div style="background-color: #6fdc8c; padding-left: 20px; padding-right: 20px; border-bottom: 4px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
   <p style="line-height: 20px;">
     <strong>Important: You are not looking at the latest product documentation.  Make sure you are reading the documentation that matches the version of the software that you are using. Switch to product version </strong>
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-k8">2.1.2</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8">2.5 </a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8">2.5.1 (latest)</a>
+    <a href="/docs/blockchain-sw?topic=blockchain-sw-deploy-k8">2.1.2</a>, 2.1.3,
+    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-deploy-k8">2.5</a>,
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-deploy-k8">2.5.1</a>,
+    <a href="/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8">2.5.2 (latest)</a>
     </p>
 </div>
 
@@ -86,8 +167,6 @@ When you purchase the {{site.data.keyword.blockchainfull_notm}} Platform from PP
 2. You need to install and connect to your cluster by using the [kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl){: external} to deploy the platform. If you are using {{site.data.keyword.cloud_notm}} Private, install the [{{site.data.keyword.cloud_notm}} Private CLI 3.2.1](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_3.2.1/manage_cluster/install_cli.html){: external}. The {{site.data.keyword.cloud_notm}} Private CLI includes the kubectl CLI.
 
 3. If you are not running the platform on Red Hat OpenShift Container Platform, Red Hat Open Kubernetes Distribution, or {{site.data.keyword.cloud_notm}} Private then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](#console-deploy-k8-considerations).
-
-**Looking for a way to script the deployment of the service?** Check out the [Ansible playbooks](/docs/blockchain-sw-213?topic=blockchain-sw-213-ansible), a powerful tool for scripting the deployment of components in your blockchain network. If you prefer a manual installation, proceed to the next section.
 
 ## Log in to your cluster
 {: #deploy-k8-login}
@@ -567,53 +646,53 @@ apiVersion: ibp.com/v1alpha1
 kind: IBPConsole
 metadata:
   name: ibpconsole
-spec:
-  arch:
-  - amd64
-  license: accept
-  serviceAccountName: default
-  proxyIP:
-  email: "<EMAIL>"
-  password: "<PASSWORD>"
-  registryURL: cp.icr.io/cp
-  imagePullSecret: "docker-key-secret"
-  networkinfo:
-      domain: <DOMAIN>
-  storage:
-    console:
-      class: default
-      size: 10Gi
-  clusterdata:
-    zones:
-  resources:
-    console:
-      requests:
-        cpu: 500m
-        memory: 1000Mi
-      limits:
-        cpu: 500m
-        memory: 1000Mi
-    configtxlator:
-      limits:
-        cpu: 25m
-        memory: 50Mi
-      requests:
-        cpu: 25m
-        memory: 50Mi
-    couchdb:
-      limits:
-        cpu: 500m
-        memory: 1000Mi
-      requests:
-        cpu: 500m
-        memory: 1000Mi
-    deployer:
-      limits:
-        cpu: 100m
-        memory: 200Mi
-      requests:
-        cpu: 100m
-        memory: 200Mi
+  spec:
+    arch:
+    - amd64
+    license: accept
+    serviceAccountName: default
+    proxyIP:
+    email: "<EMAIL>"
+    password: "<PASSWORD>"
+    registryURL: cp.icr.io/cp
+    imagePullSecret: "docker-key-secret"
+    networkinfo:
+        domain: <DOMAIN>
+    storage:
+      console:
+        class: default
+        size: 10Gi
+    clusterdata:
+      zones:
+    resources:
+      console:
+        requests:
+          cpu: 500m
+          memory: 1000Mi
+        limits:
+          cpu: 500m
+          memory: 1000Mi
+      configtxlator:
+        limits:
+          cpu: 25m
+          memory: 50Mi
+        requests:
+          cpu: 25m
+          memory: 50Mi
+      couchdb:
+        limits:
+          cpu: 500m
+          memory: 1000Mi
+        requests:
+          cpu: 500m
+          memory: 1000Mi
+      deployer:
+        limits:
+          cpu: 100m
+          memory: 200Mi
+        requests:
+          cpu: 100m
+          memory: 200Mi
 ```
 {:codeblock}
 
@@ -670,30 +749,30 @@ apiVersion: ibp.com/v1alpha1
 kind: IBPConsole
 metadata:
   name: ibpconsole
-spec:
-  arch:
-  - amd64
-  license: accept
-  serviceAccountName: default
-  proxyIP:
-  email: "<EMAIL>"
-  password: "<PASSWORD>"
-  registryURL: cp.icr.io/cp
-  imagePullSecret: "docker-key-secret"
-  networkinfo:
-      domain: <DOMAIN>
-      consolePort: <CONSOLE_PORT>
-      proxyPort: <PROXY_PORT>
-  storage:
-    console:
-      class: default
-      size: 10Gi
-  tlsSecretName: "console-tls-secret"
-  clusterdata:
-    zones:
-      - dal10
-      - dal12
-      - dal13
+  spec:
+      arch:
+      - amd64
+      license: accept
+      serviceAccountName: default
+      proxyIP:
+      email: "<EMAIL>"
+      password: "<PASSWORD>"
+      registryURL: cp.icr.io/cp
+      imagePullSecret: "docker-key-secret"
+      networkinfo:
+          domain: <DOMAIN>
+          consolePort: <CONSOLE_PORT>
+          proxyPort: <PROXY_PORT>
+      storage:
+        console:
+          class: default
+          size: 10Gi
+      tlsSecretName: "console-tls-secret"
+      clusterdata:
+        zones:
+          - dal10
+          - dal12
+          - dal13
 ```
 {:codeblock}
 
