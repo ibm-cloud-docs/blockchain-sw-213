@@ -165,7 +165,7 @@ Users who installed the {{site.data.keyword.blockchainfull_notm}} Platform v2.1.
 
 **Support for OpenShift Container Platform v4.2 on LinuxONE on s390x**
 
-Enables IBM Z environments to participate fully in a multicloud architecture. Existing IBM Z applications running on Linux on IBM Z and z/OS can be extended to create a comprehensive multi-organizatioal blockchain network.
+Enables IBM Z environments to participate fully in a multicloud architecture. Existing IBM Z applications running on Linux on IBM Z and z/OS can be extended to create a comprehensive multi-organizational blockchain network.
 
 **Hyperledger Fabric v1.4.6**
 
