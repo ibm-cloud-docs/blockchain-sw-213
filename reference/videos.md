@@ -104,7 +104,7 @@ subcollection: blockchain-sw-213
 {: #ibp-videos}
 
 <div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 10px;">
+  <p style="line-height: 15px;">
     <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
     2.1.3, <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibp-videos">2.5</a>,
     <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibp-videos">2.5.1</a>,
