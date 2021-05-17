@@ -148,4 +148,4 @@ If it is successfully deployed and running, you see output similar to:
 
 Before you decommission your cluster where the licensing service is running, you need to archive the license metric utilization evidence. Retrieve the audit snapshot for the period when it was running on the cluster and store it for audit purposes.
 
-For more information about the licensing solution, see the [License Service documentation](https://www.ibm.com/support/knowledgecenter/SSHKN6/license-service/1.x.x/license_service.html){: external}.
+For more information about the licensing solution, see the [License Service documentation](https://www.ibm.com/docs/en/SSHKN6/license-service/1.x.x/license_service.html){: external}.

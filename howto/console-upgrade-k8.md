@@ -130,9 +130,9 @@ If you are using {{site.data.keyword.blockchainfull_notm}} Platform v2.1.0 or v2
 
 You can upgrade an {{site.data.keyword.blockchainfull_notm}} Platform network by using the following steps:
 
-1. [Update the ClusterRole](#upgrade-k8-clusterrole)
-2. [Upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator](#upgrade-ocp-operator)
-3. [Use your console to upgrade your running blockchain nodes](#upgrade-ocp-nodes)
+1. [Update the ClusterRole](/docs/blockchain-sw-213?topic=blockchain-sw-213-upgrade-k8#upgrade-k8-clusterrole)
+2. [Upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator](/docs/blockchain-sw-213?topic=blockchain-sw-213-upgrade-k8#upgrade-k8-operator)
+3. [Use your console to upgrade your running blockchain nodes](/docs/blockchain-sw-213?topic=blockchain-sw-213-upgrade-k8#upgrade-k8-nodes)
 
 After you upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator, the operator will automatically upgrade the console that is deployed on your namespace. You can then use the upgraded console to upgrade your blockchain nodes.
 
@@ -357,10 +357,10 @@ To apply a patch to a node, open the node tile and click the **Update available*
 
 If you deployed the {{site.data.keyword.blockchainfull_notm}} Platform behind a firewall, without access to the external internet, you can upgrade your network by using the following steps:
 
-1. [Pull the latest {{site.data.keyword.blockchainfull_notm}} Platform images](#upgrade-k8-images-firewall)
-2. [Update the ClusterRole](#upgrade-k8-clusterrole-firewall)
-3. [Upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator](#upgrade-k8-operator-firewall)
-4. [Use your console to upgrade your running blockchain nodes](#upgrade-k8-nodes-firewall)
+1. [Pull the latest {{site.data.keyword.blockchainfull_notm}} Platform images](/docs/blockchain-sw-213?topic=blockchain-sw-213-upgrade-ocp#upgrade-ocp-images-firewall)
+2. [Update the ClusterRole](/docs/blockchain-sw-213?topic=blockchain-sw-213-upgrade-ocp#upgrade-ocp-clusterrole-firewall)
+3. [Upgrade the {{site.data.keyword.blockchainfull_notm}} Platform operator](/docs/blockchain-sw-213?topic=blockchain-sw-213-upgrade-ocp#upgrade-ocp-operator-firewall)
+4. [Use your console to upgrade your running blockchain nodes](/docs/blockchain-sw-213?topic=blockchain-sw-213-upgrade-ocp#upgrade-ocp-nodes-firewall)
 
 You can continue to submit transactions to your network while you are upgrading your network. However, you cannot use the console to deploy new nodes, install or instantiate smart contracts, or create new channels during the upgrade process.
 
