@@ -200,10 +200,10 @@ Advanced users can review the [Ansible collection documentation](https://ibm-blo
 ## Where to find support
 {: #ansible-support}
 
-Ansible is an open source technology, therefore the Ansible playbooks are not officially supported by {{site.data.keyword.IBM_notm}}. For support related to the usage of the {{site.data.keyword.blockchainfull_notm}} Platform and Ansible playbooks open an issue in the [GitHub repository](https://github.com/IBM-Blockchain/ansible-role-blockchain-platform-manager/issues){: external}
+Ansible is an open source technology, therefore the Ansible playbooks are not officially supported by {{site.data.keyword.IBM_notm}}. For support related to the usage of the {{site.data.keyword.blockchainfull_notm}} Platform and Ansible playbooks open an issue in the [GitHub repository](https://github.com/IBM-Blockchain-Archive/ansible-role-blockchain-platform-manager/issues){: external}
 
 
 ## Where to find support
 {: #ansible-support}
 
-Ansible is an open source technology, therefore the Ansible playbooks are not officially supported by {{site.data.keyword.IBM_notm}}. For support related to the usage of the {{site.data.keyword.blockchainfull_notm}} Platform and Ansible playbooks open an issue in the [GitHub repository](https://github.com/IBM-Blockchain/ansible-role-blockchain-platform-manager/issues){: external}
+Ansible is an open source technology, therefore the Ansible playbooks are not officially supported by {{site.data.keyword.IBM_notm}}. For support related to the usage of the {{site.data.keyword.blockchainfull_notm}} Platform and Ansible playbooks open an issue in the [GitHub repository](https://github.com/IBM-Blockchain-Archive/ansible-role-blockchain-platform-manager/issues){: external}
