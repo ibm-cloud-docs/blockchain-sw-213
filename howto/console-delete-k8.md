@@ -115,7 +115,7 @@ subcollection: blockchain-sw-213
 
 The {{site.data.keyword.blockchainfull}} Platform operator automatically restarts your blockchain nodes or your console if they stop or crash. As a result, you cannot manually remove your blockchain components by manually deleting their pods. Use the following steps to remove the {{site.data.keyword.blockchainfull_notm}} Platform from your cluster. You must follow these steps for each Kubernetes namespace that you create.
 
-If your organization is participating in an active blockchain network, you should remove your organization from the network before you remove your deployment. See [Removing an organization](/docs/services/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-organizations#console-organizations-remove) for more details.
+If your organization is participating in an active blockchain network, you should remove your organization from the network before you remove your deployment. See [Removing an organization](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-organizations#console-organizations-remove) for more details.
 {: important}
 
 ## Step one: Use the console to delete your blockchain nodes

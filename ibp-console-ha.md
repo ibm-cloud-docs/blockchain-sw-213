@@ -130,7 +130,7 @@ Before proceeding, we recommend that you review the platform-specific guidance f
 
 - If you are running on OpenShift Container Platform, you should review
 [HA on OpenShift Container Platform](https://docs.openshift.com/container-platform/3.11/admin_guide/high_availability.html){: external}.
-- If you are using {{site.data.keyword.cloud_notm}} Private, review [Implementing HA on {{site.data.keyword.cloud_notm}} Private](https://www.ibm.com/cloud/architecture/practices/manage/high-availability-ibm-cloud-private){: external}.  
+- If you are using {{site.data.keyword.cloud_notm}} Private, review [Implementing HA on {{site.data.keyword.cloud_notm}} Private](https://www.ibm.com/garage/method/practices/manage/high-availability-ibm-cloud-private){: external}.  
 
 
 Then, you can use this topic for details on blockchain-specific HA guidance along with the recommendations from the platform-specific topic above.

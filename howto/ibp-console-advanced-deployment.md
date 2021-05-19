@@ -1356,7 +1356,7 @@ After you create the `JSON` file with all of the certificates for the ordering n
 You have gathered all of your peer or ordering service certificates from your third-party CA, created their corresponding organization MSP definition and created a peer or ordering service. If you are following along in the tutorials, you can return to the next step.
 - If you created the peer node, the next step is to [Create the node that orders transactions](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-build-network#ibp-console-build-network-create-orderer).
 - If you created the node to join an existing network, the next step is to [Add your organization to list of organizations that can transact](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-console-join-network#ibp-console-join-network-add-org2).
-- If you created an ordering service, the next step is to [Create a channel](/docs/blockchain?topic=blockchain-ibp-console-build-network#ibp-console-build-network-create-channel#ibp-console-build-network-create-channel).
+- If you created an ordering service, the next step is to [Create a channel](/docs/blockchain?topic=blockchain-ibp-console-build-network#ibp-console-build-network-create-channel).
 
 ## Configuring a node to use a Hardware Security Module (HSM)
 {: #ibp-console-adv-deployment-cfg-hsm}
@@ -1381,7 +1381,7 @@ When a CA, peer, or ordering node is configured to use an HSM, their private key
 Configuring a node to use HSM is a three-part process:
 1. **Deploy an HSM**. Utilize the HSM appliance that is available in [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog/infrastructure/hardware-security-module){: external} or configure your own HSM. Record the value of the HSM `partition` and `PIN` to be used in the subsequent steps.
 	-  If you plan to use {{site.data.keyword.cloud_notm}} HSM see this [tutorial](/docs/blockchain-sw-213?topic=blockchain-sw-213-ibp-hsm-gemalto) for an example of how to configure {{site.data.keyword.cloud_notm}} HSM 6.0 with the {{site.data.keyword.blockchainfull_notm}} Platform including the PKCS #11 proxy. After that is completed you can skip to Part 3 **Configure the node to use HSM**.
-	- If you want to use the [openCryptoki HSM](https://www.ibm.com/docs/en/linuxonibm/com.ibm.linux.z.lxce/lxce_stackoverview.html){: external} with your Z environment, you should complete these [instructions in GitHub](https://github.com/IBM-Blockchain/HSM/tree/master/Z-HSM) and then skip to Part 3 **Configure the node to use HSM**.
+	- If you want to use the [openCryptoki HSM](https://www.ibm.com/docs/en/linux-on-systems?topic=stack-opencryptoki-overview){: external} with your Z environment, you should complete these [instructions in GitHub](https://github.com/IBM-Blockchain/HSM/tree/master/Z-HSM) and then skip to Part 3 **Configure the node to use HSM**.
 	- If you want to try out SoftHSM or learn more about the PCKS #11 proxy, continue to Part 2 **Set up a PKCS #11 proxy**.
 2. **Set up a PKCS #11 proxy**. The proxy enables the node to communicate with the HSM. [See Setting up a PKCS #11 proxy for HSM](#ibp-console-adv-deployment-pkcs11-proxy) for your HSM.
 3. **Configure the node to use HSM**.  From the APIs or the console, when you deploy a peer, CA, or ordering node, you can select the advanced option to use an HSM. See [Configure the node to use the HSM](#ibp-console-adv-deployment-cfg-hsm-node).
