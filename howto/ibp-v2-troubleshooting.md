@@ -83,6 +83,7 @@ subcollection: blockchain-sw-213
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -231,7 +232,7 @@ The console has been working successfully, but after I upgraded my Mac OS to Cat
 There are three ways to resolve this problem:
 {: tsResolve}
 1.  Use a different [supported browser](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp#deploy-ocp-browsers) with Catalina.
-2. Use your own [TLS certificates when deploying on OpenShift Contain Platform](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp#use-your-own-tls-certificates-optional-) or [TLS certificates when deploying on Kubernetes or {{site.data.keyword.cloud_notm}} Private](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8#use-your-own-tls-certificates-optional-).
+2. Use your own [TLS certificates when deploying on OpenShift Contain Platform](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp#console-deploy-ocp-use-your-own-tls-certificates-optional) or [TLS certificates when deploying on Kubernetes or {{site.data.keyword.cloud_notm}} Private](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-k8#deploy-k8-tls).
 3. Run the following commands to generate a new key and certificate pair for the console that will fix the problem.
    1. Run the following command to get the pod that corresponds to the ibp console:
       ```
@@ -262,7 +263,7 @@ There are three ways to resolve this problem:
 If you are not using your own TLS certificates to secure communications in your blockchain network, you need to accept the self-signed certificate that was generated for you. Otherwise, when you try to create a channel or add an organization to an ordering service the action fails. Channel creation fails with the error `An error occurred when creating channel. submit config update failed: grpc code ???= response contains no code or message`. Or, when you click on your ordering service, you see `Unable to get system channel. If you associated an identity without administrative privilege on the ordering service node, you will not be able to view or manage ordering service details`.
 {: tsSymptoms}
 
-This problem occurs when the blockchain console is deployed without the advanced deployment option to [use your own TLS certificates](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp#use-your-own-tls-certificates-optional-).
+This problem occurs when the blockchain console is deployed without the advanced deployment option to [use your own TLS certificates](/docs/blockchain-sw-213?topic=blockchain-sw-213-deploy-ocp#console-deploy-ocp-use-your-own-tls-certificates-optional).
 {: tsCauses}
 
 To resolve this problem, you need to accept the self-signed certificate in your browser.
